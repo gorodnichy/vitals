@@ -32,10 +32,10 @@ government, demanding it to revoke its "Mandatory Vaccination Policies" <!-- as 
 The solution to  this problem  was seen in keeping the discussion focused entirely on  Canada's own sources and open data, much of which -- thanks to the [Open Goverment and Scientific Integrity](https://open-canada.github.io/r4gc/open-policies.html#open-policies) policies introduced by the  Liberal Government several years ago -- have now become available, including  statistics of the number of deaths by cause and by vaccination status, which can be analyzed  and effectively visualized using contemporary  open source data science tools such as [R](https://cran.r-project.org/web/packages/cansim/index.html) and [RStudio](https://shiny.rstudio.com/gallery/).  
 <!-- Another part of the presenation -->
 
-<!-- A[open-canada.github.io/vitals](https://open-canada.github.io/vitals)  lot of effort in this presentation was given to applaud many of the Government of Canada efforts -->
+<!-- A[ivi-m.github.io/vv](https://ivi-m.github.io/vv)  lot of effort in this presentation was given to applaud many of the Government of Canada efforts -->
 
 
-- ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://open-canada.github.io/vitals/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf), 
+- ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf), 
 Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community)  lead, Senior Data Scientist, Dr. Dmitry Gorodnichy (4 February 2022).
 
 <!--
@@ -43,30 +43,30 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by
 
 -->
 
-<a href="https://open-canada.github.io/vitals/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf" style="text-align: center">
-<img src="https://open-canada.github.io/vitals/OneYearOfVaccineInCanada-s1.png" width="500" align="center"></a>
+<a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf" style="text-align: center">
+<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s1.png" width="500" align="center"></a>
 
 
 ### White Papers and Tools:
 
-- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://open-canada.github.io/vitals/report-side-effect)
+- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vv/report-side-effect)
 - [Interactive *Open Canada Vitals Statitistcs (Deaths) Tracker* App](https://open-canada.github.io/Apps/vitals) 
-<!-- - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://github.com/open-canada/vitals/blob/main/docs/r4gc-meetu[open-canada.github.io/vitals](https://open-canada.github.io/vitals) p-2022-02-04-SpecialEdition(OneYearOfVaccineInCanada).pdf), 
+<!-- - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://github.com/open-canada/vitals/blob/main/docs/r4gc-meetu[ivi-m.github.io/vv](https://ivi-m.github.io/vv) p-2022-02-04-SpecialEdition(OneYearOfVaccineInCanada).pdf), 
 Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup --> 
 <!-- by the community lead, Senior Data Scientist, Dr. Dmitry Gorodnichy (4 February 2022) -->
 
 -  ["Some observations from Canadian Vital Statistics Death (CVSD) Database related to
-    the 'Elephant in the Room'"](https://open-canada.github.io/vitals/comment.pdf), Comment submission to The Lancet Journal (6 January 2022)
--  ["Additional  observations related to the 'Elephant in the Room' –  from the Government of Canada COVID-19 daily epidemiology updates.  Time to act!"](https://open-canada.github.io/vitals/comment2.pdf), White paper (10 January 2022)  
+    the 'Elephant in the Room'"](https://ivi-m.github.io/vv/comment.pdf), Comment submission to The Lancet Journal (6 January 2022)
+-  ["Additional  observations related to the 'Elephant in the Room' –  from the Government of Canada COVID-19 daily epidemiology updates.  Time to act!"](https://ivi-m.github.io/vv/comment2.pdf), White paper (10 January 2022)  
   
   
-<a href="https://open-canada.github.io/vitals/OneYearOfVaccineInCanada-s19.png">
-<img src="https://open-canada.github.io/vitals/OneYearOfVaccineInCanada-s19.png" width="500">
+<a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png">
+<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png" width="500">
 </a>
 
 
 -   ["Statistical analysis of official data sources related to vaccine efficacy and  safety (NEW EVIDENCE SINCE OCTOBER
-    2021)"](https://open-canada.github.io/vitals/analysis)
+    2021)"](https://ivi-m.github.io/vv/analysis)
 
 
 
@@ -78,7 +78,7 @@ Last Updated: 2022-02-10
 
 [gc1] "Cases* following vaccination, COVID-19 Daily Epidemiology Update"*, Public Health Agency of Canada,  <https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html#a9> ([archived reports](https://github.com/open-canada/vitals/tree/main/docs/COVID-19%20epidemiology%20updates))
 
-NB: The statistics reported in this source are computed using  death data since December 2020, when  there were no fully vaccinated Canadians yet, but when many cases happened (More exactly: There were 0 fully-vaccinated in December, < 1% for most of January,  <3%  until May). This is known as *algorithmic bias*, which skews results favourably towards fully-vaccinated cases, and which can be removed using  technique described in [this paper](https://open-canada.github.io/vitals/comment2.pdf). The numbers below are quoted directrly from the source.
+NB: The statistics reported in this source are computed using  death data since December 2020, when  there were no fully vaccinated Canadians yet, but when many cases happened (More exactly: There were 0 fully-vaccinated in December, < 1% for most of January,  <3%  until May). This is known as *algorithmic bias*, which skews results favourably towards fully-vaccinated cases, and which can be removed using  technique described in [this paper](https://ivi-m.github.io/vv/comment2.pdf). The numbers below are quoted directrly from the source.
   
   
 
@@ -159,13 +159,11 @@ Last updated: February 3, 2022 at 10:31 a.m. (EST): Hosp. 536 vs 1383, ICU 179 v
 Last updated: February 6, 2022 at 10:31 a.m. (EST): 484 + 100, vs. 1264, 158 + 10 vs. 174
 -->
 
-<<<<<<< HEAD
-#### Source [gc2]: ‘Reported side effects following COVID-19 vaccination in Canada’, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety/>
-=======
+
 <hr>
 
 [gc3]: ‘Reported side effects following COVID-19 vaccination in Canada’, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety>
->>>>>>> 98cd1d921da4d06c1abe74789e8d1e29040ad558
+
  
 <!-- 
 [gc4]  **COVID-19 vaccine adverse reactions (side-effects)** (Source: 
@@ -186,7 +184,7 @@ Last updated: February 6, 2022 at 10:31 a.m. (EST): 484 + 100, vs. 1264, 158 + 1
     
 
 <!-- 
-- Many are not reported or published yet, like the one  [here](https://open-canada.github.io/vitals/SideEffectReporting-example-1.pdf)
+- Many are not reported or published yet, like the one  [here](https://ivi-m.github.io/vv/SideEffectReporting-example-1.pdf)
  - Adverse reaction, not reported yet in Canada but reported in US: -->
 
 <hr>
@@ -207,7 +205,7 @@ Recalls and safety alerts, Government of Canada: <https://recalls-rappels.canada
 
 <hr>
 
-[ gc5 ] Statistics Canada, Canadian Vital Statistics - Death database . Provisional weekly death counts, by selected grouped causes of death.  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001>  (Dashboard: <https://open-canada.github.io/vitals>) 
+[ gc5 ] Statistics Canada, Canadian Vital Statistics - Death database . Provisional weekly death counts, by selected grouped causes of death.  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001>  (Dashboard: <https://ivi-m.github.io/vv>) 
 
 <!-- 
 [gc4]: **Deaths of COVID-19** (Source: GC
@@ -272,8 +270,8 @@ Recalls and safety alerts, Government of Canada: <https://recalls-rappels.canada
 - However, natural immunity  reduces the risk of hospitalization even more (by x20-x50),  while the chance of having severe complication from COVID infection for people younger than 65 and in good health is very low (<0.01% Cases based on [ukg1])  and for  children under 12 even lower (<0.0001% Cases based on [ukg2]).
 
 
-<a href="https://open-canada.github.io/vitals/OneYearOfVaccineInCanada-s13.png" >
-<img src="https://open-canada.github.io/vitals/OneYearOfVaccineInCanada-s13.png" width="500" >
+<a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s13.png" >
+<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s13.png" width="500" >
 </a>
 
 
@@ -300,7 +298,7 @@ Heath Canada portal. This is how you do it:
 -   Go to the Health Canada Voluntary Side Effect Reporting portal :
     <https://hpr-rps.hres.ca/side-effects-reporting-form.php?form=voluntary>
 -   Submit electronic form there as shown in this 
-    [Example](https://open-canada.github.io/vitals/SideEffectReporting-example-1.pdf). (
+    [Example](https://ivi-m.github.io/vv/SideEffectReporting-example-1.pdf). (
     There are three places there you need to know how to fill out: in Section B: Patient
     ID write your initials; in Section D: Product DIN and Product Name - paste the
     vaccine names (and batch/lot number, if available), as printed on your receipt. )
