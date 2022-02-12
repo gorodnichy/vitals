@@ -1,2 +1,3 @@
-# vitals
-Codes and Web App to visualize various Open Canada Vital Statistics
+# https://ivi-m.github.io/vv/
+
+Interactive Web App, R Codes, and Resources related to the Analysis of Open Canada Vital Statistics (Deaths)
