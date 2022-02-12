@@ -4,7 +4,7 @@ Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 
 Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 ==================================================
-[open-canada.github.io/vitals](https://open-canada.github.io/vitals) 
+[ivi-m.github.io/vv](https://ivi-m.github.io/vv) ([www.IVIM.ca](http://www.IVIM.ca))
 
 
 Disclaimer: The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). The results and views presented here are those by the authors and are not to be misconstrued as representing  views of
@@ -321,7 +321,7 @@ Heath Canada portal. This is how you do it:
 <hr>
 
 
- Corrections/Comments: [ open-canada-data-analysis @ ivim . ca ]     
+ Corrections/Comments: [ opencanadadatanalysis @ ivim . ca ]     
  
 
 
