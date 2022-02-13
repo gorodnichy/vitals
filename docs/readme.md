@@ -18,14 +18,14 @@ All codes behind the analysis and supporting documents are free, open and availa
 
 ## Summary
 
-On March 31, 2021, just before COVID-19 vaccination of general public  commenced, the Chief Science Advisor of Canada (Dr. Mona Nemer) in its ["Scientific Considerations for Using COVID-19 Vaccination Certificates" Report](https://science.gc.ca/eic/site/063.nsf/eng/h_98229.html), has  expressed several concerns and recommendations related to the uncertanties associated with using new COVID-19 vaccines, which were approved under Emergercy Act and did not go through all testing stages normally requried for vaccine approval. This included the following:
+On March 31, 2021, just before COVID-19 vaccination of general public  commenced, the Chief Science Advisor of Canada (Dr. Mona Nemer) in its ["*Scientific Considerations for Using COVID-19 Vaccination Certificates"*](https://science.gc.ca/eic/site/063.nsf/eng/h_98229.html) report, has  expressed several concerns and recommendations related to the uncertanties associated with using new COVID-19 vaccines that were approved under Emergercy Act and did not go through all normally conducted testing stages. This included the following:
 
 - Scientific uncertainties: *Given the short time since the COVID-19 vaccines have become available, it is not surprising that many scientific uncertainties persist and are the subject of intense ongoing studies*.
-- Ethical and Social Considerations: *It should also be noted that while the anticipation of more freedom may be an incentive for some to get vaccinated, vaccine acceptance could decrease in others if there was a sense oCOVID-19 vaccine-associated myocarditis/pericarditis f coercion tied to using vaccination certificates.*
+- Ethical and Social Considerations: *It should also be noted that while the anticipation of more freedom may be an incentive for some to get vaccinated, vaccine acceptance could decrease in others if there was a sense oCOVID-19 vaccine-associated myocarditis/pericarditis of coercion tied to using vaccination certificates.*
 - Legal Considerations: *The processes by which vaccine certificates are issued and controlled need to be fraud proof*
 - Conclusion: *\[All levels of government could work to develop a framework that\] Maximizes consistent post-vaccine monitoring*
 
-Shortly after that on July 16, 2021, another report was issued by her office just as the vaccination rates started to pick up (but still being comparatively low - less than 10%) [COVID-19 vaccine-associated myocarditis/pericarditis](https://science.gc.ca/eic/site/063.nsf/eng/h_98291.html), where -- in the face of uncovering a major COVID-19 vaccine side effects -- she has further emphased the following:
+Shortly after that on July 16, 2021, another report was issued by her office just as the vaccination rates started to pick up (but still being comparatively low - less than 10%) ["*COVID-19 vaccine-associated myocarditis/pericarditis"*](https://science.gc.ca/eic/site/063.nsf/eng/h_98291.html), where -- in the face of uncovering a major COVID-19 vaccine side effects -- she has further emphased the following:
 
 - Priority actions moving forward: *The emerging issue of vaccine associated heart disease requires attention on two important levels:
 addressing data and knowledge gaps on the one hand, and promoting awareness and clinical care on the other.*
