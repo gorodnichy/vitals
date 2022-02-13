@@ -148,9 +148,9 @@ Proportion of Unvaccinated among COVID-19 deaths
 
 -->
 
-<!-- ###### COVID-19 deaths by Vaccination Status (from December 14, 2020) -->
+<!-- ###### COVID-19 deaths by Vaccination Status ( -->
 
-Death cases: 
+##### Death cases by vaccination status (from December 14, 2020 to present)
  
 - *on February 10, 2022 for cases from December 14, 2020 up until January 22, 2022 (n=1,670,682)* <br> 
 unvaccinated 68.1%% vs. fully vaccinated **19.5%** (+2.7% increase since last week)
@@ -163,10 +163,10 @@ unvaccinated 76.1% vs. fully vaccinated **9.5%**
 
 
 
-NB: The statistics reported above are computed using  death data since December 2020, when  there were no fully vaccinated Canadians yet, but when many cases happened (More exactly: There were 0 fully-vaccinated in December, < 1% for most of January,  <3%  until May). This is known as *algorithmic bias*, which skews results favourably towards fully-vaccinated cases. It can be removed using the technique described in [this paper](https://ivi-m.github.io/vv/comment2.pdf). 
-The unbiased statistics are shown below
+NB: The statistics above is quoted directly from the source, where it is computed using  death data *since December 2020*, when - as known -   there were no fully vaccinated Canadians yet (More exactly: There were 0 fully-vaccinated in December, < 1% for most of January,  <3%  until May). This is known as *algorithmic bias*, which skews results favourably towards fully-vaccinated cases. This bias can be removed using the technique described in [this paper](https://ivi-m.github.io/vv/comment2.pdf). 
+The unbiased statistics are shown below.
   
-# Infected Cases  between  December 04, 2021 and January 15, 2022 
+##### Infected  by vaccination status (from December 04, 2021 to January 15, 2022) 
   
 
   
