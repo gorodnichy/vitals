@@ -36,7 +36,7 @@ The solution to  this problem  was seen in keeping the discussion focused entire
 
 
 - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf), 
-Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community)  lead, Senior Data Scientist, Dr. Dmitry Gorodnichy (4 February 2022).
+Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community)  lead, Senior Data Scientist, [Dr. Dmitry Gorodnichy](http://gorodnichy.ca) (4 February 2022).
 
 <!--
 - Shorter version of the above deck, modified for larger audience is [here]()
@@ -62,9 +62,10 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
 
 ### White Papers:
 
+-  ["Additional  observations related to the 'Elephant in the Room' –  from the Government of Canada COVID-19 daily epidemiology updates.  Time to act!"](https://ivi-m.github.io/vv/comment2.pdf), White paper (10 January 2022) 
 -  ["Some observations from Canadian Vital Statistics Death (CVSD) Database related to
     the 'Elephant in the Room'"](https://ivi-m.github.io/vv/comment.pdf), Comment submission to The Lancet Journal (6 January 2022)
--  ["Additional  observations related to the 'Elephant in the Room' –  from the Government of Canada COVID-19 daily epidemiology updates.  Time to act!"](https://ivi-m.github.io/vv/comment2.pdf), White paper (10 January 2022)  
+ -  ["Statistical analysis of the official data sources related to vaccine efficacy and  safety (NEW EVIDENCE SINCE OCTOBER     2021)"](https://ivi-m.github.io/vv/analysis), Additional details.
   
   
 <a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png">
@@ -72,8 +73,7 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
 </a>
 
 
--   ["Statistical analysis of official data sources related to vaccine efficacy and  safety (NEW EVIDENCE SINCE OCTOBER
-    2021)"](https://ivi-m.github.io/vv/analysis)
+
 
 
 
@@ -86,10 +86,9 @@ Last Updated: 2022-02-11
     [canada.ca](https://health-infobase.canada.ca/covid-19/vaccination-coverage/)):
     
 - Dec 2020 - Apr 2021 (High-risk population): 0 -- 2%)
-- May 2021 - Oct 2021: General public vaccination (fully: **2% -- 75%**)
-- Total (Dec 2020 - present): 80%
-- Of these, coerced* : 5% - 15% 
-\* Estimated using the difference in rates between before and after mandatory vaccination job requirements.
+- May 2021 - Oct 2021 (General public vaccination): **2% -- 75%**)
+- Dec 2020 - present (Total): 80%
+- Of these, "coerced"": 10% - 20%  (Estimated using the difference in rates between before and after mandatory vaccination job requirements)
 
 [gcB] **COVID-19 cases vs. COVID-19 deaths** (source: [google1](https://www.google.com/search?q=canada+covid+cases&oq=canada+covid+cases)):
 
@@ -149,8 +148,9 @@ Proportion of Unvaccinated among COVID-19 deaths
 
 -->
 
-###### COVID-19 deaths by Vaccination Status (from December 14, 2020)
+<!-- ###### COVID-19 deaths by Vaccination Status (from December 14, 2020) -->
 
+Death cases: 
  
 - *on February 10, 2022 for cases from December 14, 2020 up until January 22, 2022 (n=1,670,682)* <br> 
 unvaccinated 68.1%% vs. fully vaccinated **19.5%** (+2.7% increase since last week)
@@ -164,26 +164,25 @@ unvaccinated 76.1% vs. fully vaccinated **9.5%**
 
 
 NB: The statistics reported above are computed using  death data since December 2020, when  there were no fully vaccinated Canadians yet, but when many cases happened (More exactly: There were 0 fully-vaccinated in December, < 1% for most of January,  <3%  until May). This is known as *algorithmic bias*, which skews results favourably towards fully-vaccinated cases. It can be removed using the technique described in [this paper](https://ivi-m.github.io/vv/comment2.pdf). 
-
-The unbiased statistics (for all infected cases between  December 04, 2021 and January 15, 2022) is shown below (click on the image to download it) 
+The unbiased statistics are shown below
   
+# Infected Cases  between  December 04, 2021 and January 15, 2022 
   
-<a href="https://ivi-m.github.io/vv/One-Slide-update.png">
-<img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="200">
-</a>
 
   
-The number of COVID-19 cases fully-vaccinated      vs.    unvaccinated and partially-vaccinated <br> 
+- The number of COVID-19 cases fully-vaccinated      vs.    unvaccinated and partially-vaccinated <br> 
 87% 		vs.		 	11%     and   2%
-
-For comparison, the vaccination rates in the same period: 
+- For comparison, the vaccination rates in the same period: 
 fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br> 
 77%		vs.		 	18%    and   5%
   
   
-Conclusion: Between  December 04, 2021 and January 15, 2022. fully-vaccinated Canadians were more likely to become infected with COVID-19 than their unvaccinated fellow citizens.
+**Conclusion: Between  December 04, 2021 and January 15, 2022. fully-vaccinated Canadians were more likely to become infected with COVID-19 than their unvaccinated fellow citizens**
 
 
+<a href="https://ivi-m.github.io/vv/One-Slide-update.png">
+<img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="400">
+</a>
 
 
 ###### COVID-19 cases by Vaccination Status (December 4, 2021)
@@ -364,7 +363,6 @@ Heath Canada portal. This is how you do it:
 
 -->
 
-<hr>
 
 
 
