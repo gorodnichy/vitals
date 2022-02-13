@@ -181,7 +181,7 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
 
 
 <a href="https://ivi-m.github.io/vv/One-Slide-update.png">
-<img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="400">
+<img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="500">
 </a>
 
 
