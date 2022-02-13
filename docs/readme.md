@@ -174,8 +174,16 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
 
 
 
-[ gc2 ]: Reported side effects following COVID-19 vaccination in Canada, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety> (Figure 1, Table 1)
+[ gc2 ]: Reported side effects following COVID-19 vaccination in Canada, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety> 
 
+ 
+
+<hr>
+
+
+
+
+[ gc2 ]: Reported side effects following COVID-19 vaccination in Canada, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety> (Figure 1, Table 1)
 
 
 Total (since Jan 2021):
