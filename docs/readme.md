@@ -110,8 +110,6 @@ Last Updated: 2022-02-11
  
 <!-- 
 
-
-
 - *Data extracted on January 28, 2022 for cases <u>from December 14, 2020</u>* <br>
   Unvaccinated 70.3%% vs. fully vaccinated **16.8%** (+3% increase since last week, +7.3% increase since last month) <p>
     
@@ -134,20 +132,6 @@ Report Date (total cases)| Period reported for     | Reported deaths (with bias*
 
 -->
 
-<!--
-
-
-Proportion of Unvaccinated among COVID-19 deaths
-
-
-[gc3]  **Deaths of COVID-19 by vaccination status** (Source:
-    [[canada.ca](https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html#a9), [archived reports](https://github.com/open-canada/vitals/tree/main/docs/Epidemiological-summary-of-COVID-19-cases-in-Canada-Canada.ca)] -
-    Table 2):
-
-
--->
-
-<!-- ###### COVID-19 deaths by Vaccination Status ( -->
 
 ##### Death cases by vaccination status (from December 14, 2020 to present)
  
@@ -189,7 +173,9 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
 
 
 
-[gc2]: ‘Reported side effects following COVID-19 vaccination in Canada’, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety> (Figure 1, Table 1)
+
+[ gc2 ]: Reported side effects following COVID-19 vaccination in Canada, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety> (Figure 1, Table 1)
+
 
 
 Total (since Jan 2021):
@@ -204,16 +190,12 @@ Between *May 2021 and Oct 2021* (for comparing with COVID-19 deaths in the same 
     Myocarditis1/Pericarditis), 947 thrombosis, 781 central nervous system failures
     (including 594 Bell's Palsy), 487 Anaphylaxis, 166 Auto-immune diseases, 37 Acute
     kidney injury, 25 Liver injury, and 208 deaths (some under investigation).
-    
-
-<!-- 
 - Many are not reported or published yet, like the one  [here](https://ivi-m.github.io/vv/SideEffectReporting-example-1.pdf)
- - Adverse reaction, not reported yet in Canada but reported in US: -->
 
 <hr>
 
 
-[ gc3 ] Statistics Canada, Canadian Vital Statistics - Death database . Provisional weekly death counts, by selected grouped causes of death.  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001>  (Dashboard: <https://ivi-m.github.io/vv>) 
+[ gc3 ] Statistics Canada, Canadian Vital Statistics - Death database. Provisional weekly death counts, by selected grouped causes of death.  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001>  (Dashboard: <https://ivi-m.github.io/vv>) 
 
 <!-- 
 [gc4]: **Deaths of COVID-19** (Source: GC
