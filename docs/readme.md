@@ -2,49 +2,76 @@
 Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 -->
 
-Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
+Analysis of Official Data and Sources Related to COVID-19 Vaccine Efficacy and Safety
 ==================================================
 
 
-Disclaimer: The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). The results and views presented here are those by the authors and are not to be misconstrued as representing  views of
+**Disclaimer**: The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). The results and views presented here are those by the authors and are not to be misconstrued as representing  views of
 any Canadian Agency, University, or Department. They were developed and gathered by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community) as part of the community training and socializing, mostly on authors' own time and using authors' own resources.
-All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/open-canada/vitals/).  Comments and corrections are welcome.
+All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/open-canada/vitals/).  
+
+<!-- Comments and corrections are welcome and should be emailed to <opencanadadataanalysis @ ivim . ca -- >
 
 
 
 
-### Talking about "The Elephant in the Room". 
-<!-- How to defend the constitutional freedom and scientific integgity in the times of crisis-->
 
-<!-- by a Senior Government of Canada Data Scientist, Dr. Dmitry Gorodnichy, the lead and moderator of the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community)  group, -
-, which started on January 29, 2021 and which continues till present,
+## Summary
+
+On March 31, 2021, just before COVID-19 vaccination of general public  commenced, the Chief Science Advisor of Canada (Dr. Mona Nemer) in its ["Scientific Considerations for Using COVID-19 Vaccination Certificates" Report](https://science.gc.ca/eic/site/063.nsf/eng/h_98229.html), has  expressed several concerns and recommendations related to the uncertanties associated with using new COVID-19 vaccines, which were approved under Emergercy Act and did not go through all testing stages normally requried for vaccine approval. This included the following:
+
+- Scientific uncertainties: *Given the short time since the COVID-19 vaccines have become available, it is not surprising that many scientific uncertainties persist and are the subject of intense ongoing studies*.
+- Ethical and Social Considerations: *It should also be noted that while the anticipation of more freedom may be an incentive for some to get vaccinated, vaccine acceptance could decrease in others if there was a sense oCOVID-19 vaccine-associated myocarditis/pericarditis f coercion tied to using vaccination certificates.*
+- Legal Considerations: *The processes by which vaccine certificates are issued and controlled need to be fraud proof*
+- Conclusion: *\[All levels of government could work to develop a framework that\] Maximizes consistent post-vaccine monitoring*
+
+Shortly after that on July 16, 2021, another report was issued by her office just as the vaccination rates started to pick up (but still being comparatively low - less than 10%) [COVID-19 vaccine-associated myocarditis/pericarditis](https://science.gc.ca/eic/site/063.nsf/eng/h_98291.html), where -- in the face of uncovering a major COVID-19 vaccine side effects -- she has further emphased the following:
+
+- Priority actions moving forward: *The emerging issue of vaccine associated heart disease requires attention on two important levels:
+addressing data and knowledge gaps on the one hand, and promoting awareness and clinical care on the other.*
+
+As of today  -- more than half a year later, with more than 80% Canadians now being vaccinated with  COVID-19 vaccines and with  numerous new Vital statistics and Vaccine Adverse Events data that hav been obtained since then (especially after October 2021, due to the average of three month delay in processing much of the data), -- this remains to be last report that the Chief Science Advisor of Canada has issued on the topic of COVID-19 vaccine safety and efficacy. It is not clear why. Equally it is not clear, why there is still not a single other publication or  vaccine training produced by the Goverment of Canada that would be based on  the data obtained after the commencement of mass vaccination, not prior to it.
+
+<!-- - developped in cooperation with many data govenmenr who wished to remain anonoymous, -->
+This portal aims at addressing this gap. 
+It provides links to related  Open Canada sources and datasets, includes the interactive application, and develops a number of observations, for sharing with the general public and   professionals for validation and comments.
+
+<!-- 
+Because of the [Code of Conduct](https://github.com/IVI-M/vv/raw/main/docs/legal/CBSA_conduct_code.pdf), which instructs Government of Canada employees to refrain from making  criticisms of  the Government of Canada, it has become very difficult to discuss anything in relationship to COVID-19 vaccine efficiency/safety.  Employees who experienced vaccine side effects or had  questions related to the above, would be afraid to express their concerns and seek for help, many wanted to remain anonymous. 
+
 -->
+
+### Key observations
+
+- Open Canada data that has become available *after* the start of general public vaccination <u>appears to not</u> support the COVID-19  vaccine manufacturers\' claims about  vaccine efficacy (as being over 95% efficient) and safety (as being "very safe"). 
+- Additionally, it appears that certain reports produced by the Government of Canada (Cases following vaccination) contain algorithmic bias in the way the metrics are computed and reported to the general public <!-- which skew the results considerably in the favour of vaccination -->
+- When recomputed without the embedded bias, for the period of from December 04, 2021 to January 15, 2022,  fully-vaccinated Canadians appear to be  more likely infected with COVID-19 than their unvaccinated fellow citizens.
+- The number of serious COVID-19 adverse events, including deaths, and key organs failures,   appears to be much higher than what could be expected from a "safe" vaccine, being comparable in the order of scale to that of COVID deaths alone.
+
+<!-- , and for certain populations (children, people under thirty with no other health problems) even higher than, -->
+
+The following tools and white papers have been prepared to facilitate the discussion.
+
+
+<!-- How to defend the constitutional freedom and scientific integrity in the times of crisis, -->
 
 <!--   , all bound by the [Code of Conduct](conduct_code_conduite_eng.pdf) which instructs employees to refrain from making  criticisms of  the Government
 of Canada, 
-We refrain from making public criticisms of the CBSA and/or the Government
-of Canada including posting critical comments on social media fora. -->
+We refrain from making public criticisms of the CBSA and/or the Government of Canada including posting critical comments on social media fora. -->
+
+<!-- 
+### Talking about "The Elephant in the Room"
 
 The following presentation was given to the Government of Canada employees, who expressed interest in learning about the  latest Government of Canada data related to COVID-19 vaccination. 
 A considerable portion of this presentation was about how to create a safe and respectful environment within Government of Canada where Government of Canada employees can discuss this topic ("The Elephant in the Room"), which is already causing much of polarization within Canadian public, including among the Government of Canada employees, and which has  led to  the largest in the Canadian history demonstrations of protests  of Canadians against the government.
-government, demanding it to revoke its "Mandatory Vaccination Policies" <!-- as being scientifically, ethically,  legally, and economically unjustified. -->
+government, demanding it to revoke its "Mandatory Vaccination Policies". 
 The solution to  this problem  was seen in keeping the discussion focused entirely on  Canada's own sources and open data, much of which -- thanks to the [Open Goverment and Scientific Integrity](https://open-canada.github.io/r4gc/open-policies.html#open-policies) policies introduced by the  Liberal Government several years ago -- have now become available, including  statistics of the number of deaths by cause and by vaccination status, which can be analyzed  and effectively visualized using contemporary  open source data science tools such as [R](https://cran.r-project.org/web/packages/cansim/index.html) and [RStudio](https://shiny.rstudio.com/gallery/).  
-<!-- Another part of the presenation -->
-
-<!-- A[ivi-m.github.io/vv](https://ivi-m.github.io/vv)  lot of effort in this presentation was given to applaud many of the Government of Canada efforts -->
-
-
-- ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf), 
-Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community)  lead, Senior Data Scientist, [Dr. Dmitry Gorodnichy](http://gorodnichy.ca) (4 February 2022).
-
-<!--
-- Shorter version of the above deck, modified for larger audience is [here]()
-
 -->
+<!-- as being scientifically, ethically,  legally, and economically unjustified. -->
 
-<a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf" style="text-align: center">
-<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s1.png" width="500" align="center"></a>
+<!-- Another part of the presenation was dedicated to show colleagues how to report vaccine side effects as a consumer-->
 
+<!-- A[ivi-m.github.io/vv](https://ivi-m.github.io/vv)  lot of effort in this presentation was given to applaud many of the Government of Canada efforts in creating open govenment and scientific integrity poicies-->
 
 ### Interactive Apps:
 
@@ -66,41 +93,25 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
     the 'Elephant in the Room'"](https://ivi-m.github.io/vv/comment.pdf), Comment submission to The Lancet Journal (6 January 2022)
  -  ["Statistical analysis of the official data sources related to vaccine efficacy and  safety (NEW EVIDENCE SINCE OCTOBER     2021)"](https://ivi-m.github.io/vv/analysis), Additional details.
   
-  
-<a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png">
-<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png" width="500">
-</a>
+
+- ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf), 
+Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community)  lead, Senior Data Scientist, [Dr. Dmitry Gorodnichy](http://gorodnichy.ca) (4 February 2022).
+
+<!--
+- Shorter version of the above deck, modified for larger audience is [here]()
+
+-->
+
+<a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf" style="text-align: center">
+<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s1.png" width="500" align="center"></a>
 
 
+ 
 
-
-
-
-### Key Sources and Observations
+## Sources:
 
 Last Updated: 2022-02-11 
 
-
-[gcA]  **Fully-Vaccinated rates** (Source:
-    [canada.ca](https://health-infobase.canada.ca/covid-19/vaccination-coverage/)):
-    
-- Dec 2020 - Apr 2021 (High-risk population): 0 -- 2%)
-- May 2021 - Oct 2021 (General public vaccination): **2% -- 75%**)
-- Dec 2020 - present (Total): 80%
-- Of these, "coerced"": 10% - 20%  (Estimated using the difference in rates between before and after mandatory vaccination job requirements)
-
-[gcB] **COVID-19 cases vs. COVID-19 deaths** (source: [google1](https://www.google.com/search?q=canada+covid+cases&oq=canada+covid+cases)):
-
-- Canada population: 38.246.108
-- Total COVID Cases (since March 2020): 3.150.000
-- Total COVID Deaths (since March 2020): 35.00 or 1.1% Cases
-- Of these, Most are comorbidities (>90% based on UKG and USG data)
-- Of these, Most are in people 65+ (>90% based on GC, UKG, USG data)
-- COVID Deaths for people younger than 65 with no health problems: < 0.01% Cases
-
-<!-- 
-- About 0.0xxx% of COVID-19 cases result in hospitalizations, 0.00yy% result in ICU, and 0.000z% in deaths, about 10% of which  COVID-deaths only - TBC
--->
 
 <hr>
 
@@ -132,8 +143,14 @@ Report Date (total cases)| Period reported for     | Reported deaths (with bias*
 
 -->
 
+ 
+<a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png">
+<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png" width="500">
+</a>
 
-##### Death cases by vaccination status (from December 14, 2020 to present)
+
+
+##### Death cases by vaccination status, biased reporting (from December 14, 2020 to present)
  
 - *on February 10, 2022 for cases from December 14, 2020 up until January 22, 2022 (n=1,670,682)* <br> 
 unvaccinated 68.1%% vs. fully vaccinated **19.5%** (+2.7% increase since last week)
@@ -146,10 +163,10 @@ unvaccinated 76.1% vs. fully vaccinated **9.5%**
 
 
 
-NB: The statistics above is quoted directly from the source, where it is computed using  death data *since December 2020*, when - as known -   there were no fully vaccinated Canadians yet (More exactly: There were 0 fully-vaccinated in December, < 1% for most of January,  <3%  until May). This is known as *algorithmic bias*, which skews results favourably towards fully-vaccinated cases. This bias can be removed using the technique described in [this paper](https://ivi-m.github.io/vv/comment2.pdf). 
+NB: The statistics above is quoted directly from the source, where it was computed using  death data *since December 2020*, when there were no fully vaccinated Canadians yet (more exactly: there were 0 fully-vaccinated in December, < 1% for most of January,  <3%  until May). This is known as *algorithmic bias*, which skews results favourably towards fully-vaccinated cases. This bias can be removed using the technique described in [this paper](https://ivi-m.github.io/vv/comment2.pdf). 
 The unbiased statistics are shown below.
   
-##### Infected  by vaccination status (from December 04, 2021 to January 15, 2022) 
+##### Infected cases by vaccination status, unbiased reporting (from December 04, 2021 to January 15, 2022) 
   
 
   
@@ -160,8 +177,6 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
 77%		vs.		 	18%    and   5%
   
   
-**Conclusion: Between  December 04, 2021 and January 15, 2022. fully-vaccinated Canadians were more likely to become infected with COVID-19 than their unvaccinated fellow citizens**
-
 
 <a href="https://ivi-m.github.io/vv/One-Slide-update.png">
 <img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="500">
@@ -174,16 +189,10 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
 
 
 
-[ gc2 ]: Reported side effects following COVID-19 vaccination in Canada, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety> 
-
- 
-
-<hr>
 
 
-
-
-[ gc2 ]: Reported side effects following COVID-19 vaccination in Canada, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety> (Figure 1, Table 1)
+[ gc2 ]
+**Reported side effects following COVID-19 vaccination in Canada, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada**, <https://health-infobase.canada.ca/covid-19/vaccine-safety> (Figure 1, Table 1)
 
 
 Total (since Jan 2021):
@@ -203,7 +212,8 @@ Between *May 2021 and Oct 2021* (for comparing with COVID-19 deaths in the same 
 <hr>
 
 
-[ gc3 ] Statistics Canada, Canadian Vital Statistics - Death database. Provisional weekly death counts, by selected grouped causes of death.  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001>  (Dashboard: <https://ivi-m.github.io/vv>) 
+[ gc3 ] 
+**Statistics Canada, Canadian Vital Statistics - Death database. Provisional weekly death counts, by selected grouped causes of death**,  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001>  ([Dashboard](https://open-canada.github.io/Apps/vitals), Last record: November 6, 2021):
 
 <!-- 
 [gc4]: **Deaths of COVID-19** (Source: GC
@@ -214,8 +224,8 @@ Between *May 2021 and Oct 2021* (for comparing with COVID-19 deaths in the same 
 
 - From December 14, 2020 to  April 30, 2021: 13075
 - From May 1,  2021 to  October 31, 2021*: **2975** 
-- Of these, deaths of COVID-19 without comorbidities: **404** (recomputed using [ukg1])
-- Of these, deaths of COVID-19 without comorbidities for \<65 : **89** (recomputed  using [ukg1])
+    - Of these, deaths of COVID-19 without comorbidities: **404** (recomputed using [ukg1])
+    - Of these, deaths of COVID-19 without comorbidities for \<65 : **89** (recomputed  using [ukg1])
 
 <!-- 
 - For comparison (in the same period): Cancer -- , ...
@@ -230,7 +240,7 @@ Between *May 2021 and Oct 2021* (for comparing with COVID-19 deaths in the same 
 
 
 [ gc4 ] 
-Recalls and safety alerts, Government of Canada: <https://recalls-rappels.canada.ca/>: 
+**Recalls and safety alerts, Government of Canada**, <https://recalls-rappels.canada.ca/>: 
 (for 
 [[Moderna](https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=moderna)], 
 [[Pfizer](https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=pfizer)], 
@@ -238,28 +248,51 @@ Recalls and safety alerts, Government of Canada: <https://recalls-rappels.canada
 )
 
 - Risk of Facial paralysis/Bell’s Palsy. Posted: 2021-08-06 
-- Risk of Myocarditis and pericarditis. Posted: 2021-06-30 ( x 1000-10000 for less than 30 years old  [Explanation](https://www.youtube.com/watch?v=Hb1Xm1uaedU))
+- Risk of Myocarditis and pericarditis. Posted: 2021-06-30 ( x 1000-10000 for young men - [Explanation](https://www.youtube.com/watch?v=Hb1Xm1uaedU))
 - Risk of Capillary Leak Syndrome. Posted: 2021-06-29
 - Risk of Thrombosis with Thrombocytopenia. Posted: 2021-03-24
 
 
 <!-- 
-Myocarditis after vaccination, firm data: https://www.youtube.com/watch?v=Hb1Xm1uaedU
-
 Another example of algorithmic bias:
-
+Myocarditis after vaccination, firm data: https://www.youtube.com/watch?v=Hb1Xm1uaedU
 After mRNA-based COVID-19 vaccine administration
-
 Between December 2020 and August 2021 in 
-
 n = 192,405,448 older than 12 years of age in the US
-
 -->
 
-<hr>
 
 
-#### Data from other governments:
+### Other statistics
+
+[gcA]  **Fully-Vaccinated rates** (Source:
+    [canada.ca](https://health-infobase.canada.ca/covid-19/vaccination-coverage/)):
+    
+- Dec 2020 - Apr 2021 (High-risk population): 0 -- 2%
+- May 2021 - Oct 2021 (General public vaccination): **2% -- 75%**
+
+- Dec 2020 - present (Total): 80%
+    - Of these, following employers' enforced vaccination mandate: 10% - 20%  
+
+<!-- "coerced" (Estimated using the difference in rates between before and after mandatory vaccination job requirements) -->
+
+[gcB] **COVID-19 cases vs. COVID-19 deaths** (source: [google1](https://www.google.com/search?q=canada+covid+cases&oq=canada+covid+cases)):
+
+- Canada population: 38.246.108
+- Total COVID Cases (since March 2020): 3.150.000
+- Total COVID Deaths (since March 2020): 35.00 or 1.1% Cases
+- Of these, Most are comorbidities (>90% based on UKG and USG data)
+- Of these, Most are in people 65+ (>90% based on GC, UKG, USG data)
+- COVID Deaths for people younger than 65 with no health problems: < 0.01% Cases
+
+<!-- 
+- About 0.0xxx% of COVID-19 cases result in hospitalizations, 0.00yy% result in ICU, and 0.000z% in deaths, about 10% of which  COVID-deaths only - TBC
+-->
+
+
+
+
+### Data from other governments:
  
  
 [ukg1] **COVID deaths vs. COVID alone deaths** (Source: [gov.uk](https://www.ons.gov.uk/aboutus/transparencyandgovernance/freedomofinformationfoi/deathsfromcovid19withnootherunderlyingcauses) - [Explanation](https://www.youtube.com/watch?v=9UHvwWWcjYw)):
@@ -281,11 +314,7 @@ n = 192,405,448 older than 12 years of age in the US
 </a>
 
 
-    
-<!-- 
-#### CONCLUSION: Open Canada data that has become available *after* the start of general public vaccination  <u>do not</u> support the COVID-19  vaccine manufacturers\' claims about  vaccine efficacy and safety.
--->
-
+ 
 
 <!-- 
 #### Additional  references:  
