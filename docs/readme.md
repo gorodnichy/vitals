@@ -47,13 +47,20 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by
 <img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s1.png" width="500" align="center"></a>
 
 
-### White Papers and Tools:
+### Interactive Apps:
 
-- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vv/report-side-effect)
-- [Interactive *Open Canada Vitals Statitistcs (Deaths) Tracker* App](https://open-canada.github.io/Apps/vitals) 
+- Interactive *Open Canada Vitals Statitistcs (Deaths) Tracker* App: <https://open-canada.github.io/Apps/vitals>
 <!-- - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://github.com/open-canada/vitals/blob/main/docs/r4gc-meetu[ivi-m.github.io/vv](https://ivi-m.github.io/vv) p-2022-02-04-SpecialEdition(OneYearOfVaccineInCanada).pdf), 
 Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup --> 
 <!-- by the community lead, Senior Data Scientist, Dr. Dmitry Gorodnichy (4 February 2022) -->
+
+
+<a href="https://ivi-m.github.io/vv/app.png" style="text-align: center">
+<img src="https://ivi-m.github.io/vv/app.png" width="500" align="center"></a>
+
+
+
+### White Papers:
 
 -  ["Some observations from Canadian Vital Statistics Death (CVSD) Database related to
     the 'Elephant in the Room'"](https://ivi-m.github.io/vv/comment.pdf), Comment submission to The Lancet Journal (6 January 2022)
@@ -70,17 +77,36 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
 
 
 
-### Sources and Findings
+### Key Sources and Observations
 
-Last Updated: 2022-02-10 
+Last Updated: 2022-02-11 
 
 
+[gcA]  **Fully-Vaccinated rates** (Source:
+    [canada.ca](https://health-infobase.canada.ca/covid-19/vaccination-coverage/)):
+    
+- Dec 2020 - Apr 2021 (High-risk population): 0 -- 2%)
+- May 2021 - Oct 2021: General public vaccination (fully: **2% -- 75%**)
+- Total (Dec 2020 - present): 80%
+- Of these, coerced* : 5% - 15% 
+\* Estimated using the difference in rates between before and after mandatory vaccination job requirements.
 
-[gc1] "Cases* following vaccination, COVID-19 Daily Epidemiology Update"*, Public Health Agency of Canada,  <https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html#a9> ([archived reports](https://github.com/open-canada/vitals/tree/main/docs/COVID-19%20epidemiology%20updates))
+[gcB] **COVID-19 cases vs. COVID-19 deaths** (source: [google1](https://www.google.com/search?q=canada+covid+cases&oq=canada+covid+cases)):
 
-NB: The statistics reported in this source are computed using  death data since December 2020, when  there were no fully vaccinated Canadians yet, but when many cases happened (More exactly: There were 0 fully-vaccinated in December, < 1% for most of January,  <3%  until May). This is known as *algorithmic bias*, which skews results favourably towards fully-vaccinated cases, and which can be removed using  technique described in [this paper](https://ivi-m.github.io/vv/comment2.pdf). The numbers below are quoted directrly from the source.
-  
-  
+- Canada population: 38.246.108
+- Total COVID Cases (since March 2020): 3.150.000
+- Total COVID Deaths (since March 2020): 35.00 or 1.1% Cases
+- Of these, Most are comorbidities (>90% based on UKG and USG data)
+- Of these, Most are in people 65+ (>90% based on GC, UKG, USG data)
+- COVID Deaths for people younger than 65 with no health problems: < 0.01% Cases
+
+<!-- 
+- About 0.0xxx% of COVID-19 cases result in hospitalizations, 0.00yy% result in ICU, and 0.000z% in deaths, about 10% of which  COVID-deaths only - TBC
+-->
+
+<hr>
+
+[gc1] *"Cases following vaccination, COVID-19 Daily Epidemiology Update"*, Public Health Agency of Canada,  <https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html#a9> ([archived reports](https://github.com/open-canada/vitals/tree/main/docs/COVID-19%20epidemiology%20updates))
 
 
  
@@ -123,10 +149,10 @@ Proportion of Unvaccinated among COVID-19 deaths
 
 -->
 
-###### COVID-19 deaths by Vaccination Status
+###### COVID-19 deaths by Vaccination Status (from December 14, 2020)
 
  
-- *on February 10, 2022 for cases from December 14, 2020 up until January 15, 2022 (n=1,670,682)* <br> 
+- *on February 10, 2022 for cases from December 14, 2020 up until January 22, 2022 (n=1,670,682)* <br> 
 unvaccinated 68.1%% vs. fully vaccinated **19.5%** (+2.7% increase since last week)
 - *on February 04,  2022 for cases from December 14, 2020 up until January 15, 2022 (n=1,458,433)* <br> 
 unvaccinated 70.3% vs. fully vaccinated **16.8%** (+3% increase since last week)
@@ -135,48 +161,77 @@ unvaccinated 72.8% vs. fully vaccinated **13.8%** (+4.3% increase since December
 - *on December 15, 2021 for cases from December 14, 2020 up until November 27, 2021 (n=882,988)*: <br> 
 unvaccinated 76.1% vs. fully vaccinated **9.5%**
 
+
+
+NB: The statistics reported above are computed using  death data since December 2020, when  there were no fully vaccinated Canadians yet, but when many cases happened (More exactly: There were 0 fully-vaccinated in December, < 1% for most of January,  <3%  until May). This is known as *algorithmic bias*, which skews results favourably towards fully-vaccinated cases. It can be removed using the technique described in [this paper](https://ivi-m.github.io/vv/comment2.pdf). 
+
+The unbiased statistics (for all infected cases between  December 04, 2021 and January 15, 2022) is shown below (click on the image to download it) 
+  
+  
+<a href="https://ivi-m.github.io/vv/One-Slide-update.png">
+<img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="200">
+</a>
+
+  
+The number of COVID-19 cases fully-vaccinated      vs.    unvaccinated and partially-vaccinated <br> 
+87% 		vs.		 	11%     and   2%
+
+For comparison, the vaccination rates in the same period: 
+fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br> 
+77%		vs.		 	18%    and   5%
+  
+  
+Conclusion: Between  December 04, 2021 and January 15, 2022. fully-vaccinated Canadians were more likely to become infected with COVID-19 than their unvaccinated fellow citizens.
+
+
+
+
+###### COVID-19 cases by Vaccination Status (December 4, 2021)
+
+ 
+
 <hr>
 
-[ gc2a ] Hospitalizations by vaccination status, COVID-19 (coronavirus) in Ontario, <https://covid-19.ontario.ca/data/hospitalizations#hospitalizationsByVaccinationStatus>
 
-[ gc2b ] For more information on cases following vaccination, please see the Weekly epidemiology report (PDF) available on the [Government of Canada’s COVID-19 data trends](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/epidemiological-economic-research-data.html) page
+<!-- https://covid-19.ontario.ca/data -->
+
+
+<!-- ONTARIO
+Last updated: February 3, 2022 at 10:31 a.m. (EST): Hosp. 536 vs 1383,  ICU 179 vs 211
+Last updated: February 6, 2022 at 10:31 a.m. (EST): Hosp. 484 + 100, vs. 1264, ICU: 158 +10 vs. 174
+-->
 
 <!-- 
+[ gc2a ] Hospitalizations by vaccination status, COVID-19 (coronavirus) in Ontario, <https://covid-19.ontario.ca/data/hospitalizations#hospitalizationsByVaccinationStatus>
 
-[gc1] **Hospitalizations by vaccination status** (Sources:
-[canada.ca](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/epidemiological-economic-research-data.html) - weekly report (PDF), [ontario.ca](https://covid-19.ontario.ca/data/hospitalizations#hospitalizationsByVaccinationStatus))
 
--->
+[ gc2b ] Weekly epidemiology report (PDF) available on the [Government of Canada’s COVID-19 data trends](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/epidemiological-economic-research-data.html) page (Figure 6).
+
 
 -  *“Incidence [of COVID-19 cases] among fully vaccinated cases has surpassed those among unvaccinated since mid-December 2021”*. 
 -  In January 2022, close to 3/4 of hospitalized COVID patients in Ontario were fully vaccinated
 
-<!-- -  The proportion of fully-vaccinated hospitalizations has been increasing since December 2021.-->
-<!-- - and continues* to increase -->
+page 12:
+Incidence rates among fully vaccinated individualswere higher thanthose amongunvaccinated individuals betweenmid-December 2021and the beginning of January 2022. However as of early-January 2022, the incidence rate among fully vaccinated individuals has decreased to a lower rate than that of unvaccinated individuals, while the incidence rate among unvaccinated individuals declined since peaking in early-January 2022.
+Hospitalization rates among unvaccinatedindividuals continue to be higher than those fully vaccinated.The hospitalization ratesamong both unvaccinated and fully vaccinated cases increased betweenmid-December 2021and early-January 2022, and have declined since mid-January 2020
 
-<!-- ONTARIO
-Last updated: February 3, 2022 at 10:31 a.m. (EST): Hosp. 536 vs 1383, ICU 179 vs 211
-Last updated: February 6, 2022 at 10:31 a.m. (EST): 484 + 100, vs. 1264, 158 + 10 vs. 174
--->
 
 
 <hr>
 
-[gc3]: ‘Reported side effects following COVID-19 vaccination in Canada’, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety>
+-->
 
- 
-<!-- 
-[gc4]  **COVID-19 vaccine adverse reactions (side-effects)** (Source: 
-    [[canada.ca](https://health-infobase.canada.ca/covid-19/vaccine-safety/)] - Figure 1, Table 1)):
-    
-    -->
+[gc2]: ‘Reported side effects following COVID-19 vaccination in Canada’, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety> (Figure 1, Table 1)
 
 
-- Total (since Jan 2021) "Serious": *	7,678.  Weekly: 118
-- Total (since Jan 2021) "Not serious":    28,486. 
+Total (since Jan 2021):
 
+- All reported adverse reactions: 36,164
+- Serious adverse reactions: 	7,678.  (118 / week)
 
-- Between *May 2021 and Oct 2021* "Serious" side-effects: **5200** (increased from 5038 posted in last month report)
+Between *May 2021 and Oct 2021* (for comparing with COVID-19 deaths in the same period)
+
+- Serious adverse reactions:  **5200** (NB: increased from 5038 posted in last month report)
 -  Of these: 1,111 heart diseases (including 64 Cardiac arrests, 77 Heart Attacks, 970
     Myocarditis1/Pericarditis), 947 thrombosis, 781 central nervous system failures
     (including 594 Bell's Palsy), 487 Anaphylaxis, 166 Auto-immune diseases, 37 Acute
@@ -189,23 +244,8 @@ Last updated: February 6, 2022 at 10:31 a.m. (EST): 484 + 100, vs. 1264, 158 + 1
 
 <hr>
 
-[gc4] 
-Recalls and safety alerts, Government of Canada: <https://recalls-rappels.canada.ca/>
-(for 
-[[Moderna](https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=moderna)], 
-[[Pfizer](https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=pfizer)], 
-[[Astrazeneca](https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=astrazeneca)]
-):
 
-- Risk of Facial paralysis/Bell’s Palsy. Posted: 2021-08-06 
-- Risk of Myocarditis and pericarditis. Posted: 2021-06-30
-- Risk of Capillary Leak Syndrome. Posted: 2021-06-29
-- Risk of Thrombosis with Thrombocytopenia. Posted: 2021-03-24
-
-
-<hr>
-
-[ gc5 ] Statistics Canada, Canadian Vital Statistics - Death database . Provisional weekly death counts, by selected grouped causes of death.  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001>  (Dashboard: <https://ivi-m.github.io/vv>) 
+[ gc3 ] Statistics Canada, Canadian Vital Statistics - Death database . Provisional weekly death counts, by selected grouped causes of death.  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001>  (Dashboard: <https://ivi-m.github.io/vv>) 
 
 <!-- 
 [gc4]: **Deaths of COVID-19** (Source: GC
@@ -230,28 +270,36 @@ Recalls and safety alerts, Government of Canada: <https://recalls-rappels.canada
 
 <hr>
 
-[gcA]  **Vaccination rates** (Source:
-    [canada.ca](https://health-infobase.canada.ca/covid-19/vaccination-coverage/)):
-    
-- Dec 2020 - Apr 2021: High-risk population vaccination (rate: 0 -- 2%)
-- May 2021 - Oct 2021: General public  vaccination (rate: **2% -- 75%**)
 
+[ gc4 ] 
+Recalls and safety alerts, Government of Canada: <https://recalls-rappels.canada.ca/>: 
+(for 
+[[Moderna](https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=moderna)], 
+[[Pfizer](https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=pfizer)], 
+[[Astrazeneca](https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=astrazeneca)]
+)
 
+- Risk of Facial paralysis/Bell’s Palsy. Posted: 2021-08-06 
+- Risk of Myocarditis and pericarditis. Posted: 2021-06-30 ( x 1000-10000 for less than 30 years old  [Explanation](https://www.youtube.com/watch?v=Hb1Xm1uaedU))
+- Risk of Capillary Leak Syndrome. Posted: 2021-06-29
+- Risk of Thrombosis with Thrombocytopenia. Posted: 2021-03-24
 
-[gcB] **COVID-19 cases vs. COVID-19 deaths** (source: [google1](https://www.google.com/search?q=canada+covid+cases&oq=canada+covid+cases)):
-
-- Canada population: 38.246.108
-- Total COVID Cases (since March 2020): 3.150.000
-- Total COVID Deaths (since March 2020): 35.00 or 1.1% Cases
-- Of these, Most are comorbidities (>90% based on UKG and USG data)
-- Of these, Most are in people 65+ (>90% based on GC, UKG, USG data)
-- COVID Deaths for people younger than 65 with no health problems: < 0.01% Cases
 
 <!-- 
-- About 0.0xxx% of COVID-19 cases result in hospitalizations, 0.00yy% result in ICU, and 0.000z% in deaths, about 10% of which  COVID-deaths only - TBC
+Myocarditis after vaccination, firm data: https://www.youtube.com/watch?v=Hb1Xm1uaedU
+
+Another example of algorithmic bias:
+
+After mRNA-based COVID-19 vaccine administration
+
+Between December 2020 and August 2021 in 
+
+n = 192,405,448 older than 12 years of age in the US
+
 -->
 
 <hr>
+
 
 #### Data from other governments:
  
@@ -318,6 +366,14 @@ Heath Canada portal. This is how you do it:
 
 <hr>
 
+
+
+### Additional Resources:
+
+- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vv/report-side-effect)
+- [Early Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/)
+
+<hr>
 
  Corrections/Comments: [ opencanadadatanalysis @ ivim . ca ]     
  
