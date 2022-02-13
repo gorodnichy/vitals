@@ -4,7 +4,6 @@ Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 
 Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 ==================================================
-[www.IVIM.ca](http://www.IVIM.ca) ([ivi-m.github.io/vv](https://ivi-m.github.io/vv), forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))
 
 
 Disclaimer: The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). The results and views presented here are those by the authors and are not to be misconstrued as representing  views of
@@ -184,41 +183,11 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
 <img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="500">
 </a>
 
-
-###### COVID-19 cases by Vaccination Status (December 4, 2021)
-
  
 
 <hr>
 
 
-<!-- https://covid-19.ontario.ca/data -->
-
-
-<!-- ONTARIO
-Last updated: February 3, 2022 at 10:31 a.m. (EST): Hosp. 536 vs 1383,  ICU 179 vs 211
-Last updated: February 6, 2022 at 10:31 a.m. (EST): Hosp. 484 + 100, vs. 1264, ICU: 158 +10 vs. 174
--->
-
-<!-- 
-[ gc2a ] Hospitalizations by vaccination status, COVID-19 (coronavirus) in Ontario, <https://covid-19.ontario.ca/data/hospitalizations#hospitalizationsByVaccinationStatus>
-
-
-[ gc2b ] Weekly epidemiology report (PDF) available on the [Government of Canada’s COVID-19 data trends](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/epidemiological-economic-research-data.html) page (Figure 6).
-
-
--  *“Incidence [of COVID-19 cases] among fully vaccinated cases has surpassed those among unvaccinated since mid-December 2021”*. 
--  In January 2022, close to 3/4 of hospitalized COVID patients in Ontario were fully vaccinated
-
-page 12:
-Incidence rates among fully vaccinated individualswere higher thanthose amongunvaccinated individuals betweenmid-December 2021and the beginning of January 2022. However as of early-January 2022, the incidence rate among fully vaccinated individuals has decreased to a lower rate than that of unvaccinated individuals, while the incidence rate among unvaccinated individuals declined since peaking in early-January 2022.
-Hospitalization rates among unvaccinatedindividuals continue to be higher than those fully vaccinated.The hospitalization ratesamong both unvaccinated and fully vaccinated cases increased betweenmid-December 2021and early-January 2022, and have declined since mid-January 2020
-
-
-
-<hr>
-
--->
 
 [gc2]: ‘Reported side effects following COVID-19 vaccination in Canada’, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada, <https://health-infobase.canada.ca/covid-19/vaccine-safety> (Figure 1, Table 1)
 
@@ -373,7 +342,40 @@ Heath Canada portal. This is how you do it:
 
 <hr>
 
+ 
+[www.IVIM.ca](http://www.IVIM.ca) ([ivi-m.github.io/vv](https://ivi-m.github.io/vv), forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))
+ <br>
  Corrections/Comments: [ opencanadadatanalysis @ ivim . ca ]     
  
+ 
+<!-- https://covid-19.ontario.ca/data 
 
+
+ONTARIO
+Last updated: February 3, 2022 at 10:31 a.m. (EST): Hosp. 536 vs 1383,  ICU 179 vs 211
+Last updated: February 6, 2022 at 10:31 a.m. (EST): Hosp. 484 + 100, vs. 1264, ICU: 158 +10 vs. 174
+
+
+
+###### COVID-19 cases by Vaccination Status (December 4, 2021)
+
+
+[ gc2a ] Hospitalizations by vaccination status, COVID-19 (coronavirus) in Ontario, <https://covid-19.ontario.ca/data/hospitalizations#hospitalizationsByVaccinationStatus>
+
+
+[ gc2b ] Weekly epidemiology report (PDF) available on the [Government of Canada’s COVID-19 data trends](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/epidemiological-economic-research-data.html) page (Figure 6).
+
+
+-  *“Incidence [of COVID-19 cases] among fully vaccinated cases has surpassed those among unvaccinated since mid-December 2021”*. 
+-  In January 2022, close to 3/4 of hospitalized COVID patients in Ontario were fully vaccinated
+
+page 12:
+Incidence rates among fully vaccinated individualswere higher thanthose amongunvaccinated individuals betweenmid-December 2021and the beginning of January 2022. However as of early-January 2022, the incidence rate among fully vaccinated individuals has decreased to a lower rate than that of unvaccinated individuals, while the incidence rate among unvaccinated individuals declined since peaking in early-January 2022.
+Hospitalization rates among unvaccinatedindividuals continue to be higher than those fully vaccinated.The hospitalization ratesamong both unvaccinated and fully vaccinated cases increased betweenmid-December 2021and early-January 2022, and have declined since mid-January 2020
+
+
+
+<hr>
+
+-->
 
