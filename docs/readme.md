@@ -2,7 +2,7 @@
 Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 -->
 
-Analysis of Official Data and Sources Related to COVID-19 Vaccine Efficacy and Safety
+Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 ==================================================
 
 
@@ -10,7 +10,7 @@ Analysis of Official Data and Sources Related to COVID-19 Vaccine Efficacy and S
 any Canadian Agency, University, or Department. They were developed and gathered by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community) as part of the community training and socializing, mostly on authors' own time and using authors' own resources.
 All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/open-canada/vitals/).  
 
-<!-- Comments and corrections are welcome and should be emailed to <opencanadadataanalysis @ ivim . ca -- >
+<!-- Comments and corrections are welcome and should be emailed to <opencanadadataanalysis @ ivim . ca -->
 
 
 
@@ -113,9 +113,8 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by
 Last Updated: 2022-02-11 
 
 
-<hr>
 
-[gc1] *"Cases following vaccination, COVID-19 Daily Epidemiology Update"*, Public Health Agency of Canada,  <https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html#a9> ([archived reports](https://github.com/open-canada/vitals/tree/main/docs/COVID-19%20epidemiology%20updates))
+[gc1] **Cases following vaccination, COVID-19 Daily Epidemiology Update, Public Health Agency of Canada**,  <https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html#a9> ([archived reports](https://github.com/open-canada/vitals/tree/main/docs/COVID-19%20epidemiology%20updates))
 
 
  
@@ -207,7 +206,16 @@ Between *May 2021 and Oct 2021* (for comparing with COVID-19 deaths in the same 
     Myocarditis1/Pericarditis), 947 thrombosis, 781 central nervous system failures
     (including 594 Bell's Palsy), 487 Anaphylaxis, 166 Auto-immune diseases, 37 Acute
     kidney injury, 25 Liver injury, and 208 deaths (some under investigation).
-- Many are not reported or published yet, like the one  [here](https://ivi-m.github.io/vv/SideEffectReporting-example-1.pdf)
+- Many are not reported or published yet like the one  [here](https://ivi-m.github.io/vv/SideEffectReporting-example-1.pdf). 
+<!-- It takes over three months to prepare the report. -->
+
+
+
+<a href="https://ivi-m.github.io/vv/gc2-reactions.png">
+<img src="https://ivi-m.github.io/vv/gc2-reactions.png" width="500">
+</a>
+
+ 
 
 <hr>
 
@@ -236,6 +244,12 @@ Between *May 2021 and Oct 2021* (for comparing with COVID-19 deaths in the same 
 -->
 
 
+<a href="https://ivi-m.github.io/vv/gc3-deaths.png">
+<img src="https://ivi-m.github.io/vv/gc2-deaths.png" width="500">
+</a>
+
+
+
 <hr>
 
 
@@ -248,7 +262,7 @@ Between *May 2021 and Oct 2021* (for comparing with COVID-19 deaths in the same 
 )
 
 - Risk of Facial paralysis/Bell’s Palsy. Posted: 2021-08-06 
-- Risk of Myocarditis and pericarditis. Posted: 2021-06-30 ( x 1000-10000 for young men - [Explanation](https://www.youtube.com/watch?v=Hb1Xm1uaedU))
+- Risk of Myocarditis and pericarditis. Posted: 2021-06-30 ([by over x 1000 for young men](https://www.youtube.com/watch?v=Hb1Xm1uaedU))
 - Risk of Capillary Leak Syndrome. Posted: 2021-06-29
 - Risk of Thrombosis with Thrombocytopenia. Posted: 2021-03-24
 
@@ -272,7 +286,7 @@ n = 192,405,448 older than 12 years of age in the US
 - May 2021 - Oct 2021 (General public vaccination): **2% -- 75%**
 
 - Dec 2020 - present (Total): 80%
-    - Of these, following employers' enforced vaccination mandate: 10% - 20%  
+    - Of these, following employers' enforcement of vaccination mandates: 10% - 20%  
 
 <!-- "coerced" (Estimated using the difference in rates between before and after mandatory vaccination job requirements) -->
 
