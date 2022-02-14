@@ -230,7 +230,7 @@ Between May  2021 and October 2021 (for benchmarking against  health damages  ca
 - COVID-19 deaths without comorbidities for \<65 : **89** (recomputed  using [ukg1])
 
 
-- For comparison (in the same period) - Cancer: 27805, Heart: 16605, Accidents: 3380, Suisides: 555	
+- For comparison --- Cancer: 27805, Heart: 16605, Accidents: 3380, Suisides: 555	
 
 <!-- 
 - All COVID-19 since the start of pandemic: with comorbidities --, without comorbidities -- , without for \<65 years old -- 
@@ -243,10 +243,24 @@ Between May  2021 and October 2021 (for benchmarking against  health damages  ca
 <img src="https://ivi-m.github.io/vv/gc2-deaths.png" width="500">
 </a>
 
-Other observations (see [White Paper](comment2.pdf) - Appendix):
+Observations  of the following anomalies (possibly, “new normals”) are made:
 
-- 
+- The total number of deaths in last two years is comparable to (and in some provinces lower  than) their five-year average
+- At the start of pandemic, when policies among the provinces varies, there was practically no “first wave” observed in Western provinces
+- Since the start of pandemic, the number of all non-COVID deaths started to decline
+- Sharp increase in the number of unexplained deaths  since May 2021,  and finally
+- Increased delay in reporting deaths: from 2 months to 3 (and in some provinces to 6) months
 
+<!-- 
+Multiple insights and anomalies (possibly, “new normals”) are observed:
+- the total number of deaths over the entire period is comparable to (and in some provinces lower  than) five-year average;
+- rather small number of COVID deaths – compared to the very large (x1000) number of COVID cases that have been reported,
+- there was practically no “first wave” in Alberta and British Columbia at the start of pandemic);
+- decrease in all non-covid causes, since the start of the pandemic (even those that have a trend to increase over time)
+- sharp increase in the number of unexplained deaths, since April (which is when the vaccination was extended to general public), and finally,
+- increased delay in reporting deaths: from 2 months to 3 and in some provinces to 6 months
+
+-->
 <hr>
 
 
