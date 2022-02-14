@@ -6,7 +6,7 @@ Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 ==================================================
 
 
-**Disclaimer**: The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). The results and views presented here are those by the authors and are not to be misconstrued as representing  views of
+**Disclaimer**: The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
 any Canadian Agency, University, or Department. They were developed and gathered by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community) as part of the community training and socializing, mostly on authors' own time and using authors' own resources.
 All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/open-canada/vitals/).  
 
@@ -16,62 +16,49 @@ All codes behind the analysis and supporting documents are free, open and availa
 
 
 
-## Summary
+### Raison d'être
 
 On March 31, 2021, just before COVID-19 vaccination of general public  commenced, the Chief Science Advisor of Canada (Dr. Mona Nemer) in its ["*Scientific Considerations for Using COVID-19 Vaccination Certificates"*](https://science.gc.ca/eic/site/063.nsf/eng/h_98229.html) report, has  expressed several concerns and recommendations related to the uncertanties associated with using new COVID-19 vaccines that were approved under Emergercy Act and did not go through all normally conducted testing stages. This included the following:
 
-- Scientific uncertainties: *Given the short time since the COVID-19 vaccines have become available, it is not surprising that many scientific uncertainties persist and are the subject of intense ongoing studies*.
-- Ethical and Social Considerations: *It should also be noted that while the anticipation of more freedom may be an incentive for some to get vaccinated, vaccine acceptance could decrease in others if there was a sense oCOVID-19 vaccine-associated myocarditis/pericarditis of coercion tied to using vaccination certificates.*
-- Legal Considerations: *The processes by which vaccine certificates are issued and controlled need to be fraud proof*
-- Conclusion: *\[All levels of government could work to develop a framework that\] Maximizes consistent post-vaccine monitoring*
+- Scientific uncertainties: *<u>Given the short time since the COVID-19 vaccines have become available, it is not surprising that many scientific uncertainties persist</u> and are the subject of intense ongoing studies*.
+- Ethical and Social Considerations: *It should also be noted that while the anticipation of more freedom may be an incentive for some to get vaccinated, <u>vaccine acceptance could decrease in others if there was a sense of coercion tied to using vaccination certificates.</u>*
+- Legal Considerations: *The processes by which vaccine certificates are issued and controlled <u>need to be fraud proof</u>*
+- Conclusion: *\[All levels of government could work to develop a framework that\] Maximizes <u>consistent post-vaccine monitoring</u>*
 
-Shortly after that on July 16, 2021, another report was issued by her office just as the vaccination rates started to pick up (but still being comparatively low - less than 10%) ["*COVID-19 vaccine-associated myocarditis/pericarditis"*](https://science.gc.ca/eic/site/063.nsf/eng/h_98291.html), where -- in the face of uncovering a major COVID-19 vaccine side effects -- she has further emphased the following:
+Another report was issued by Chief Science Advisor on July 16, 2021, just as the vaccination rates started to pick up (but still being low - less than 10%): ["*COVID-19 vaccine-associated myocarditis/pericarditis"*](https://science.gc.ca/eic/site/063.nsf/eng/h_98291.html), which -- in the light of the COVID-19 vaccine side effects that were just uncovered  half a year  after the vaccinae started to be used -- further emphasized the following:
 
-- Priority actions moving forward: *The emerging issue of vaccine associated heart disease requires attention on two important levels:
-addressing data and knowledge gaps on the one hand, and promoting awareness and clinical care on the other.*
+- Priority actions moving forward: *<u>The emerging issue of vaccine associated heart disease requires attention</u> on two important levels:
+    <u>addressing data and knowledge gaps</u> on the one hand, and <u>promoting awareness</u> and clinical care on the other.*
 
-As of today  -- more than half a year later, with more than 80% Canadians now being vaccinated with  COVID-19 vaccines and with  numerous new Vital statistics and Vaccine Adverse Events data that hav been obtained since then (especially after October 2021, due to the average of three month delay in processing much of the data), -- this remains to be last report that the Chief Science Advisor of Canada has issued on the topic of COVID-19 vaccine safety and efficacy. It is not clear why. Equally it is not clear, why there is still not a single other publication or  vaccine training produced by the Goverment of Canada that would be based on  the data obtained after the commencement of mass vaccination, not prior to it.
+It could have been expected that there would be as  more reports produced from the Chief Science Advisor to follow up on their own recommendations of "addressing data and knowledge gaps" and "promoting awareness", as more and more data stated to be avalailble (especially after October 2021, when vaccination rate reached 75% and vital statistics (deaths) data has finally become, due to the avareage of several month delay in processing these data), and yet there were none produced as of today -- more than half a year after the previous report was issued.
+<!-- As of today  -- more than half a year later, with more than 80% Canadians now being vaccinated with  COVID-19 vaccines and with  numerous new Vital statistics and Vaccine Adverse Events data that hav been obtained since then (especially after October 2021, due to the average of three month delay in processing much of the data), -- this remains to be last report that the Chief Science Advisor of Canada has issued on the topic of COVID-19 vaccine safety and efficacy. -->
+It is not clear why. Equally it is not clear, why there is still not a single other publication or COVID-19 vaccine training produced by the Goverment of Canada that would be based on  the data obtained *after* the commencement of general public vaccination (i.e., after May and which has become vaialable in public domain after October 2021), not prior to it. Numerous requests for such information were made, none granted.
 
-<!-- - developped in cooperation with many data govenmenr who wished to remain anonoymous, -->
-This portal aims at addressing this gap. 
-It provides links to related  Open Canada sources and datasets, includes the interactive application, and develops a number of observations, for sharing with the general public and   professionals for validation and comments.
+Additionally, it was also started to become clear that this 
+
+ Canada's own sources and open data, much of which -- thanks to the [Open Goverment and Scientific Integrity](https://open-canada.github.io/r4gc/open-policies.html#open-policies) policies introduced by the  Liberal Government several years ago 
+In the absense to the official published analysis of the latest data, a group of data scientists from across several Goverment of Canada departments decided to conduct such analysis themselves, as part of their weekly data science training  and driven by  the desire to apply their new skills for public good, and also help each other, as some members of the group experienced long-lasting (albeit called non-serious) vaccine side effects, which, they found, was very difficult for them to report.
+This portal started as a result of these efforts.
+<!-- This portal is designed to address this gap. -->
+It provides links to all related  [Open Canada sources and datasets](#Sources:), [Guidelines for reporting vaccine side-effects](https://ivi-m.github.io/vv/report-side-effect), an interactive [Open Canada Vital Statistics (Death) Tracking application](https://open-canada.github.io/Apps/vitals) built by the community, and the [Observations] made from their analysis, which are  shared through this portal with the general public and policy-makers for greater awareness and further validation -- in line with the recommendations of the  Office of the Chief Science Advisor 
+and the [Scientific Integrity Policy](https://science.gc.ca/eic/site/063.nsf/eng/h_98027.html)  they  developed.
 
 <!-- 
 Because of the [Code of Conduct](https://github.com/IVI-M/vv/raw/main/docs/legal/CBSA_conduct_code.pdf), which instructs Government of Canada employees to refrain from making  criticisms of  the Government of Canada, it has become very difficult to discuss anything in relationship to COVID-19 vaccine efficiency/safety.  Employees who experienced vaccine side effects or had  questions related to the above, would be afraid to express their concerns and seek for help, many wanted to remain anonymous. 
 
 -->
 
-### Key observations
+### Observations
 
-- Open Canada data that has become available *after* the start of general public vaccination <u>appears to not</u> support the COVID-19  vaccine manufacturers\' claims about  vaccine efficacy (as being over 95% efficient) and safety (as being "very safe"). 
-- Additionally, it appears that certain reports produced by the Government of Canada (Cases following vaccination) contain algorithmic bias in the way the metrics are computed and reported to the general public <!-- which skew the results considerably in the favour of vaccination -->
+- Open Canada data that has become available *after* the start of general public vaccination <u>do not</u> support the COVID-19  vaccine manufacturers\' claims about  vaccine efficacy (as being over 90% efficient) and safety (as being "very safe"). 
+- Additionally, it appears that certain reports produced by the Government of Canada ('Cases following vaccination') contain algorithmic bias in the way the metrics are computed and reported to the general public, which skew the results considerably in the favour of vaccine manufacturers' claims.
 - When recomputed without the embedded bias, for the period of from December 04, 2021 to January 15, 2022,  fully-vaccinated Canadians appear to be  more likely infected with COVID-19 than their unvaccinated fellow citizens.
-- The number of serious COVID-19 adverse events, including deaths, and key organs failures,   appears to be much higher than what could be expected from a "safe" vaccine, being comparable in the order of scale to that of COVID deaths alone.
+- The number of serious COVID-19 adverse events already reported, including deaths and key organs failures,   appears to be much higher than what should be expected from a "safe" vaccine, being comparable to (and for certain populations higher than)  the number of COVID-19 deaths alone.
 
 <!-- , and for certain populations (children, people under thirty with no other health problems) even higher than, -->
 
 The following tools and white papers have been prepared to facilitate the discussion.
 
-
-<!-- How to defend the constitutional freedom and scientific integrity in the times of crisis, -->
-
-<!--   , all bound by the [Code of Conduct](conduct_code_conduite_eng.pdf) which instructs employees to refrain from making  criticisms of  the Government
-of Canada, 
-We refrain from making public criticisms of the CBSA and/or the Government of Canada including posting critical comments on social media fora. -->
-
-<!-- 
-### Talking about "The Elephant in the Room"
-
-The following presentation was given to the Government of Canada employees, who expressed interest in learning about the  latest Government of Canada data related to COVID-19 vaccination. 
-A considerable portion of this presentation was about how to create a safe and respectful environment within Government of Canada where Government of Canada employees can discuss this topic ("The Elephant in the Room"), which is already causing much of polarization within Canadian public, including among the Government of Canada employees, and which has  led to  the largest in the Canadian history demonstrations of protests  of Canadians against the government.
-government, demanding it to revoke its "Mandatory Vaccination Policies". 
-The solution to  this problem  was seen in keeping the discussion focused entirely on  Canada's own sources and open data, much of which -- thanks to the [Open Goverment and Scientific Integrity](https://open-canada.github.io/r4gc/open-policies.html#open-policies) policies introduced by the  Liberal Government several years ago -- have now become available, including  statistics of the number of deaths by cause and by vaccination status, which can be analyzed  and effectively visualized using contemporary  open source data science tools such as [R](https://cran.r-project.org/web/packages/cansim/index.html) and [RStudio](https://shiny.rstudio.com/gallery/).  
--->
-<!-- as being scientifically, ethically,  legally, and economically unjustified. -->
-
-<!-- Another part of the presenation was dedicated to show colleagues how to report vaccine side effects as a consumer-->
-
-<!-- A[ivi-m.github.io/vv](https://ivi-m.github.io/vv)  lot of effort in this presentation was given to applaud many of the Government of Canada efforts in creating open govenment and scientific integrity poicies-->
 
 ### Interactive Apps:
 
@@ -84,6 +71,12 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
 <a href="https://ivi-m.github.io/vv/app.png" style="text-align: center">
 <img src="https://ivi-m.github.io/vv/app.png" width="500" align="center"></a>
 
+
+
+### Self-help tools:
+
+- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vv/report-side-effect)
+- [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/)
 
 
 ### White Papers:
@@ -193,29 +186,24 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
 [ gc2 ]
 **Reported side effects following COVID-19 vaccination in Canada, Canadian COVID-19 vaccination safety report, Public Health Agency of Canada**, <https://health-infobase.canada.ca/covid-19/vaccine-safety> (Figure 1, Table 1)
 
+**Adverse reactions from COVID-19 vaccines**
 
 Total (since Jan 2021):
-
 - All reported adverse reactions: 36,164
 - Serious adverse reactions: 	7,678.  (118 / week)
 
-Between *May 2021 and Oct 2021* (for comparing with COVID-19 deaths in the same period)
-
+Between May 2021 and October 2021 (for benchnarking against  COVID-19 deaths in the same period - see below)
 - Serious adverse reactions:  **5200** (NB: increased from 5038 posted in last month report)
 -  Of these: 1,111 heart diseases (including 64 Cardiac arrests, 77 Heart Attacks, 970
     Myocarditis1/Pericarditis), 947 thrombosis, 781 central nervous system failures
     (including 594 Bell's Palsy), 487 Anaphylaxis, 166 Auto-immune diseases, 37 Acute
-    kidney injury, 25 Liver injury, and 208 deaths (some under investigation).
-- Many are not reported or published yet like the one  [here](https://ivi-m.github.io/vv/SideEffectReporting-example-1.pdf). 
-<!-- It takes over three months to prepare the report. -->
-
-
+    kidney injury, 25 Liver injury, and 208 deaths (some under investigation). 
+- Many are not reported or published yet. According to Health Canada , filing of a report takes three months (in practice, longer than that).
 
 <a href="https://ivi-m.github.io/vv/gc2-reactions.png">
 <img src="https://ivi-m.github.io/vv/gc2-reactions.png" width="500">
 </a>
 
- 
 
 <hr>
 
@@ -229,14 +217,20 @@ Between *May 2021 and Oct 2021* (for comparing with COVID-19 deaths in the same 
     Calculator](https://o-canada.shinyapps.io/vitals/#section-statistics)) - (Last record: 6 NOV 2021):
 -->
 
+**Deaths of COVID-19**
 
-- From December 14, 2020 to  April 30, 2021: 13075
-- From May 1,  2021 to  October 31, 2021*: **2975** 
-    - Of these, deaths of COVID-19 without comorbidities: **404** (recomputed using [ukg1])
-    - Of these, deaths of COVID-19 without comorbidities for \<65 : **89** (recomputed  using [ukg1])
+Between December 2020 to  April 2021 (from the day first vaccination started to when vaccination rate reached 3%)
+- COVID-19 deaths: : 13075 
+
+Between May  2021 and October 2021 (for benchmarking against  health damages  caused by COVID-19 vaccine - see above) 
+- COVID-19 deaths: **2975** 
+- COVID-19 deaths without comorbidities: **404** (recomputed using [ukg1])
+- COVID-19 deaths without comorbidities for \<65 : **89** (recomputed  using [ukg1])
 
 <!-- 
-- For comparison (in the same period): Cancer -- , ...
+For comparison in the same period (use [App
+    Calculator](https://o-canada.shinyapps.io/vitals/#section-statistics) to compute those): 
+- Cancer -- , ...
 
 - All COVID-19 since the start of pandemic: with comorbidities --, without comorbidities -- , without for \<65 years old -- 
 - For comparison, since the start of pandemic other caueses of death: Cancer -- , ...
@@ -366,12 +360,6 @@ Heath Canada portal. This is how you do it:
 -->
 
 
-
-
-### Additional Resources:
-
-- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vv/report-side-effect)
-- [Early Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/)
 
 <hr>
 
