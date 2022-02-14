@@ -34,9 +34,6 @@ It could have been expected that there would be as  more reports produced from t
 <!-- As of today  -- more than half a year later, with more than 80% Canadians now being vaccinated with  COVID-19 vaccines and with  numerous new Vital statistics and Vaccine Adverse Events data that hav been obtained since then (especially after October 2021, due to the average of three month delay in processing much of the data), -- this remains to be last report that the Chief Science Advisor of Canada has issued on the topic of COVID-19 vaccine safety and efficacy. -->
 It is not clear why. Equally it is not clear, why there is still not a single other publication or COVID-19 vaccine training produced by the Goverment of Canada that would be based on  the data obtained *after* the commencement of general public vaccination (i.e., after May and which has become vaialable in public domain after October 2021), not prior to it. Numerous requests for such information were made, none granted.
 
-Additionally, it was also started to become clear that this 
-
- Canada's own sources and open data, much of which -- thanks to the [Open Goverment and Scientific Integrity](https://open-canada.github.io/r4gc/open-policies.html#open-policies) policies introduced by the  Liberal Government several years ago 
 In the absense to the official published analysis of the latest data, a group of data scientists from across several Goverment of Canada departments decided to conduct such analysis themselves, as part of their weekly data science training  and driven by  the desire to apply their new skills for public good, and also help each other, as some members of the group experienced long-lasting (albeit called non-serious) vaccine side effects, which, they found, was very difficult for them to report.
 This portal started as a result of these efforts.
 <!-- This portal is designed to address this gap. -->
@@ -62,7 +59,7 @@ The following tools and white papers have been prepared to facilitate the discus
 
 ### Interactive Apps:
 
-- Interactive *Open Canada Vitals Statitistcs (Deaths) Tracker* App: <https://open-canada.github.io/Apps/vitals>
+- Interactive *Open Canada Vitals Statitistcs (Deaths) Tracker* App: <https://open-canada.github.io/Apps/vitals> (mirror: <https://o-canada.shinyapps.io/vitals>).
 <!-- - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://github.com/open-canada/vitals/blob/main/docs/r4gc-meetu[ivi-m.github.io/vv](https://ivi-m.github.io/vv) p-2022-02-04-SpecialEdition(OneYearOfVaccineInCanada).pdf), 
 Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup --> 
 <!-- by the community lead, Senior Data Scientist, Dr. Dmitry Gorodnichy (4 February 2022) -->
@@ -209,7 +206,7 @@ Between May 2021 and October 2021 (for benchnarking against  COVID-19 deaths in 
 
 
 [ gc3 ] 
-**Statistics Canada, Canadian Vital Statistics - Death database. Provisional weekly death counts, by selected grouped causes of death**,  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001>  ([Dashboard](https://open-canada.github.io/Apps/vitals), Last record: November 6, 2021):
+**Statistics Canada, Canadian Vital Statistics - Death database. Provisional weekly death counts, by selected grouped causes of death**,  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001>  ([App Calculator ](https://o-canada.shinyapps.io/vitals/#section-statistics), Last record: November 6, 2021):
 
 <!-- 
 [gc4]: **Deaths of COVID-19** (Source: GC
@@ -227,11 +224,9 @@ Between May  2021 and October 2021 (for benchmarking against  health damages  ca
 - COVID-19 deaths without comorbidities: **404** (recomputed using [ukg1])
 - COVID-19 deaths without comorbidities for \<65 : **89** (recomputed  using [ukg1])
 
-<!-- 
-For comparison in the same period (use [App
-    Calculator](https://o-canada.shinyapps.io/vitals/#section-statistics) to compute those): 
-- Cancer -- , ...
 
+- For comparison (in the same period) - Cancer: 27805, Heart: 16605, Accidents: 3380, Suisides: 	
+<!-- 
 - All COVID-19 since the start of pandemic: with comorbidities --, without comorbidities -- , without for \<65 years old -- 
 - For comparison, since the start of pandemic other caueses of death: Cancer -- , ...
 - For comparison, Deaths from Flu without comorbidities (10-year historical average): 
@@ -242,7 +237,9 @@ For comparison in the same period (use [App
 <img src="https://ivi-m.github.io/vv/gc2-deaths.png" width="500">
 </a>
 
+Other observations (see [White Paper](comment2.pdf) - Appendix):
 
+- 
 
 <hr>
 
@@ -326,38 +323,9 @@ n = 192,405,448 older than 12 years of age in the US
 
 <!-- 
 #### Additional  references:  
-
- 
 - [Justice Centre for Constitutional Freedoms](https://www.jccf.ca)
-
 -->
 
-<!--  
-Any Canadian can report vaccine side-effect, as a consumer, i.e., without a doctor, at the 
-Heath Canada portal. This is how you do it:
-
--   Check if your symptoms are reported in the US COVID Vaccine Adverse Event Reports
-    (VAERS): [vaers.hhs.gov](https://openvaers.com). 
--   Go to the Health Canada Voluntary Side Effect Reporting portal :
-    <https://hpr-rps.hres.ca/side-effects-reporting-form.php?form=voluntary>
--   Submit electronic form there as shown in this 
-    [Example](https://ivi-m.github.io/vv/SideEffectReporting-example-1.pdf). (
-    There are three places there you need to know how to fill out: in Section B: Patient
-    ID write your initials; in Section D: Product DIN and Product Name - paste the
-    vaccine names (and batch/lot number, if available), as printed on your receipt. )
--   Call Heath Canada Voluntary Reporting support line: Tel. 866-234-2345, if you still
-    have problems submitting the form, leave a message, they should respond within 24
-    hours. )
-    
--->
-
-<!-- 
- -   Check if your symptoms are reported in the US COVID Vaccine Adverse Event Reports
-    (VAERS): [vaers.hhs.gov](https://openvaers.com). 
--   Check if your vaccine batch (aka lot), which is printed on your vaccination receipt, is among the ["bad ones"](https://www.howbad.info), according to VAERS data. -->    
-<!--   
-
--->
 
 
 
@@ -366,7 +334,7 @@ Heath Canada portal. This is how you do it:
  
 [www.IVIM.ca](http://www.IVIM.ca) ([ivi-m.github.io/vv](https://ivi-m.github.io/vv), forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))
  <br>
- Corrections/Comments: [ opencanadadatanalysis @ ivim . ca ]     
+ Corrections/Comments: [ dg @ ivim . ca ]     
  
  
 <!-- https://covid-19.ontario.ca/data 
