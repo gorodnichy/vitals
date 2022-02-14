@@ -73,17 +73,19 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
 ### Self-help tools:
 
 - [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vv/report-side-effect)
+
 - [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/)
 
 
 ### White Papers:
 
--  ["Additional  observations related to the 'Elephant in the Room' –  from the Government of Canada COVID-19 daily epidemiology updates.  Time to act!"](https://ivi-m.github.io/vv/comment2.pdf), White paper (10 January 2022) 
+-  ["Additional  observations related to the 'Elephant in the Room' –  from the Government of Canada COVID-19 daily epidemiology updates.  Time to act!"](https://ivi-m.github.io/vv/comment2.pdf), White paper (10 February 2022) 
+
 -  ["Some observations from Canadian Vital Statistics Death (CVSD) Database related to
     the 'Elephant in the Room'"](https://ivi-m.github.io/vv/comment.pdf), Comment submission to The Lancet Journal (6 January 2022)
- -  ["Statistical analysis of the official data sources related to vaccine efficacy and  safety (NEW EVIDENCE SINCE OCTOBER     2021)"](https://ivi-m.github.io/vv/analysis), Additional details.
+   
+-  ["Statistical analysis of the official data sources related to vaccine efficacy and  safety (NEW EVIDENCE SINCE OCTOBER     2021)"](https://ivi-m.github.io/vv/analysis), Additional details (14 January 2022)
   
-
 - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf), 
 Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community)  lead, Senior Data Scientist, [Dr. Dmitry Gorodnichy](http://gorodnichy.ca) (4 February 2022).
 
@@ -225,7 +227,8 @@ Between May  2021 and October 2021 (for benchmarking against  health damages  ca
 - COVID-19 deaths without comorbidities for \<65 : **89** (recomputed  using [ukg1])
 
 
-- For comparison (in the same period) - Cancer: 27805, Heart: 16605, Accidents: 3380, Suisides: 	
+- For comparison (in the same period) - Cancer: 27805, Heart: 16605, Accidents: 3380, Suisides: 555	
+
 <!-- 
 - All COVID-19 since the start of pandemic: with comorbidities --, without comorbidities -- , without for \<65 years old -- 
 - For comparison, since the start of pandemic other caueses of death: Cancer -- , ...
