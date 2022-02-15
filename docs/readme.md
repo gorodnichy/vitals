@@ -383,7 +383,7 @@ n = 192,405,448 older than 12 years of age in the US
  Corrections/Comments: [ dg @ ivim . ca ]     -->
  
  If you want to help with further development of this Portal and Open Canada Vaccine /  Vitals Statistics Tracking App development, 
- please send eTransfer to dg@ivim.ca. Comments and corrections can be emailed to the same adddress.
+ please send eTransfer to dg @ ivim . ca.  Comments and corrections should be sent to the same address.
  
  
  
