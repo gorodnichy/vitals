@@ -22,7 +22,7 @@
 
 #
 rsconnect/
-_TESTS_BACKUPS/
+TESTS_BACKUPS/
 
 # produced vignettes
 vignettes/*.html
@@ -35,11 +35,6 @@ vignettes/*.pdf
 *_cache/
 /cache/
 
-
-
-# Temporary files created by R markdown
-*.utf8.md
-*.knit.md
 
 # R Environment Variables
 .Renviron
