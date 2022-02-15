@@ -156,7 +156,7 @@ Report Date (total cases)| Period reported for     | Reported deaths (with bias*
 
  
 <a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png">
-<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png" width="500">
+<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png" width="100%">
 </a>
 
 
@@ -188,7 +188,7 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
 77%		vs.		 	18%    and   5%
   
   
-
+<!-- 
 <a href="https://ivi-m.github.io/vv/One-Slide-update-2022-02-11.png">
 <img src="https://ivi-m.github.io/vv/One-Slide-update-2022-02-11.png" width="100%">
 </a>
@@ -198,7 +198,7 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
 <img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="100%">
 </a>
 
- 
+ -->
 
 <hr>
 
@@ -361,7 +361,7 @@ n = 192,405,448 older than 12 years of age in the US
 
 
 <a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s13.png" >
-<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s13.png" width="500" >
+<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s13.png" width="100%" >
 </a>
 
 
