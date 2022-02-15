@@ -17,7 +17,7 @@ All codes behind the analysis and supporting documents are free, open and availa
 
 
 
-### Raison d'être
+## Raison d'être
 
 On March 31, 2021, just before COVID-19 vaccination of general public  commenced, the Chief Science Advisor of Canada in its ["*Scientific Considerations for Using COVID-19 Vaccination Certificates"*](https://science.gc.ca/eic/site/063.nsf/eng/h_98229.html) report has  expressed several concerns and recommendations related to the uncertanties associated with using new COVID-19 vaccines that were approved under Emergercy Act and did not go through all normally conducted testing stages, which include the following:
 
@@ -35,13 +35,12 @@ It could have been expected that there would  more reports produced from the Chi
 <!-- , due to the several months delay in processing these data), -->
 and yet there were none produced, as of Februarry 2020 -- more than half a year after the previous report was issued.
 <!-- As of today  -- more than half a year later, with more than 80% Canadians now being vaccinated with  COVID-19 vaccines and with  numerous new Vital statistics and Vaccine Adverse Events data that hav been obtained since then (especially after October 2021, due to the average of three month delay in processing much of the data), -- this remains to be last report that the Chief Science Advisor of Canada has issued on the topic of COVID-19 vaccine safety and efficacy. -->
-
 It is not clear why. Equally it is not clear, why there is still not a single other publication or COVID-19 vaccine training produced by the Goverment of Canada that would be based on  the data obtained *after* the commencement of general public vaccination (i.e., after May and which has become avialable in public domain after October 2021), not prior to it. Numerous requests for such information were made.
-In the absense to the official published analysis of the latest data, a group of data scientists from across several Goverment of Canada departments decided to conduct such analysis themselves, as part of their weekly data science training  and driven by  the desire to apply their new skills for public good, while also helping each other, as some members of the group experienced long-lasting (albeit called "non-serious") vaccine side effects that, they found, very difficult to report.
 
+In the absense to the official published analysis of the latest data, a group of data scientists from across several Goverment of Canada departments decided to conduct such analysis themselves, as part of their weekly data science training  and driven by  the desire to apply their new skills for public good, while also helping each other, as some members of the group experienced long-lasting (albeit called "non-serious") vaccine side effects that, they found, very difficult to report.
 This portal started as a result of these efforts.
 <!-- This portal is designed to address this gap. -->
-It provides links to  related  [Open Canada sources and datasets](), [Guidelines for reporting vaccine side-effects](https://ivi-m.github.io/vv/report-side-effect), an interactive [Open Canada Vital Statistics (Death) Tracking application](https://open-canada.github.io/Apps/vitals) built by the community, and the [Observations]() made from the analysis  for sharing with the public and policy-makers for greater awareness and further validation -- in line with the recommendations of the  Office of the Chief Science Advisor 
+It provides links to  related  [Open Canada sources and datasets](), [Guidelines for reporting vaccine side-effects](https://ivi-m.github.io/vv/report-side-effect), an interactive [Open Canada Vital Statistics (Death) Tracking application](https://open-canada.github.io/Apps/vitals) built by the community, and the [Observations]() made from the analysis  --- for sharing with the general public and policy-makers for greater awareness and further validation, in line with the recommendations of the  Office of the Chief Science Advisor 
 and the [Scientific Integrity Policy](https://science.gc.ca/eic/site/063.nsf/eng/h_98027.html)  they  developed.
 
 <!-- 
@@ -66,9 +65,9 @@ Because of the [Code of Conduct](https://github.com/IVI-M/vv/raw/main/docs/legal
   - Below is a one-slide summary of the result. A PDF version of it with clickable links is available  [here](One-slide-update.pdf) 
 
 
-<
+
 <a href="https://ivi-m.github.io/vv/One-Slide-update.png">
-<img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="500">
+<img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="100%">
 </a>
 
  
@@ -86,8 +85,8 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
 <!-- by the community lead, Senior Data Scientist, Dr. Dmitry Gorodnichy (4 February 2022) -->
 
 
-<a href="https://ivi-m.github.io/vv/app.png" style="text-align: center">
-<img src="https://ivi-m.github.io/vv/app.png" width="500" align="center"></a>
+<a href="https://ivi-m.github.io/vv/app.png" >
+<img src="https://ivi-m.github.io/vv/app.png" width="100%"></a>
 
 
 
@@ -225,10 +224,12 @@ Between May 2021 and October 2021 (for benchnarking against  COVID-19 deaths in 
     kidney injury, 25 Liver injury, and 208 deaths (some under investigation). 
 - Many are not reported or published yet. According to Health Canada , filing of a report takes three months (in practice, longer than that).
 
+
+<!--
 <a href="https://ivi-m.github.io/vv/gc2-reactions.png">
 <img src="https://ivi-m.github.io/vv/gc2-reactions.png" width="500">
 </a>
-
+-->
 
 <hr>
 
@@ -261,12 +262,14 @@ Between May  2021 and October 2021 (for benchmarking against  health damages  ca
 - For comparison, Deaths from Flu without comorbidities (10-year historical average): 
 -->
 
-
+<!-- 
 <a href="https://ivi-m.github.io/vv/gc3-deaths.png">
 <img src="https://ivi-m.github.io/vv/gc2-deaths.png" width="500">
 </a>
 
-Observations  of the following anomalies (possibly, “new normals”) are made:
+-->
+
+**Additional observations  of the anomalies (possibly, “new normals”)**:
 
 - The total number of deaths in last two years is comparable to (and in some provinces lower  than) their five-year average
 - At the start of pandemic, when policies among the provinces varies, there was practically no “first wave” observed in Western provinces
