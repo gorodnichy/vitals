@@ -5,6 +5,7 @@ Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 ==================================================
 
+Last updated: February 15, 2022
 
 **Disclaimer**: The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
 any Canadian Agency, University, or Department. They were developed and gathered by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community) as part of the community training and socializing, mostly on authors' own time and using authors' own resources.
@@ -48,12 +49,29 @@ Because of the [Code of Conduct](https://github.com/IVI-M/vv/raw/main/docs/legal
 
 -->
 
-### Observations
+<!-- ### Observations -->
 
-- Open Canada data that has become available *after* the start of general public vaccination <u>do not</u> support the COVID-19  vaccine manufacturers\' claims about  vaccine efficacy (as being over 90% efficient) and safety (as being "very safe"). 
-- Additionally, it appears that certain reports produced by the Government of Canada ('Cases following vaccination') contain algorithmic bias in the way the metrics are computed and reported to the general public, which skew the results considerably in the favour of vaccine manufacturers' claims.
-- When recomputed without the embedded bias, for the period of from December 04, 2021 to January 15, 2022,  fully-vaccinated Canadians appear to be  more likely infected with COVID-19 than their unvaccinated fellow citizens.
-- The number of serious COVID-19 adverse events already reported, including deaths and key organs failures,   appears to be much higher than what should be expected from a "safe" vaccine, being comparable to (and for certain populations higher than)  the number of COVID-19 deaths alone.
+## Summary of key observations
+
+
+<!-- (as being over 90% efficient) and safety (as being "very safe"). -->
+
+- Open Canada data that has become available *after* the start of general public vaccination <u>do not</u> support the COVID-19  vaccine manufacturers\' claims about  vaccine efficacy and safety. 
+
+- Firstly, the number of serious COVID-19 adverse events already reported, including deaths and key organs failures,   appears to be much higher than what should be expected from a "safe" vaccine, being comparable to (and for certain populations higher than)  the number of COVID-19 deaths alone.
+
+- Secondly, it is observed that certain reports produced by the Government of Canada (PHAC 'Cases following vaccination' reports) contain algorithmic bias that skews the results considerably in the favour of vaccine manufacturers' claims. When recomputed without the embedded bias,  the reported data  <u>do not support</u> the claims made in those reports that *“Fully vaccinated individuals diagnosed with COVID-19 were significantly protected from severe outcomes.”*. In fact, they support  the opposite -- that as since December, *Fully vaccinated individuals diagnosed with COVID-19 (shown in violet colour in slide below) were <u>twice as much less</u> protected from severe outcomes, compared to unvaccinated individuals (shown in colour in slide below)*
+
+  - All codes, spreadsheets, and  archived PHAC reports (since July 2021, which is when PHAC they started  reporting 'Cases by vaccination status' statistics), from which the raw data were extracted, are available [here](https://github.com/IVI-M/vv/tree/main/docs/COVID-19%20epidemiology%20updates). 
+  - Below is a one-slide summary of the result. A PDF version of it with clickable links is available  [here](One-slide-update.pdf) 
+
+
+<
+<a href="https://ivi-m.github.io/vv/One-Slide-update.png">
+<img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="500">
+</a>
+
+ 
 
 <!-- , and for certain populations (children, people under thirty with no other health problems) even higher than, -->
 
@@ -105,7 +123,7 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by
 
 ## Sources:
 
-Last Updated: 2022-02-11 
+<!-- Last Updated: 2022-02-11 -->
 
 
 
@@ -172,6 +190,11 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
   
   
 
+<a href="https://ivi-m.github.io/vv/One-Slide-update-2022-02-11.png">
+<img src="https://ivi-m.github.io/vv/One-Slide-update-2022-02-11.png" width="500">
+</a>
+
+ 
 <a href="https://ivi-m.github.io/vv/One-Slide-update.png">
 <img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="500">
 </a>
