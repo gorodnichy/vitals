@@ -55,32 +55,40 @@ Because of the [Code of Conduct](https://github.com/IVI-M/vv/raw/main/docs/legal
 
 <!-- (as being over 90% efficient) and safety (as being "very safe"). -->
 
-- Open Canada data that has become available *<u>after</u>* the start of general public vaccination <u>do not appear to support </u>  the COVID-19  vaccine manufacturers\' original claims about  vaccine efficacy and safety. 
+- Open Canada data that has become available *after* the start of general public vaccination <u>do not appear to support </u>  the COVID-19  vaccine manufacturers\' original claims about  vaccine efficacy and safety. Recommendations are made to reevaluate vaccine efficacy and safety.based on the emperiical data obtained *<u>after</u>* May, as this is when most (over 95%) of these data was obtained.
 
-- The number of reported serious COVID-19 adverse events, including deaths and key organs failures,   appears to be the same order of magnitude as the number of COVID-19 deaths alone, and for certain populations higher than that. 
-<!-- much higher than what should be expected from a "safe" vaccine, being comparable to (and for certain populations higher than)  the number of COVID-19 deaths alone.-->
+- The number of reported serious adverse events from COVID-19 vaccine (including deaths and key organs failures)   appears to be the same order of magnitude as the number of COVID-19 deaths alone, and for certain populations higher than that. 
+    -  It is also noted that these numbers are reported with several months delay and may not represent the true number of side-events, as reporting of vaccines side-events is not mandatory and 
 
-- Certain reports produced by the Government of Canada (PHAC 'Cases following vaccination' reports) appear to contain algorithmic bias that skews the results  in the favour of  manufacturers' claims about vaccine efficacy. When recomputed without this  bias,  the reported data  <u>do not appear to support</u> the claims made in those reports that *“Fully vaccinated individuals diagnosed with COVID-19 were significantly protected from severe outcomes.”*. The data shows that the numbers of severe outcomes (deaths and hostitlizations) of fully vaccinated is comparable to that of unvaccinated. More detailed analysis, which is would compare the rate of the increase of severe outcomes among fully vaccinated to the national vaccination rate increase, is required. 
+- The risk of COVID deaths for population younger than 65 and with no other health issues is about two orders of magnitude less than for older poplations with other heath issues.   
+    - Natural immunity is confirmed to be reduce the risk of hostpiliations more than vaccine-induced immunity
+    
+- Certain reports produced by the Government of Canada (PHAC 'Cases following vaccination' reports) appear to contain algorithmic bias that skews the results  in the favour of  manufacturers' claims about vaccine efficacy. 
+    - When recomputed without this  bias,  the reported data  <u>do not appear to support</u> the claims made in those reports that *“Fully vaccinated individuals diagnosed with COVID-19 were significantly protected from severe outcomes.”*. The data shows that the numbers of severe outcomes (deaths and hostitlizations) of fully vaccinated, in fact, is comparable to that of unvaccinated. More detailed analysis, which is would compare the rate of the increase of severe outcomes among fully vaccinated to the national vaccination rate increase, is required. --  See images below.
 
 
 
-<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-rel.png" width="100%">
 <img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-reported-since2020_12_14-rel.png" width="100%">
-
+<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-rel.png" width="100%">
+<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-abs.png" width="100%">
  
 
-To facilitate further analysis and discussion, the following resources, tools and white papers have been prepared.
+To facilitate further analysis and discussion, the following resources, tools and white papers have been gathered.
 
 #### Codes and data archives
 
-- Archive of PHAC 'Cases following vaccination' reports (since July 2021, which is when PHAC started  reporting 'Cases by vaccination status' statistics), from which the raw data were extracted: [/docs/COVID-19 epidemiology updates](https://github.com/IVI-M/vv/tree/main/docs/COVID-19%20epidemiology%20updates). 
-  - Spreadsheet with raw Cases numbers extracted from the reports (page 21, Table 2) - counted since December 14, 2020: [PHAC_Cases_following_vaccination_Table2-raw-data-log.csv](https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-raw-data-log.csv)
-  - Spreadsheet with recomputed raw Cases numbers to weekly Cases statistics reporting: [PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv)](https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv)
+- Archive of PHAC 'Cases following vaccination' reports (since July 2021, which is when PHAC started  reporting 'Cases by vaccination status' statistics): [/docs/COVID-19 epidemiology updates](https://github.com/IVI-M/vv/tree/main/docs/COVID-19%20epidemiology%20updates). 
+  - Spreadsheet with raw Cases numbers extracted from archived PHAC reports (p.21, Table 2), which are counted since December 14, 2020: [PHAC_Cases_following_vaccination_Table2-raw-data-log.csv](https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-raw-data-log.csv)
+  - Spreadsheet with recomputed raw Cases numbers, which can be reported as weekly Cases average: [PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv](https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv)
  
 - Archive of Statistics Canada Table 13100810 (Provisional weekly death counts, by selected grouped causes of death): [open-canada/datasets/tree/main/statcan](https://github.com/open-canada/datasets/tree/main/statcan)
 - R codes to process and visualize StatCan and PHAC data: [/R](https://github.com/IVI-M/vv/tree/main/R)
 
 
+#### Self-help tools:
+
+- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vv/report-side-effect)
+- [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/)
 
 #### Interactive Apps:
 
@@ -95,11 +103,6 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
 
 
 
-#### Self-help tools:
-
-- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vv/report-side-effect)
-
-- [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/)
 
 
 #### White Papers:
@@ -120,7 +123,7 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by
 -->
 
 <a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf" style="text-align: center">
-<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s1.png" width="500" align="center"></a>
+<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s1.png" width="400" align="center"></a>
 
 
  
@@ -129,6 +132,7 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by
 
 <!-- Last Updated: 2022-02-11 -->
 
+### Source #1:
 
 
 [gc1] **Cases following vaccination, COVID-19 Daily Epidemiology Update, Public Health Agency of Canada**,  <https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html#a9> ([archived reports](https://github.com/open-canada/vitals/tree/main/docs/COVID-19%20epidemiology%20updates))
@@ -208,7 +212,7 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
 <hr>
 
 
-
+### Source #2:
 
 
 
@@ -221,7 +225,7 @@ Total (since Jan 2021):
 - All reported adverse reactions: 36,164
 - Serious adverse reactions: 	7,678.  (118 / week)
 
-Between May 2021 and October 2021 (for benchnarking against  COVID-19 deaths in the same period - see below)
+<u>Between May 2021 and October 2021</u> (for benchnarking against  COVID-19 deaths in the same period - see below)
 - Serious adverse reactions:  **5200** (NB: increased from 5038 posted in last month report)
 -  Of these: 1,111 heart diseases (including 64 Cardiac arrests, 77 Heart Attacks, 970
     Myocarditis1/Pericarditis), 947 thrombosis, 781 central nervous system failures
@@ -238,6 +242,7 @@ Between May 2021 and October 2021 (for benchnarking against  COVID-19 deaths in 
 
 <hr>
 
+### Source #3:
 
 [ gc3 ] 
 **Statistics Canada, Canadian Vital Statistics - Death database. Provisional weekly death counts, by selected grouped causes of death**,  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001>  ([App Calculator ](https://o-canada.shinyapps.io/vitals/#section-statistics), Last record: November 6, 2021):
@@ -253,7 +258,7 @@ Between May 2021 and October 2021 (for benchnarking against  COVID-19 deaths in 
 Between December 2020 to  April 2021 (from the day first vaccination started to when vaccination rate reached 3%)
 - COVID-19 deaths: : 13075 
 
-Between May  2021 and October 2021 (for benchmarking against  health damages  caused by COVID-19 vaccine - see above) 
+<u>Between May 2021 and October 2021</u> (for benchmarking against  health damages  caused by COVID-19 vaccine - see above) 
 - COVID-19 deaths: **2975** 
 - COVID-19 deaths without comorbidities: **404** (recomputed using [ukg1])
 - COVID-19 deaths without comorbidities for \<65 : **89** (recomputed  using [ukg1])
@@ -274,13 +279,14 @@ Between May  2021 and October 2021 (for benchmarking against  health damages  ca
 
 -->
 
-**Additional observations  of the anomalies (possibly, “new normals”)**:
+**Additional observations**:
+<!-- of the anomalies (possibly, “new normals”)**: -->
 
 - The total number of deaths in last two years is comparable to (and in some provinces lower  than) their five-year average
-- At the start of pandemic, when policies among the provinces varies, there was practically no “first wave” observed in Western provinces
+- At the start of pandemic, when policies among the provinces varied, there was practically no “first wave” observed in Western provinces
 - Since the start of pandemic, the number of all non-COVID deaths started to decline
-- Sharp increase in the number of unexplained deaths  since May 2021,  and finally
-- Increased delay in reporting deaths: from 2 months to 3 (and in some provinces to 6) months
+- Sharp increase in the number of unexplained deaths  since May 2021
+- Significant increased delay in reporting death causes is observed.
 
 <!-- 
 Multiple insights and anomalies (possibly, “new normals”) are observed:
@@ -294,6 +300,7 @@ Multiple insights and anomalies (possibly, “new normals”) are observed:
 -->
 <hr>
 
+### Source #4:
 
 [ gc4 ] 
 **Recalls and safety alerts, Government of Canada**, <https://recalls-rappels.canada.ca/>: 
@@ -304,7 +311,7 @@ Multiple insights and anomalies (possibly, “new normals”) are observed:
 )
 
 - Risk of Facial paralysis/Bell’s Palsy. Posted: 2021-08-06 
-- Risk of Myocarditis and pericarditis. Posted: 2021-06-30 ([by over x 1000 for young men](https://www.youtube.com/watch?v=Hb1Xm1uaedU))
+- Risk of Myocarditis and pericarditis. Posted: 2021-06-30 (bover x 1000 - [Explanation](https://www.youtube.com/watch?v=Hb1Xm1uaedU))
 - Risk of Capillary Leak Syndrome. Posted: 2021-06-29
 - Risk of Thrombosis with Thrombocytopenia. Posted: 2021-03-24
 
@@ -319,7 +326,7 @@ n = 192,405,448 older than 12 years of age in the US
 
 
 
-### Other statistics
+### Other Sources
 
 [gcA]  **Fully-Vaccinated rates** (Source:
     [canada.ca](https://health-infobase.canada.ca/covid-19/vaccination-coverage/)):
@@ -348,7 +355,7 @@ n = 192,405,448 older than 12 years of age in the US
 
 
 
-### Data from other governments:
+### Sources from other governments:
  
  
 [ukg1] **COVID deaths vs. COVID alone deaths** (Source: [gov.uk](https://www.ons.gov.uk/aboutus/transparencyandgovernance/freedomofinformationfoi/deathsfromcovid19withnootherunderlyingcauses) - [Explanation](https://www.youtube.com/watch?v=9UHvwWWcjYw)):
@@ -386,7 +393,7 @@ n = 192,405,448 older than 12 years of age in the US
  
 [www.IVIM.ca](http://www.IVIM.ca) (forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))
 <br>
-Corrections/Comments: [ opencanadadataanalysis @ ivim . ca ]     
+Corrections/Comments:  opencanadadataanalysis@ivim.ca ]     
  
  
  
