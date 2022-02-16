@@ -55,19 +55,19 @@ Because of the [Code of Conduct](https://github.com/IVI-M/vv/raw/main/docs/legal
 
 <!-- (as being over 90% efficient) and safety (as being "very safe"). -->
 
-- Open Canada data that has become available *after* the start of general public vaccination <u>do not</u> support the COVID-19  vaccine manufacturers\' claims about  vaccine efficacy and safety. 
+- Open Canada data that has become available *after* the start of general public vaccination <u>do not</u> support the COVID-19  vaccine manufacturers\' original claims about  vaccine efficacy and safety. 
 
-- Firstly, the number of serious COVID-19 adverse events already reported, including deaths and key organs failures,   appears to be much higher than what should be expected from a "safe" vaccine, being comparable to (and for certain populations higher than)  the number of COVID-19 deaths alone.
+- The number of serious COVID-19 adverse events already reported, including deaths and key organs failures,   appears to be much higher than what should be expected from a "safe" vaccine, being comparable to (and for certain populations higher than)  the number of COVID-19 deaths alone.
 
-- Secondly, it is observed that certain reports produced by the Government of Canada (PHAC 'Cases following vaccination' reports) contain algorithmic bias that skews the results considerably in the favour of vaccine manufacturers' claims. When recomputed without the embedded bias,  the reported data  <u>do not support</u> the claims made in those reports that *“Fully vaccinated individuals diagnosed with COVID-19 were significantly protected from severe outcomes.”*.
+- It is observed that certain reports produced by the Government of Canada (PHAC 'Cases following vaccination' reports) contain algorithmic bias that skews the results considerably in the favour of vaccine manufacturers' claims. When recomputed without the embedded bias,  the reported data  <u>do not support</u> the claims made in those reports that *“Fully vaccinated individuals diagnosed with COVID-19 were significantly protected from severe outcomes.”*.
 
-  - All codes, spreadsheets, and  archived PHAC reports (since July 2021, which is when PHAC they started  reporting 'Cases by vaccination status' statistics), from which the raw data were extracted, are available [here](https://github.com/IVI-M/vv/tree/main/docs/COVID-19%20epidemiology%20updates). 
-  - Below is a one-slide summary of the result. A PDF version of it with clickable links is available  [here](One-Slide-update.pdf).
+  - All codes, spreadsheets, and  archived PHAC reports (since July 2021, which is when PHAC started  reporting 'Cases by vaccination status' statistics), from which the raw data were extracted, are available [here](https://github.com/IVI-M/vv/tree/main/docs/COVID-19%20epidemiology%20updates). 
+  - Below is a one-slide summary of the result. A PDF version of it with clickable links is available  [here](One-Slide-update2.pdf).
 
 
 
-<a href="https://ivi-m.github.io/vv/One-Slide-update.png">
-<img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="100%">
+<a href="https://ivi-m.github.io/vv/One-Slide-update2.png">
+<img src="https://ivi-m.github.io/vv/One-Slide-update2.png" width="100%">
 </a>
 
  
@@ -380,7 +380,7 @@ n = 192,405,448 older than 12 years of age in the US
  
 [www.IVIM.ca](http://www.IVIM.ca) (forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))
  <!-- br>
- Corrections/Comments: [ dg @ ivim . ca ]     -->
+ Corrections/Comments: [ opencanadadataanalysis @ ivim . ca ]     -->
  
  If you want to help with further development of this Portal and Open Canada Vaccine /  Vitals Statistics Tracking App development, 
  please send eTransfer to dg @ ivim . ca.  Comments and corrections should be sent to the same address.
