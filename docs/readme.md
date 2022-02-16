@@ -64,8 +64,8 @@ Because of the [Code of Conduct](https://github.com/IVI-M/vv/raw/main/docs/legal
 
 
 
-<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-rel.png" width="49%">
-<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-reported-since2020_12_14-rel.png" width="49%">
+<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-rel.png" width="100%">
+<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-reported-since2020_12_14-rel.png" width="100%">
 
  
 
@@ -79,15 +79,6 @@ To facilitate further analysis and discussion, the following resources, tools an
  
 - Archive of Statistics Canada Table 13100810 (Provisional weekly death counts, by selected grouped causes of death): [open-canada/datasets/tree/main/statcan](https://github.com/open-canada/datasets/tree/main/statcan)
 - R codes to process and visualize StatCan and PHAC data: [/R](https://github.com/IVI-M/vv/tree/main/R)
-
-
-<!-- , and for certain populations (children, people under thirty with no other health problems) even higher than, -->
-
-
-
-
- <!-- 
-  - Below is a one-slide summary of the result. A PDF version of it with clickable links is available  [here](One-Slide-update2.pdf).-->
 
 
 
@@ -394,14 +385,10 @@ n = 192,405,448 older than 12 years of age in the US
 
  
 [www.IVIM.ca](http://www.IVIM.ca) (forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))
- <!-- br>
- Corrections/Comments: [ opencanadadataanalysis @ ivim . ca ]     -->
+<br>
+Corrections/Comments: [ opencanadadataanalysis @ ivim . ca ]     
  
- <!-- 
- If you want to help with further development of this Portal and Open Canada Vaccine /  Vitals Statistics Tracking App development, 
- please send eTransfer to dg @ ivim . ca.  Comments and corrections should be sent to the same address.
  
- -->
  
 <!-- https://covid-19.ontario.ca/data 
 
@@ -432,5 +419,10 @@ Hospitalization rates among unvaccinatedindividuals continue to be higher than t
 
 <hr>
 
+ If you want to help with further development of this Portal and Open Canada Vaccine /  Vitals Statistics Tracking App development, 
+ please send eTransfer to dg @ ivim . ca.  Comments and corrections should be sent to the same address.
+ 
+
 -->
+
 
