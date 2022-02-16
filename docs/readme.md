@@ -50,34 +50,48 @@ Because of the [Code of Conduct](https://github.com/IVI-M/vv/raw/main/docs/legal
 
 <!-- ### Observations -->
 
-## Summary of key observations
+## Key observations
 
 
 <!-- (as being over 90% efficient) and safety (as being "very safe"). -->
 
-- Open Canada data that has become available *after* the start of general public vaccination <u>do not</u> support the COVID-19  vaccine manufacturers\' original claims about  vaccine efficacy and safety. 
+- Open Canada data that has become available *<u>after</u>* the start of general public vaccination <u>do not appear to support </u>  the COVID-19  vaccine manufacturers\' original claims about  vaccine efficacy and safety. 
 
-- The number of serious COVID-19 adverse events already reported, including deaths and key organs failures,   appears to be much higher than what should be expected from a "safe" vaccine, being comparable to (and for certain populations higher than)  the number of COVID-19 deaths alone.
+- The number of reported serious COVID-19 adverse events, including deaths and key organs failures,   appears to be the same order of magnitude as the number of COVID-19 deaths alone, and for certain populations higher than that. 
+<!-- much higher than what should be expected from a "safe" vaccine, being comparable to (and for certain populations higher than)  the number of COVID-19 deaths alone.-->
 
-- It is observed that certain reports produced by the Government of Canada (PHAC 'Cases following vaccination' reports) contain algorithmic bias that skews the results considerably in the favour of vaccine manufacturers' claims. When recomputed without the embedded bias,  the reported data  <u>do not support</u> the claims made in those reports that *“Fully vaccinated individuals diagnosed with COVID-19 were significantly protected from severe outcomes.”*.
-
-  - All codes, spreadsheets, and  archived PHAC reports (since July 2021, which is when PHAC started  reporting 'Cases by vaccination status' statistics), from which the raw data were extracted, are available [here](https://github.com/IVI-M/vv/tree/main/docs/COVID-19%20epidemiology%20updates). 
-  - Below is a one-slide summary of the result. A PDF version of it with clickable links is available  [here](One-Slide-update2.pdf).
+- Certain reports produced by the Government of Canada (PHAC 'Cases following vaccination' reports) appear to contain algorithmic bias that skews the results  in the favour of  manufacturers' claims about vaccine efficacy. When recomputed without this  bias,  the reported data  <u>do not appear to support</u> the claims made in those reports that *“Fully vaccinated individuals diagnosed with COVID-19 were significantly protected from severe outcomes.”*. The data shows that the numbers of severe outcomes (deaths and hostitlizations) of fully vaccinated is comparable to that of unvaccinated. More detailed analysis, which is would compare the rate of the increase of severe outcomes among fully vaccinated to the national vaccination rate increase, is required. 
 
 
 
-<a href="https://ivi-m.github.io/vv/One-Slide-update2.png">
-<img src="https://ivi-m.github.io/vv/One-Slide-update2.png" width="100%">
-</a>
+<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-rel.png" width="49%">
+<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-reported-since2020_12_14-rel.png" width="49%">
 
  
 
+To facilitate further analysis and discussion, the following resources, tools and white papers have been prepared.
+
+#### Codes and data archives
+
+- Archive of PHAC 'Cases following vaccination' reports (since July 2021, which is when PHAC started  reporting 'Cases by vaccination status' statistics), from which the raw data were extracted: [/docs/COVID-19 epidemiology updates](https://github.com/IVI-M/vv/tree/main/docs/COVID-19%20epidemiology%20updates). 
+  - Spreadsheet with raw Cases numbers extracted from the reports (page 21, Table 2) - counted since December 14, 2020: [PHAC_Cases_following_vaccination_Table2-raw-data-log.csv](https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-raw-data-log.csv)
+  - Spreadsheet with recomputed raw Cases numbers to weekly Cases statistics reporting: [PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv)](https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv)
+ 
+- Archive of Statistics Canada Table 13100810 (Provisional weekly death counts, by selected grouped causes of death): [open-canada/datasets/tree/main/statcan](https://github.com/open-canada/datasets/tree/main/statcan)
+- R codes to process and visualize StatCan and PHAC data: [/R](https://github.com/IVI-M/vv/tree/main/R)
+
+
 <!-- , and for certain populations (children, people under thirty with no other health problems) even higher than, -->
 
-The following tools and white papers have been prepared to facilitate the discussion.
 
 
-### Interactive Apps:
+
+ <!-- 
+  - Below is a one-slide summary of the result. A PDF version of it with clickable links is available  [here](One-Slide-update2.pdf).-->
+
+
+
+#### Interactive Apps:
 
 - Interactive *Open Canada Vitals Statitistcs (Deaths) Tracker* App: <https://open-canada.github.io/Apps/vitals> (mirror: <https://o-canada.shinyapps.io/vitals>).
 <!-- - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://github.com/open-canada/vitals/blob/main/docs/r4gc-meetu[ivi-m.github.io/vv](https://ivi-m.github.io/vv) p-2022-02-04-SpecialEdition(OneYearOfVaccineInCanada).pdf), 
@@ -85,19 +99,19 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
 <!-- by the community lead, Senior Data Scientist, Dr. Dmitry Gorodnichy (4 February 2022) -->
 
 
-<a href="https://ivi-m.github.io/vv/app.png" >
+<a href="https://o-canada.shinyapps.io/vitals" >
 <img src="https://ivi-m.github.io/vv/app.png" width="100%"></a>
 
 
 
-### Self-help tools:
+#### Self-help tools:
 
 - [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vv/report-side-effect)
 
 - [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/)
 
 
-### White Papers:
+#### White Papers:
 
 -  ["Additional  observations related to the 'Elephant in the Room' –  from the Government of Canada COVID-19 daily epidemiology updates.  Time to act!"](https://ivi-m.github.io/vv/comment2.pdf), White paper (10 February 2022) 
 
@@ -155,9 +169,9 @@ Report Date (total cases)| Period reported for     | Reported deaths (with bias*
 -->
 
  
-<a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png">
+
 <img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png" width="100%">
-</a>
+
 
 
 
@@ -351,18 +365,19 @@ n = 192,405,448 older than 12 years of age in the US
 - Of all reported in UK COVID deaths, only 13.6%  are due to COVID alone. 
 - 78% of all COVID alone deaths occurred in people with 65+ of age.
 - Average age of death from COVID is 82.5 years, which is statistically equal to the average life expectancy in UK.
-
+- The chance of having severe complication from COVID infection for people younger than 65 and in good health is very low (<0.01% Cases)  and for  children under 12 even lower (<0.0001% Cases).
  
 [usg1] **Natural immunity vs. vaccine-induced immunity** (Source: [cdc.gov](https://www.cdc.gov/mmwr/volumes/71/wr/mm7104e1.htm) - [Explanation](https://www.youtube.com/watch?v=eK83QqbNOmU)):
 
 
 - COVID vaccine reduces the risk of hospitalization considerably (by x10-x20)
-- However, natural immunity  reduces the risk of hospitalization even more (by x20-x50),  while the chance of having severe complication from COVID infection for people younger than 65 and in good health is very low (<0.01% Cases based on [ukg1])  and for  children under 12 even lower (<0.0001% Cases based on [ukg2]).
+- Natural immunity  reduces the risk of hospitalization even more (by x20-x50)  
+- COVID vaccine with Natural immunity does not reduce the risk of hospitalization, possibly slightly increases it.
 
 
-<a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s13.png" >
+
 <img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s13.png" width="100%" >
-</a>
+
 
 
  
@@ -382,10 +397,11 @@ n = 192,405,448 older than 12 years of age in the US
  <!-- br>
  Corrections/Comments: [ opencanadadataanalysis @ ivim . ca ]     -->
  
+ <!-- 
  If you want to help with further development of this Portal and Open Canada Vaccine /  Vitals Statistics Tracking App development, 
  please send eTransfer to dg @ ivim . ca.  Comments and corrections should be sent to the same address.
  
- 
+ -->
  
 <!-- https://covid-19.ontario.ca/data 
 
