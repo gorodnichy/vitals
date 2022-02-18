@@ -41,7 +41,7 @@ In the absense to the official published analysis of the latest data, a group of
 This portal started as a result of these efforts.
 <!-- This portal is designed to address this gap. -->
 It provides links to  related  [Open Canada sources and datasets](), [Guidelines for reporting vaccine side-effects](https://ivi-m.github.io/vitals/report-side-effect), an interactive [Open Canada Vital Statistics (Death) Tracking application](https://open-canada.github.io/Apps/vitals) built by the community, and the [Observations]() made from the analysis  --- for sharing with the general public and policy-makers for greater awareness and further validation, in line with the recommendations of the  Office of the Chief Science Advisor 
-and the [Scientific Integrity Policy](https://science.gc.ca/eic/site/063.nsf/eng/h_98027.html)  they  developed.
+and the [Scientific Integrity Policy](https://science.gc.ca/eic/site/063.nsf/eng/h_97643.html)  they  developed.
 
 <!-- 
 Because of the [Code of Conduct](https://github.com/IVI-M/vitals/raw/main/docs/legal/CBSA_conduct_code.pdf), which instructs Government of Canada employees to refrain from making  criticisms of  the Government of Canada, it has become very difficult to discuss anything in relationship to COVID-19 vaccine efficiency/safety.  Employees who experienced vaccine side effects or had  questions related to the above, would be afraid to express their concerns and seek for help, many wanted to remain anonymous. 
