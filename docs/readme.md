@@ -40,11 +40,11 @@ It is not clear why. Equally it is not clear, why there is still not a single ot
 In the absense to the official published analysis of the latest data, a group of data scientists from across several Goverment of Canada departments decided to conduct such analysis themselves, as part of their weekly data science training  and driven by  the desire to apply their new skills for public good, while also helping each other, as some members of the group experienced long-lasting (albeit called "non-serious") vaccine side effects that, they found, very difficult to report.
 This portal started as a result of these efforts.
 <!-- This portal is designed to address this gap. -->
-It provides links to  related  [Open Canada sources and datasets](), [Guidelines for reporting vaccine side-effects](https://ivi-m.github.io/vv/report-side-effect), an interactive [Open Canada Vital Statistics (Death) Tracking application](https://open-canada.github.io/Apps/vitals) built by the community, and the [Observations]() made from the analysis  --- for sharing with the general public and policy-makers for greater awareness and further validation, in line with the recommendations of the  Office of the Chief Science Advisor 
+It provides links to  related  [Open Canada sources and datasets](), [Guidelines for reporting vaccine side-effects](https://ivi-m.github.io/vitals/report-side-effect), an interactive [Open Canada Vital Statistics (Death) Tracking application](https://open-canada.github.io/Apps/vitals) built by the community, and the [Observations]() made from the analysis  --- for sharing with the general public and policy-makers for greater awareness and further validation, in line with the recommendations of the  Office of the Chief Science Advisor 
 and the [Scientific Integrity Policy](https://science.gc.ca/eic/site/063.nsf/eng/h_98027.html)  they  developed.
 
 <!-- 
-Because of the [Code of Conduct](https://github.com/IVI-M/vv/raw/main/docs/legal/CBSA_conduct_code.pdf), which instructs Government of Canada employees to refrain from making  criticisms of  the Government of Canada, it has become very difficult to discuss anything in relationship to COVID-19 vaccine efficiency/safety.  Employees who experienced vaccine side effects or had  questions related to the above, would be afraid to express their concerns and seek for help, many wanted to remain anonymous. 
+Because of the [Code of Conduct](https://github.com/IVI-M/vitals/raw/main/docs/legal/CBSA_conduct_code.pdf), which instructs Government of Canada employees to refrain from making  criticisms of  the Government of Canada, it has become very difficult to discuss anything in relationship to COVID-19 vaccine efficiency/safety.  Employees who experienced vaccine side effects or had  questions related to the above, would be afraid to express their concerns and seek for help, many wanted to remain anonymous. 
 
 -->
 
@@ -68,38 +68,38 @@ Because of the [Code of Conduct](https://github.com/IVI-M/vv/raw/main/docs/legal
 
 
 
-<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-reported-since2020_12_14-rel.png" width="100%">
-<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-rel.png" width="100%">
-<img src="https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-abs.png" width="100%">
+<img src="https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-reported-since2020_12_14-rel.png" width="100%">
+<img src="https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-rel.png" width="100%">
+<img src="https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-abs.png" width="100%">
  
 
 To facilitate further analysis and discussion, the following resources, tools and white papers have been gathered.
 
 #### Codes and data archives
 
-- Archive of PHAC 'Cases following vaccination' reports (since July 2021, which is when PHAC started  reporting 'Cases by vaccination status' statistics): [/docs/COVID-19 epidemiology updates](https://github.com/IVI-M/vv/tree/main/docs/COVID-19%20epidemiology%20updates). 
-  - Spreadsheet with raw Cases numbers extracted from archived PHAC reports (p.21, Table 2), which are counted since December 14, 2020: [PHAC_Cases_following_vaccination_Table2-raw-data-log.csv](https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-raw-data-log.csv)
-  - Spreadsheet with recomputed raw Cases numbers, which can be reported as weekly Cases average: [PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv](https://github.com/IVI-M/vv/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv)
+- Archive of PHAC 'Cases following vaccination' reports (since July 2021, which is when PHAC started  reporting 'Cases by vaccination status' statistics): [/docs/COVID-19 epidemiology updates](https://github.com/IVI-M/vitals/tree/main/docs/COVID-19%20epidemiology%20updates). 
+  - Spreadsheet with raw Cases numbers extracted from archived PHAC reports (p.21, Table 2), which are counted since December 14, 2020: [PHAC_Cases_following_vaccination_Table2-raw-data-log.csv](https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-raw-data-log.csv)
+  - Spreadsheet with recomputed raw Cases numbers, which can be reported as weekly Cases average: [PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv](https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv)
  
 - Archive of Statistics Canada Table 13100810 (Provisional weekly death counts, by selected grouped causes of death): [open-canada/datasets/tree/main/statcan](https://github.com/open-canada/datasets/tree/main/statcan)
-- R codes to process and visualize StatCan and PHAC data: [/R](https://github.com/IVI-M/vv/tree/main/R)
+- R codes to process and visualize StatCan and PHAC data: [/R](https://github.com/IVI-M/vitals/tree/main/R)
 
 
 #### Self-help tools:
 
-- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vv/report-side-effect)
+- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vitals/report-side-effect)
 - [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/)
 
 #### Interactive Apps:
 
 - Interactive *Open Canada Vitals Statitistcs (Deaths) Tracker* App: <https://open-canada.github.io/Apps/vitals> (mirror: <https://o-canada.shinyapps.io/vitals>).
-<!-- - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://github.com/open-canada/vitals/blob/main/docs/r4gc-meetu[ivi-m.github.io/vv](https://ivi-m.github.io/vv) p-2022-02-04-SpecialEdition(OneYearOfVaccineInCanada).pdf), 
+<!-- - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://github.com/open-canada/vitals/blob/main/docs/r4gc-meetu[ivi-m.github.io/vitals](https://ivi-m.github.io/vitals) p-2022-02-04-SpecialEdition(OneYearOfVaccineInCanada).pdf), 
 Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup --> 
 <!-- by the community lead, Senior Data Scientist, Dr. Dmitry Gorodnichy (4 February 2022) -->
 
 
 <a href="https://o-canada.shinyapps.io/vitals" >
-<img src="https://ivi-m.github.io/vv/app.png" width="100%"></a>
+<img src="https://ivi-m.github.io/vitals/app.png" width="100%"></a>
 
 
 
@@ -107,14 +107,14 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
 
 #### White Papers:
 
--  ["Additional  observations related to the 'Elephant in the Room' –  from the Government of Canada COVID-19 daily epidemiology updates.  Time to act!"](https://ivi-m.github.io/vv/comment2.pdf), White paper (10 February 2022) 
+-  ["Additional  observations related to the 'Elephant in the Room' –  from the Government of Canada COVID-19 daily epidemiology updates.  Time to act!"](https://ivi-m.github.io/vitals/comment2.pdf), White paper (10 February 2022) 
 
 -  ["Some observations from Canadian Vital Statistics Death (CVSD) Database related to
-    the 'Elephant in the Room'"](https://ivi-m.github.io/vv/comment.pdf), Comment submission to The Lancet Journal (6 January 2022)
+    the 'Elephant in the Room'"](https://ivi-m.github.io/vitals/comment.pdf), Comment submission to The Lancet Journal (6 January 2022)
    
--  ["Statistical analysis of the official data sources related to vaccine efficacy and  safety (NEW EVIDENCE SINCE OCTOBER     2021)"](https://ivi-m.github.io/vv/analysis), Additional details (14 January 2022)
+-  ["Statistical analysis of the official data sources related to vaccine efficacy and  safety (NEW EVIDENCE SINCE OCTOBER     2021)"](https://ivi-m.github.io/vitals/analysis), Additional details (14 January 2022)
   
-- ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf), 
+- ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://ivi-m.github.io/vitals/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf), 
 Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community)  lead, Senior Data Scientist, [Dr. Dmitry Gorodnichy](http://gorodnichy.ca) (4 February 2022).
 
 <!--
@@ -122,8 +122,8 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by
 
 -->
 
-<a href="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf" style="text-align: center">
-<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s1.png" width="400" align="center"></a>
+<a href="https://ivi-m.github.io/vitals/OneYearOfVaccineInCanada-deck-meetup-2022-02-04.pdf" style="text-align: center">
+<img src="https://ivi-m.github.io/vitals/OneYearOfVaccineInCanada-s1.png" width="400" align="center"></a>
 
 
  
@@ -165,7 +165,7 @@ Report Date (total cases)| Period reported for     | Reported deaths (with bias*
 
  
 
-<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s19.png" width="100%">
+<img src="https://ivi-m.github.io/vitals/OneYearOfVaccineInCanada-s19.png" width="100%">
 
 
 
@@ -183,7 +183,7 @@ unvaccinated 76.1% vs. fully vaccinated **9.5%**
 
 
 
-NB: The statistics above is quoted directly from the source, where it was computed using  death data *since December 2020*, when there were no fully vaccinated Canadians yet (more exactly: there were 0 fully-vaccinated in December, < 1% for most of January,  <3%  until May). This is known as *algorithmic bias*, which skews results favourably towards fully-vaccinated cases. This bias can be removed using the technique described in [this paper](https://ivi-m.github.io/vv/comment2.pdf). 
+NB: The statistics above is quoted directly from the source, where it was computed using  death data *since December 2020*, when there were no fully vaccinated Canadians yet (more exactly: there were 0 fully-vaccinated in December, < 1% for most of January,  <3%  until May). This is known as *algorithmic bias*, which skews results favourably towards fully-vaccinated cases. This bias can be removed using the technique described in [this paper](https://ivi-m.github.io/vitals/comment2.pdf). 
 The unbiased statistics are shown below.
   
 ##### Infected cases by vaccination status, unbiased reporting (from December 04, 2021 to January 15, 2022) 
@@ -198,13 +198,13 @@ fully vaccinated     vs.    unvaccinated and partially-vaccinated: <br>
   
   
 <!-- 
-<a href="https://ivi-m.github.io/vv/One-Slide-update-2022-02-11.png">
-<img src="https://ivi-m.github.io/vv/One-Slide-update-2022-02-11.png" width="100%">
+<a href="https://ivi-m.github.io/vitals/One-Slide-update-2022-02-11.png">
+<img src="https://ivi-m.github.io/vitals/One-Slide-update-2022-02-11.png" width="100%">
 </a>
 
  
-<a href="https://ivi-m.github.io/vv/One-Slide-update.png">
-<img src="https://ivi-m.github.io/vv/One-Slide-update.png" width="100%">
+<a href="https://ivi-m.github.io/vitals/One-Slide-update.png">
+<img src="https://ivi-m.github.io/vitals/One-Slide-update.png" width="100%">
 </a>
 
  -->
@@ -235,8 +235,8 @@ Total (since Jan 2021):
 
 
 <!--
-<a href="https://ivi-m.github.io/vv/gc2-reactions.png">
-<img src="https://ivi-m.github.io/vv/gc2-reactions.png" width="500">
+<a href="https://ivi-m.github.io/vitals/gc2-reactions.png">
+<img src="https://ivi-m.github.io/vitals/gc2-reactions.png" width="500">
 </a>
 -->
 
@@ -273,8 +273,8 @@ Between December 2020 to  April 2021 (from the day first vaccination started to 
 -->
 
 <!-- 
-<a href="https://ivi-m.github.io/vv/gc3-deaths.png">
-<img src="https://ivi-m.github.io/vv/gc2-deaths.png" width="500">
+<a href="https://ivi-m.github.io/vitals/gc3-deaths.png">
+<img src="https://ivi-m.github.io/vitals/gc2-deaths.png" width="500">
 </a>
 
 -->
@@ -374,7 +374,7 @@ n = 192,405,448 older than 12 years of age in the US
 
 
 
-<img src="https://ivi-m.github.io/vv/OneYearOfVaccineInCanada-s13.png" width="100%" >
+<img src="https://ivi-m.github.io/vitals/OneYearOfVaccineInCanada-s13.png" width="100%" >
 
 
 
