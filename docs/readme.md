@@ -11,7 +11,6 @@ Last updated: February 15, 2022
 **Disclaimer**: The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
 any Canadian Agency, University, or Department. All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/ivi-m/vitals/).  
 
--
 <!-- Raison d'être:
 The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html).  They were developed and gathered by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community) as part of the community training and socializing, mostly on authors' own time and using authors' own resources.
 Table of Contents:
@@ -19,7 +18,7 @@ Table of Contents:
 
 ## Where to go from here:
 
-- [What did Chief Science Advisor of Canada say about COVID-19 vaccines]()
+- [What did Chief Science Advisor of Canada say about COVID-19 vaccines](https://ivi-m.github.io/vitals/#ChiefSciCan)
 - [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vitals/report-side-effect)
 <!-- - [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/) -->
 - Interactive *Open Canada Vitals Statitistcs (Deaths) Tracker* App: <https://open-canada.github.io/Apps/vitals> (mirror: <https://o-canada.shinyapps.io/vitals>).
@@ -51,8 +50,9 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
 
 -->
 
+<a name="#ChiefSciCan"></a>
 
-## Introduction: What Chief Science Advisor of Canada said about COVID-19 vaccines...
+## Introduction: What Chief Science Advisor of Canada said about COVID-19 vaccines.
 
 On March 31, 2021, just before COVID-19 vaccination of general public  commenced, the **Chief Science Advisor of Canada** in the ["*Scientific Considerations for Using COVID-19 Vaccination Certificates"*](https://science.gc.ca/eic/site/063.nsf/eng/h_98229.html) report has  expressed several concerns and recommendations related to the uncertanties associated with using new COVID-19 vaccines that were approved under Emergercy Act and did not go through all normally conducted testing stages. Some of these are listed below:
 
