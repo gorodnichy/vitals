@@ -9,7 +9,7 @@ Last updated: February 15, 2022
 
 
 **Disclaimer**: The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
-any Canadian Agency, University, or Department. All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/ivi-m/vitals/).  
+any Canadian Agency, University, or Department. All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/ivi-m/vitals/).  The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). 
 
 <!-- Raison d'être:
 The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html).  They were developed and gathered by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community) as part of the community training and socializing, mostly on authors' own time and using authors' own resources.
