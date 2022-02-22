@@ -7,41 +7,88 @@ Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 
 Last updated: February 15, 2022
 
-**Disclaimer**: The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
-any Canadian Agency, University, or Department. They were developed and gathered by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community) as part of the community training and socializing, mostly on authors' own time and using authors' own resources.
-All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/open-canada/vitals/).  
 
-<!-- Comments and corrections are welcome and should be emailed to <opencanadadataanalysis @ ivim . ca -->
+**Disclaimer**: The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
+any Canadian Agency, University, or Department. All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/ivi-m/vitals/).  
+
+-
+<!-- Raison d'être:
+The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html).  They were developed and gathered by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community) as part of the community training and socializing, mostly on authors' own time and using authors' own resources.
+Table of Contents:
+-->
+
+## Where to go from here:
+
+- [What did Chief Science Advisor of Canada say about COVID-19 vaccines]()
+- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vitals/report-side-effect)
+<!-- - [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/) -->
+- Interactive *Open Canada Vitals Statitistcs (Deaths) Tracker* App: <https://open-canada.github.io/Apps/vitals> (mirror: <https://o-canada.shinyapps.io/vitals>).
+- Archive of PHAC 'Cases following vaccination' reports ad data: [past reports](https://github.com/IVI-M/vitals/tree/main/docs/COVID-19%20epidemiology%20updates),
+Spreadsheet with raw data&nbsp;and calculations: (<a href="http://docs.google.com/spreadsheets/d/e/2PACX-1vT9YL1sdOLcImnAc5FPOq92pcnTBibk7NYZBYI1K5EXxOXgiBS7ONinDa336sAfw3AD4unOadWqFFNd/pubhtml">google sheets</a>,
+<a href="https://github.com/IVI-M/vitals/tree/main/docs/COVID-19%20epidemiology%20updates/Table2-log-calculations.xlsx">xls</a>, <a href="http://github.com/IVI-M/vitals/tree/main/docs/COVID-19%20epidemiology%20updates/Table2-log-calculations.pdf">pdf</a>)
 
 
+<!-- To facilitate further analysis and discussion, the following resources, tools and white papers have been gathered.-->
+
+<!-- 
+#### Codes and data archives
+
+- Archive of PHAC 'Cases following vaccination' reports (since July 2021, which is when PHAC started  reporting 'Cases by vaccination status' statistics): [/docs/COVID-19 epidemiology updates](https://github.com/IVI-M/vitals/tree/main/docs/COVID-19%20epidemiology%20updates). 
+  - Spreadsheet with raw Cases numbers extracted from archived PHAC reports (p.21, Table 2), which are counted since December 14, 2020: [PHAC_Cases_following_vaccination_Table2-raw-data-log.csv](https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-raw-data-log.csv)
+  - Spreadsheet with recomputed raw Cases numbers, which can be reported as weekly Cases average: [PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv](https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv)
+ 
+- Archive of Statistics Canada Table 13100810 (Provisional weekly death counts, by selected grouped causes of death): [open-canada/datasets/tree/main/statcan](https://github.com/open-canada/datasets/tree/main/statcan)
+- R codes to process and visualize StatCan and PHAC data: [/R](https://github.com/IVI-M/vitals/tree/main/R)
+-->
+
+<!-- - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://github.com/open-canada/vitals/blob/main/docs/r4gc-meetu[ivi-m.github.io/vitals](https://ivi-m.github.io/vitals) p-2022-02-04-SpecialEdition(OneYearOfVaccineInCanada).pdf), 
+Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup --> 
+<!-- by the community lead, Senior Data Scientist, Dr. Dmitry Gorodnichy (4 February 2022) -->
+
+<!-- 
+<a href="https://o-canada.shinyapps.io/vitals" >
+<img src="https://ivi-m.github.io/vitals/app.png" width="100%"></a>
+
+-->
 
 
+## Introduction: What Chief Science Advisor of Canada said about COVID-19 vaccines...
 
-## Raison d'être
-
-On March 31, 2021, just before COVID-19 vaccination of general public  commenced, the Chief Science Advisor of Canada in its ["*Scientific Considerations for Using COVID-19 Vaccination Certificates"*](https://science.gc.ca/eic/site/063.nsf/eng/h_98229.html) report has  expressed several concerns and recommendations related to the uncertanties associated with using new COVID-19 vaccines that were approved under Emergercy Act and did not go through all normally conducted testing stages, which include the following:
+On March 31, 2021, just before COVID-19 vaccination of general public  commenced, the **Chief Science Advisor of Canada** in the ["*Scientific Considerations for Using COVID-19 Vaccination Certificates"*](https://science.gc.ca/eic/site/063.nsf/eng/h_98229.html) report has  expressed several concerns and recommendations related to the uncertanties associated with using new COVID-19 vaccines that were approved under Emergercy Act and did not go through all normally conducted testing stages. Some of these are listed below:
 
 - Scientific uncertainties: *<u>Given the short time since the COVID-19 vaccines have become available, it is not surprising that many scientific uncertainties persist</u> and are the subject of intense ongoing studies*.
 - Ethical and Social Considerations: *It should also be noted that while the anticipation of more freedom may be an incentive for some to get vaccinated, <u>vaccine acceptance could decrease in others if there was a sense of coercion tied to using vaccination certificates.</u>*
 - Legal Considerations: *The processes by which vaccine certificates are issued and controlled <u>need to be fraud proof</u>*
 - Conclusion: *\[All levels of government could work to develop a framework that\] Maximizes <u>consistent post-vaccine monitoring</u>*
 
-Another report was issued by the Chief Science Advisor on July 16, 2021, just as the vaccination rates started to pick up (but still being low - less than 10%): ["*COVID-19 vaccine-associated myocarditis/pericarditis"*](https://science.gc.ca/eic/site/063.nsf/eng/h_98291.html), which -- in the light of the COVID-19 vaccine side effects that were just uncovered  half a year  after the vaccinae started to be used -- further emphasized the following:
+Another report was issued by the Chief Science Advisor Office on July 16, 2021, just as the vaccination rates started to pick up (but still being low - less than 10%): ["*COVID-19 vaccine-associated myocarditis/pericarditis"*](https://science.gc.ca/eic/site/063.nsf/eng/h_98291.html), which -- in the light of the COVID-19 vaccine side effects that were just uncovered -- further emphasized the following:
 
 - Priority actions moving forward: *<u>The emerging issue of vaccine associated heart disease requires attention</u> on two important levels:
     <u>addressing data and knowledge gaps</u> on the one hand, and <u>promoting awareness</u> and clinical care on the other.*
 
-It could have been expected that there would  more reports produced from the Chief Science Advisor Office to follow up on their own recommendations of "addressing data and knowledge gaps" and "promoting awareness", as more and more data just stated to be avalailable after July (especially after October 2021, when vaccination rate reached 75% and vital statistics (deaths) data has finally become available),
-<!-- , due to the several months delay in processing these data), -->
-and yet there were none produced, as of Februarry 2020 -- more than half a year after the previous report was issued.
-<!-- As of today  -- more than half a year later, with more than 80% Canadians now being vaccinated with  COVID-19 vaccines and with  numerous new Vital statistics and Vaccine Adverse Events data that hav been obtained since then (especially after October 2021, due to the average of three month delay in processing much of the data), -- this remains to be last report that the Chief Science Advisor of Canada has issued on the topic of COVID-19 vaccine safety and efficacy. -->
-It is not clear why. Equally it is not clear, why there is still not a single other publication or COVID-19 vaccine training produced by the Goverment of Canada that would be based on  the data obtained *after* the commencement of general public vaccination (i.e., after May and which has become avialable in public domain after October 2021), not prior to it. Numerous requests for such information were made.
+It could have been expected that there would be more reports produced from the Chief Science Advisor Office after July 2021 - to follow up on their  recommendations of "addressing data and knowledge gaps" and "promoting awareness", especially as much new data (such as 'Cases following vaccination' statistics) hase become availalable only after July 2021,
+<!-- after July (especially after October 2021, when vaccination rate reached 75% and vital statistics (deaths) data has finally become available),-->
+<!-- , due to the several months delay in processing these data), 
+and yet there were none produced. Still as of today, February 2022 .
+-->
+and yet there were none produced still, as of today, February 2022.
 
-In the absense to the official published analysis of the latest data, a group of data scientists from across several Goverment of Canada departments decided to conduct such analysis themselves, as part of their weekly data science training  and driven by  the desire to apply their new skills for public good, while also helping each other, as some members of the group experienced long-lasting (albeit called "non-serious") vaccine side effects that, they found, very difficult to report.
-This portal started as a result of these efforts.
+This portal is created to address this gap -- to provide Canadians with the new up to date information related to Vaccine safety and efficacy asdiretly observed form officially public Government of Canada data, most of which has become available after July 2021.
+<!-- As of today  -- more than half a year later, with more than 80% Canadians now being vaccinated with  COVID-19 vaccines and with  numerous new Vital statistics and Vaccine Adverse Events data that hav been obtained since then (especially after October 2021, due to the average of three month delay in processing much of the data), -- this remains to be last report that the Chief Science Advisor of Canada has issued on the topic of COVID-19 vaccine safety and efficacy. -->
+<!-- It is not clear why. Equally it is not clear, why there is still not a single other publication or COVID-19 vaccine training produced by the Goverment of Canada that would be based on  the new data that have become available *after* July.-->
+<!-- , which is when most the commencement of general public vaccination (i.e., after May and which has become avialable in public domain after October 2021), not prior to it. Numerous requests for such information were made.
+
+from across several Goverment of Canada departments --> 
+
+<!-- In the absense to the officially published analysis of the new data, a group of data scientists decided to conduct such analysis themselves, as part of their weekly data science training  and driven by  the desire to apply their new skills for public good, while also helping each other, as some members of the group experienced long-lasting (albeit called "non-serious") vaccine side effects that, they found, very difficult to report.
+This portal started as a result of these efforts. -->
 <!-- This portal is designed to address this gap. -->
-It provides links to  related  [Open Canada sources and datasets](), [Guidelines for reporting vaccine side-effects](https://ivi-m.github.io/vitals/report-side-effect), an interactive [Open Canada Vital Statistics (Death) Tracking application](https://open-canada.github.io/Apps/vitals) built by the community, and the [Observations]() made from the analysis  --- for sharing with the general public and policy-makers for greater awareness and further validation, in line with the recommendations of the  Office of the Chief Science Advisor 
+
+<!-- 
+It provides links to the related  [Open Canada sources and datasets](), [Guidelines for reporting vaccine side-effects](https://ivi-m.github.io/vitals/report-side-effect), an interactive [Open Canada Vital Statistics (Death) Tracking application](https://open-canada.github.io/Apps/vitals) built by the community, and the [Observations]() made from the analysis  --- for sharing with the general public and policy-makers for greater awareness and further validation, in line with the recommendations of the  Office of the Chief Science Advisor 
 and the [Scientific Integrity Policy](https://science.gc.ca/eic/site/063.nsf/eng/h_97643.html)  they  developed.
+
+-->
 
 <!-- 
 Because of the [Code of Conduct](https://github.com/IVI-M/vitals/raw/main/docs/legal/CBSA_conduct_code.pdf), which instructs Government of Canada employees to refrain from making  criticisms of  the Government of Canada, it has become very difficult to discuss anything in relationship to COVID-19 vaccine efficiency/safety.  Employees who experienced vaccine side effects or had  questions related to the above, would be afraid to express their concerns and seek for help, many wanted to remain anonymous. 
@@ -53,18 +100,20 @@ Because of the [Code of Conduct](https://github.com/IVI-M/vitals/raw/main/docs/l
 ## Key observations
 
 
-<!-- (as being over 90% efficient) and safety (as being "very safe"). -->
+<!-- (as being over 90% efficient) and safety (as being "very safe"). 
+*after* the start of general public vaccination
+Recommendations are made to reevaluate vaccine efficacy and safety.based on the emperiical data obtained *<u>after</u>* May, as this is when most (over 95%) of these data was obtained.
 
-- Open Canada data that has become available *after* the start of general public vaccination <u>do not appear to support </u>  the COVID-19  vaccine manufacturers\' original claims about  vaccine efficacy and safety. Recommendations are made to reevaluate vaccine efficacy and safety.based on the emperiical data obtained *<u>after</u>* May, as this is when most (over 95%) of these data was obtained.
+-->
 
-- The number of reported serious adverse events from COVID-19 vaccine (including deaths and key organs failures)   appears to be the same order of magnitude as the number of COVID-19 deaths alone, and for certain populations higher than that. 
-    -  It is also noted that these numbers are reported with several months delay and may not represent the true number of side-events, as reporting of vaccines side-events is not mandatory and 
+- Open Canada data that has become available *after* Kuly 2021 <u>do not appear to support </u>  the COVID-19  vaccine manufacturers\' original claims about  vaccine efficacy and safety (See images below). Specifically:
 
-- The risk of COVID deaths for population younger than 65 and with no other health issues is about two orders of magnitude less than for older poplations with other heath issues.   
-    - Natural immunity is confirmed to be reduce the risk of hostpiliations more than vaccine-induced immunity
+    - The number of reported serious adverse events from COVID-19 vaccine (including deaths and key organs failures)   appears to be the same order of magnitude as the number of COVID-19 deaths alone, and for certain populations higher than that. It is also noted that these numbers are reported with several months delay and may not represent the true number of side-events, as reporting of vaccines side-events is not mandatory and 
+
+    - The risk of COVID deaths for population younger than 65 and with no other health issues is about two orders of magnitude less than for older populations with pre-existing heath issues.  Additionally, natural immunity is confirmed to reduce the risk of hospitalizations more than vaccine-induced immunity.
     
-- Certain reports produced by the Government of Canada (PHAC 'Cases following vaccination' reports) appear to contain algorithmic bias that skews the results  in the favour of  manufacturers' claims about vaccine efficacy. 
-    - When recomputed without this  bias,  the reported data  <u>do not appear to support</u> the claims made in those reports that *“Fully vaccinated individuals diagnosed with COVID-19 were significantly protected from severe outcomes.”*. The data shows that the numbers of severe outcomes (deaths and hostitlizations) of fully vaccinated, in fact, is comparable to that of unvaccinated. More detailed analysis, which is would compare the rate of the increase of severe outcomes among fully vaccinated to the national vaccination rate increase, is required. --  See images below.
+    - Certain reports produced by the Government of Canada (PHAC 'Cases following vaccination' reports) appear to contain algorithmic bias that skews   the results significantly (by order of magnitude) in favour of Fully vaccinated.  The skew was most noticeable at early stages of reporting 'Cases by Vaccination Status' statistics (July - September), when instead of the observed  10%-30% deaths among Fully vaccinated, PHAC reported only 1%-3% of them.
+  <!--   - When recomputed without this  bias,  the reported data  <u>do not appear to support</u> the claims made in those reports that *“Fully vaccinated individuals diagnosed with COVID-19 were significantly protected from severe outcomes.”*. The data show  that the percentage of severe outcomes (deaths and hostitlizations) of fully vaccinated is comparable to that of unvaccinated.  More detailed analysis, which is would compare the rate of the increase of severe outcomes among fully vaccinated to the national vaccination rate increase, is required. -->       
 
 
 
@@ -72,36 +121,6 @@ Because of the [Code of Conduct](https://github.com/IVI-M/vitals/raw/main/docs/l
 <img src="https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-rel.png" width="100%">
 <img src="https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC-cases-by-vaccination-recomputed-per-week-abs.png" width="100%">
  
-
-To facilitate further analysis and discussion, the following resources, tools and white papers have been gathered.
-
-#### Codes and data archives
-
-- Archive of PHAC 'Cases following vaccination' reports (since July 2021, which is when PHAC started  reporting 'Cases by vaccination status' statistics): [/docs/COVID-19 epidemiology updates](https://github.com/IVI-M/vitals/tree/main/docs/COVID-19%20epidemiology%20updates). 
-  - Spreadsheet with raw Cases numbers extracted from archived PHAC reports (p.21, Table 2), which are counted since December 14, 2020: [PHAC_Cases_following_vaccination_Table2-raw-data-log.csv](https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-raw-data-log.csv)
-  - Spreadsheet with recomputed raw Cases numbers, which can be reported as weekly Cases average: [PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv](https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv)
- 
-- Archive of Statistics Canada Table 13100810 (Provisional weekly death counts, by selected grouped causes of death): [open-canada/datasets/tree/main/statcan](https://github.com/open-canada/datasets/tree/main/statcan)
-- R codes to process and visualize StatCan and PHAC data: [/R](https://github.com/IVI-M/vitals/tree/main/R)
-
-
-#### Self-help tools:
-
-- [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vitals/report-side-effect)
-- [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/)
-
-#### Interactive Apps:
-
-- Interactive *Open Canada Vitals Statitistcs (Deaths) Tracker* App: <https://open-canada.github.io/Apps/vitals> (mirror: <https://o-canada.shinyapps.io/vitals>).
-<!-- - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://github.com/open-canada/vitals/blob/main/docs/r4gc-meetu[ivi-m.github.io/vitals](https://ivi-m.github.io/vitals) p-2022-02-04-SpecialEdition(OneYearOfVaccineInCanada).pdf), 
-Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup --> 
-<!-- by the community lead, Senior Data Scientist, Dr. Dmitry Gorodnichy (4 February 2022) -->
-
-
-<a href="https://o-canada.shinyapps.io/vitals" >
-<img src="https://ivi-m.github.io/vitals/app.png" width="100%"></a>
-
-
 
 
 
@@ -138,6 +157,8 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup  by
 [gc1] **Cases following vaccination, COVID-19 Daily Epidemiology Update, Public Health Agency of Canada**,  <https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html#a9> ([archived reports](https://github.com/open-canada/vitals/tree/main/docs/COVID-19%20epidemiology%20updates))
 
 
+Spreadsheet with raw data&nbsp;and calculations: (<a href="http://docs.google.com/spreadsheets/d/e/2PACX-1vT9YL1sdOLcImnAc5FPOq92pcnTBibk7NYZBYI1K5EXxOXgiBS7ONinDa336sAfw3AD4unOadWqFFNd/pubhtml">google sheets</a>,
+<a href="https://github.com/IVI-M/vitals/tree/main/docs/COVID-19%20epidemiology%20updates/Table2-log-calculations.xlsx">xls</a>, <a href="http://github.com/IVI-M/vitals/tree/main/docs/COVID-19%20epidemiology%20updates/Table2-log-calculations.pdf">pdf</a>)
  
 <!-- 
 
@@ -311,8 +332,11 @@ Multiple insights and anomalies (possibly, “new normals”) are observed:
 )
 
 - Risk of Facial paralysis/Bell’s Palsy. Posted: 2021-08-06 
-- Risk of Myocarditis and pericarditis. Posted: 2021-06-30 (bover x 1000 - [Explanation](https://www.youtube.com/watch?v=Hb1Xm1uaedU))
+
+- Risk of Myocarditis and pericarditis. Posted: 2021-06-30 ( [Explanation](https://www.youtube.com/watch?v=Hb1Xm1uaedU), Data from [www.health.gov.au/](https://www.health.gov.au/sites/default/files/documents/2021/10/covid-19-vaccination-guidance-on-myocarditis-and-pericarditis-after-mrna-covid-19-vaccines.pdf))
+
 - Risk of Capillary Leak Syndrome. Posted: 2021-06-29
+
 - Risk of Thrombosis with Thrombocytopenia. Posted: 2021-03-24
 
 
@@ -389,12 +413,6 @@ n = 192,405,448 older than 12 years of age in the US
 
 
 <hr>
-
- 
-[www.IVIM.ca](http://www.IVIM.ca) (forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))
-<br>
-Corrections/Comments:  opencanadadataanalysis@ivim.ca ]     
- 
  
  
 <!-- https://covid-19.ontario.ca/data 
@@ -431,5 +449,24 @@ Hospitalization rates among unvaccinatedindividuals continue to be higher than t
  
 
 -->
+
+<!-- 
+**Disclaimer**: The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
+any Canadian Agency, University, or Department. They were developed and gathered by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community) as part of the community training and socializing, mostly on authors' own time and using authors' own resources.
+All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/ivi-m/vitals/).  
+
+-->
+
+ 
+[www.IVIM.ca](http://www.IVIM.ca) (forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))
+<br>
+Corrections/Comments:  opencanadadataanalysis@ivim.ca ].
+<a href="https://twitter.com/unbiased__one">Twitter</a>, <a href="https://www.youtube.com/user/IVI0IVI">YouTube</a></p>
+ 
+
+
+<!-- Comments and corrections are welcome and should be emailed to <opencanadadataanalysis @ ivim . ca -->
+
+
 
 
