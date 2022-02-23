@@ -126,7 +126,7 @@ Recommendations are made to reevaluate vaccine efficacy and safety.based on the 
 
 #### White Papers:
 
--  ["Additional  observations related to the 'Elephant in the Room' –  from the Government of Canada COVID-19 daily epidemiology updates.  Time to act!"](https://ivi-m.github.io/vitals/comment2.pdf), White paper (10 February 2022) 
+-  ["Additional  observations related to the 'Elephant in the Room' –  from the Government of Canada COVID-19 daily epidemiology updates"](https://ivi-m.github.io/vitals/comment2.pdf), White paper (10 February 2022) 
 
 -  ["Some observations from Canadian Vital Statistics Death (CVSD) Database related to
     the 'Elephant in the Room'"](https://ivi-m.github.io/vitals/comment.pdf), Comment submission to The Lancet Journal (6 January 2022)
