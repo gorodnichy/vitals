@@ -74,26 +74,7 @@ and yet there were none produced. Still as of today, February 2022 .
 and yet there were none produced still, as of today, February 2022.
 
 This portal is created to address this gap -- to provide Canadians with the new up to date information related to Vaccine safety and efficacy asdiretly observed form officially public Government of Canada data, most of which has become available after July 2021.
-<!-- As of today  -- more than half a year later, with more than 80% Canadians now being vaccinated with  COVID-19 vaccines and with  numerous new Vital statistics and Vaccine Adverse Events data that hav been obtained since then (especially after October 2021, due to the average of three month delay in processing much of the data), -- this remains to be last report that the Chief Science Advisor of Canada has issued on the topic of COVID-19 vaccine safety and efficacy. -->
-<!-- It is not clear why. Equally it is not clear, why there is still not a single other publication or COVID-19 vaccine training produced by the Goverment of Canada that would be based on  the new data that have become available *after* July.-->
-<!-- , which is when most the commencement of general public vaccination (i.e., after May and which has become avialable in public domain after October 2021), not prior to it. Numerous requests for such information were made.
 
-from across several Goverment of Canada departments --> 
-
-<!-- In the absense to the officially published analysis of the new data, a group of data scientists decided to conduct such analysis themselves, as part of their weekly data science training  and driven by  the desire to apply their new skills for public good, while also helping each other, as some members of the group experienced long-lasting (albeit called "non-serious") vaccine side effects that, they found, very difficult to report.
-This portal started as a result of these efforts. -->
-<!-- This portal is designed to address this gap. -->
-
-<!-- 
-It provides links to the related  [Open Canada sources and datasets](), [Guidelines for reporting vaccine side-effects](https://ivi-m.github.io/vitals/report-side-effect), an interactive [Open Canada Vital Statistics (Death) Tracking application](https://open-canada.github.io/Apps/vitals) built by the community, and the [Observations]() made from the analysis  --- for sharing with the general public and policy-makers for greater awareness and further validation, in line with the recommendations of the  Office of the Chief Science Advisor 
-and the [Scientific Integrity Policy](https://science.gc.ca/eic/site/063.nsf/eng/h_97643.html)  they  developed.
-
--->
-
-<!-- 
-Because of the [Code of Conduct](https://github.com/IVI-M/vitals/raw/main/docs/legal/CBSA_conduct_code.pdf), which instructs Government of Canada employees to refrain from making  criticisms of  the Government of Canada, it has become very difficult to discuss anything in relationship to COVID-19 vaccine efficiency/safety.  Employees who experienced vaccine side effects or had  questions related to the above, would be afraid to express their concerns and seek for help, many wanted to remain anonymous. 
-
--->
 
 <!-- ### Observations -->
 
