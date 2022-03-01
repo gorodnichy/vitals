@@ -5,7 +5,7 @@ Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 ==================================================
 
-Last updated: February 15, 2022
+Last updated: February 28, 2022
 
 
 **Disclaimer**: The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
@@ -18,6 +18,7 @@ Table of Contents:
 
 ## Where to go from here:
 
+- NEW: LIVE analysis of official data has moved to <www.IVIM.ca>
 - [What did Chief Science Advisor of Canada say about COVID-19 vaccines](https://ivi-m.github.io/vitals/#ChiefSciCan)
 - [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vitals/report-side-effect)
 <!-- - [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/) -->
@@ -66,12 +67,8 @@ Another report was issued by the Chief Science Advisor Office on July 16, 2021, 
 - Priority actions moving forward: *<u>The emerging issue of vaccine associated heart disease requires attention</u> on two important levels:
     <u>addressing data and knowledge gaps</u> on the one hand, and <u>promoting awareness</u> and clinical care on the other.*
 
-It could have been expected that there would be more reports produced from the Chief Science Advisor Office after July 2021 - to follow up on their  recommendations of "addressing data and knowledge gaps" and "promoting awareness", especially as much new data (such as 'Cases following vaccination' statistics) hase become availalable only after July 2021,
-<!-- after July (especially after October 2021, when vaccination rate reached 75% and vital statistics (deaths) data has finally become available),-->
-<!-- , due to the several months delay in processing these data), 
-and yet there were none produced. Still as of today, February 2022 .
--->
-and yet there were none produced still, as of today, February 2022.
+It could have been expected that there would be more reports produced from the Chief Science Advisor Office after July 2021 - to follow up on their  recommendations of "addressing data and knowledge gaps" and "promoting awareness", especially as most  data (such as 'Cases following vaccination' statistics) have become availalable <u>only after</u> July 2021,
+and yet there were none produced still, as of February 2022.
 
 This portal is created to address this gap -- to provide Canadians with the up to date information related to Vaccine safety and efficacy --
 as directly observed form official public Government of Canada data, most of which has become available after July 2021 -- inline with the considerations by Chief Science Advisor of Canada  listed above and the [Scientific Integrity Policy](https://science.gc.ca/eic/site/063.nsf/eng/h_97643.html) principles that they have developed.
@@ -94,7 +91,7 @@ Recommendations are made to reevaluate vaccine efficacy and safety.based on the 
 
     - The risk of COVID deaths for population younger than 65 and with no other health issues is about two orders of magnitude less than for older populations with pre-existing heath issues.  Additionally, natural immunity is confirmed to reduce the risk of hospitalizations more than vaccine-induced immunity.
     
-    - Certain reports produced by the Government of Canada (PHAC 'Cases following vaccination' reports) appear to contain algorithmic bias that skews   the results significantly (by order of magnitude) in favour of Fully vaccinated.  The skew was most noticeable at early stages of reporting 'Cases by Vaccination Status' statistics (July - September), when instead of the observed  10%-30% deaths among Fully vaccinated, PHAC reported only 1%-3% of them.
+    - Certain reports produced by the Government of Canada (PHAC 'Cases following vaccination' reports) appear to contain algorithmic bias that skews   the results significantly (by order of magnitude) in favour of Fully vaccinated.  The skew was most noticeable at early stages of reporting 'Cases by Vaccination Status' statistics (July - September), when instead of the observed  10%-30% cases/deaths among Fully vaccinated, PHAC reported only 1%-3% of them.
   <!--   - When recomputed without this  bias,  the reported data  <u>do not appear to support</u> the claims made in those reports that *“Fully vaccinated individuals diagnosed with COVID-19 were significantly protected from severe outcomes.”*. The data show  that the percentage of severe outcomes (deaths and hostitlizations) of fully vaccinated is comparable to that of unvaccinated.  More detailed analysis, which is would compare the rate of the increase of severe outcomes among fully vaccinated to the national vaccination rate increase, is required. -->       
 
 
