@@ -73,7 +73,8 @@ and yet there were none produced. Still as of today, February 2022 .
 -->
 and yet there were none produced still, as of today, February 2022.
 
-This portal is created to address this gap -- to provide Canadians with the new up to date information related to Vaccine safety and efficacy asdiretly observed form officially public Government of Canada data, most of which has become available after July 2021.
+This portal is created to address this gap -- to provide Canadians with the up to date information related to Vaccine safety and efficacy --
+as directly observed form official public Government of Canada data, most of which has become available after July 2021 -- inline with the considerations by Chief Science Advisor of Canada  listed above and the [Scientific Integrity Policy](https://science.gc.ca/eic/site/063.nsf/eng/h_97643.html) principles that they have developed.
 
 
 <!-- ### Observations -->
