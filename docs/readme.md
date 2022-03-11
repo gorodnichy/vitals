@@ -18,7 +18,7 @@ Table of Contents:
 
 ## Where to go from here:
 
-- NEW: LIVE analysis of official data has moved to <www.IVIM.ca>
+- NEW: LIVE analysis of official data has moved to <https://www.IVIM.ca>
 - [What did Chief Science Advisor of Canada say about COVID-19 vaccines](https://ivi-m.github.io/vitals/#ChiefSciCan)
 - [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vitals/report-side-effect)
 <!-- - [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/) -->
@@ -51,7 +51,7 @@ Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup -->
 
 -->
 
-<a name="#ChiefSciCan"></a>
+<a name="ChiefSciCan"></a>
 
 ## Introduction: What Chief Science Advisor of Canada said about COVID-19 vaccines.
 
