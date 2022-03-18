@@ -5,7 +5,7 @@ Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 ==================================================
 
-[ivi-m.github.io/vitals](https://ivi-m.github.io/vitals) (forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))
+[ivi-m.github.io/vitals](https://ivi-m.github.io/vitals) (forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))    
 Last updated: March 2, 2022
 
 
