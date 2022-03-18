@@ -5,7 +5,8 @@ Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 ==================================================
 
-Last updated: February 28, 2022
+[ivi-m.github.io/vitals](https://ivi-m.github.io/vitals) (forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))
+Last updated: March 2, 2022
 
 
 **Disclaimer**: The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
@@ -18,7 +19,7 @@ Table of Contents:
 
 ## Where to go from here:
 
-- NEW: LIVE analysis of official data has moved to <https://www.IVIM.ca>
+- NEW: [LIVE SPREADSHEET:  Official Data Related to COVID-19 Vaccine Efficacy and Safety - Dashboard and raw data](https://docs.google.com/spreadsheets/d/1lSO5jJwTkMNGl9kk6Y5jeGORGS11KzEE5yTxBGrGYKw)
 - [What did Chief Science Advisor of Canada say about COVID-19 vaccines](https://ivi-m.github.io/vitals/#ChiefSciCan)
 - [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vitals/report-side-effect)
 <!-- - [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/) -->
@@ -436,11 +437,16 @@ All codes behind the analysis and supporting documents are free, open and availa
 
 -->
 
- 
+ <!-- 
 [www.IVIM.ca](http://www.IVIM.ca) (forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))
 <br>
+
+-->
 Corrections/Comments:  opencanadadataanalysis@ivim.ca ].
+<!-- 
 <a href="https://twitter.com/unbiased__one">Twitter</a>, <a href="https://www.youtube.com/user/IVI0IVI">YouTube</a></p>
+
+-->
  
 
 
