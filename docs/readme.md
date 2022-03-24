@@ -19,30 +19,39 @@ months ago and those who are unvaccinated, in terms of the risks that they pose 
 
 ## Weekly update ([Live Google spreadsheet](https://ivi-m.github.io/vitals/data)):
 
-Percentage of Fully vaccinated: 
-- In Canada (Full vaccination rate): 80.7%
-- In C19 cases: 83.9%
-- In C19 deaths: 76.4%
+Percentage of Fully vaccinated: last week (six-month weekly average)
+- In Canada - Full vaccination rate : 80.7% (75%)
+- In C19 cases: 83.9% (62%)
+- In C19 deaths: 76.4% (52%)
 
 
-C-19 Deaths:
-- All ages, including deaths from other causes with C19 positive: 228 (ie 6 in million)
-  - Of  these, for youth under 20 years of age : 0.1%
-  - Of  these, for people under 40 years of age : 1%
-- Average age of deceased: 75 +/-3 years  
-- C19 Deaths / C19 Cases: 0.75% 
+C19 Deaths: last week (six-month weekly average)
+- All ages*: 228 or 6 people in million (276.9)
+- Under 20 : 0 (0.2)
+- Under 40 : 2 (2.5)
+- Average age of deceased: 75  years  
+- Without no other death cause**: 20 +/- 10
+\* Includes deaths from other causes with C19 positive test.
+\** Estimated based on historical data
+
+Other deaths in the same week, based on [historical data](https://open-canada.github.io/vitals/app):
+- Total: ~6000
+- Cancer-related: ~1500
+- Heart deseases: ~1000
+- Accidents: ~300
+- Suicides: ~100
+
+C19 Cases resulting in Deaths:
+- All: 0.78% 
+- Unvacinated: 1.0%
+- Vaccinated with 2 doses: 0.5%
+- Vaccinated with 3 dosesL 0.9
 
 
-<!-- 
-- C19 Deaths without other causes / C19 Deaths : ~10 % (estimated)
-Other deaths:
-In Historically Deaths
-
--->
-
-C-19 Vaccine Severe reactions (six-month weekly average)
-- All ages: 150 
-  -  Of  these, for youth under 20 years of age : 8%
+C-19 Vaccine Severe reactions (three-month weekly average adjusted for the reporting delay)
+- All ages:  207 
+- Under 20: 14
+\* Average delay in reporting: 4 months
 <!-- 
 
 
@@ -56,7 +65,7 @@ any Canadian Agency, University, or Department. All codes behind the analysis an
 
 ## Where to go from here:
 
-- NEW: [LIVE SPREADSHEET:  Official Data Related to COVID-19 Vaccine Efficacy and Safety - Dashboard and raw data](https://docs.google.com/spreadsheets/d/1lSO5jJwTkMNGl9kk6Y5jeGORGS11KzEE5yTxBGrGYKw)
+- [LIVE SPREADSHEET:  Official Data Related to COVID-19 Vaccine Efficacy and Safety - Dashboard and raw data](https://docs.google.com/spreadsheets/d/1lSO5jJwTkMNGl9kk6Y5jeGORGS11KzEE5yTxBGrGYKw) 
 - [What did Chief Science Advisor of Canada say about COVID-19 vaccines](https://ivi-m.github.io/vitals/#ChiefSciCan)
 - [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vitals/report-side-effect)
 <!-- - [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/) -->
@@ -66,28 +75,11 @@ Spreadsheet with raw data&nbsp;and calculations: (<a href="http://docs.google.co
 <a href="https://github.com/IVI-M/vitals/tree/main/docs/COVID-19%20epidemiology%20updates/Table2-log-calculations.xlsx">xls</a>, <a href="http://github.com/IVI-M/vitals/tree/main/docs/COVID-19%20epidemiology%20updates/Table2-log-calculations.pdf">pdf</a>)
 
 
-<!-- To facilitate further analysis and discussion, the following resources, tools and white papers have been gathered.-->
 
-<!-- 
-#### Codes and data archives
+## Live Spreadsheet
 
-- Archive of PHAC 'Cases following vaccination' reports (since July 2021, which is when PHAC started  reporting 'Cases by vaccination status' statistics): [/docs/COVID-19 epidemiology updates](https://github.com/IVI-M/vitals/tree/main/docs/COVID-19%20epidemiology%20updates). 
-  - Spreadsheet with raw Cases numbers extracted from archived PHAC reports (p.21, Table 2), which are counted since December 14, 2020: [PHAC_Cases_following_vaccination_Table2-raw-data-log.csv](https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-raw-data-log.csv)
-  - Spreadsheet with recomputed raw Cases numbers, which can be reported as weekly Cases average: [PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv](https://github.com/IVI-M/vitals/raw/main/docs/COVID-19%20epidemiology%20updates/PHAC_Cases_following_vaccination_Table2-recalculated-wo-bias.csv)
- 
-- Archive of Statistics Canada Table 13100810 (Provisional weekly death counts, by selected grouped causes of death): [open-canada/datasets/tree/main/statcan](https://github.com/open-canada/datasets/tree/main/statcan)
-- R codes to process and visualize StatCan and PHAC data: [/R](https://github.com/IVI-M/vitals/tree/main/R)
--->
+<iframe frameborder="0" height="420" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9YL1sdOLcImnAc5FPOq92pcnTBibk7NYZBYI1K5EXxOXgiBS7ONinDa336sAfw3AD4unOadWqFFNd/pubhtml?widget=true&amp;headers=false" width="100%"></iframe>
 
-<!-- - ["One Year since Vaccination. What we have learnt - using Open Canada Data and Data Science"](https://github.com/open-canada/vitals/blob/main/docs/r4gc-meetu[ivi-m.github.io/vitals](https://ivi-m.github.io/vitals) p-2022-02-04-SpecialEdition(OneYearOfVaccineInCanada).pdf), 
-Special Edition presentation for the R4GC Community 'Lunch and Learn' Meetup --> 
-<!-- by the community lead, Senior Data Scientist, Dr. Dmitry Gorodnichy (4 February 2022) -->
-
-<!-- 
-<a href="https://o-canada.shinyapps.io/vitals" >
-<img src="https://ivi-m.github.io/vitals/app.png" width="100%"></a>
-
--->
 
 <a name="ChiefSciCan"></a>
 
