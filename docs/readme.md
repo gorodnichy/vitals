@@ -2,22 +2,45 @@
 Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 -->
 
-Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
+Analysis of Official Canada Data Related to COVID-19 Vaccine Efficacy and Safety
 ==================================================
 
-[ivi-m.github.io/vitals](https://ivi-m.github.io/vitals) (forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))    
+[ivi-m.github.io/vitals](https://ivi-m.github.io/vitals) (originally: [open-canada.github.io/vitals](https://open-canada.github.io/vitals))    
 Last updated: March 23, 2022
 
 ## News
 
-- ["PSAC files policy grievances against federal vaccination policy" (23 March 2022)](https://psacunion.ca/psac-files-policy-grievances-against-federal)
-<span class="badge badge-secondary">New</span> 
-- ["State Health Departments Forced to Remove False Information About COVID-19 Vaccines"](https://www.icandecide.org/state-health-departments-forced-to-remove-false-information-about-covid-19-vaccines/)
+- ["PSAC files policy grievances against federal vaccination policy"](https://psacunion.ca/psac-files-policy-grievances-against-federal)
+, 23 March 2022
+- ["State Health Departments Forced to Remove False Information About COVID-19 Vaccines"](https://www.icandecide.org/state-health-departments-forced-to-remove-false-information-about-covid-19-vaccines/), 8 March 2022
+- ["There is no longer a strong scientific reason to differentially treat those who were fully vaccinated
+months ago and those who are unvaccinated, in terms of the risks that they pose for transmitting COVID to others" (Letter to the University of British Columbia from UBC Professors](https://github.com/IVI-M/vitals/raw/main/docs/2022-02-20-Letter-to-UBC-Pres-from-UBC-experts.pdf),  20 February 2022
 
 
-## Latest statistics:
+## Weekly update ([Live Google spreadsheet](https://ivi-m.github.io/vitals/data)):
+
+As of March 18, 2022
+
+C-19 Deaths:
+
+- All ages, including deaths from other causes (with COVID positive test in death certificate): 228, or 0.56 in 100,000
+- Of  these, for youth under 20 years of age : 0.1% * 228 = 0.2 or 0.00056 in 100,000
+- Of  these, for people under 20 years of age : 1% * 228 = 0.2 or 0.056 in 100,000
+
+- Average age of deceased: 75 +/-3 years  
+- Average mortality of C-19 cases: 0.75%
+
+Percentage of Fully vaccinated: 
+
+- Among C-19 deaths: 76.4%
+- Among all C-19 cases: 83.9%
+
+- Among all Canadian population (Full vaccination rate): 80.7%
+
 
 <!-- 
+
+C-19 Vaccine Severe reactions:
   
 **Disclaimer**: The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
 any Canadian Agency, University, or Department. All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/ivi-m/vitals/).  The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). 
