@@ -19,28 +19,33 @@ months ago and those who are unvaccinated, in terms of the risks that they pose 
 
 ## Weekly update ([Live Google spreadsheet](https://ivi-m.github.io/vitals/data)):
 
-As of March 18, 2022
+Percentage of Fully vaccinated: 
+- In Canada (Full vaccination rate): 80.7%
+- In C19 cases: 83.9%
+- In C19 deaths: 76.4%
+
 
 C-19 Deaths:
-
-- All ages, including deaths from other causes (with COVID positive test in death certificate): 228, or 0.56 in 100,000
-- Of  these, for youth under 20 years of age : 0.1% * 228 = 0.2 or 0.00056 in 100,000
-- Of  these, for people under 20 years of age : 1% * 228 = 0.2 or 0.056 in 100,000
-
+- All ages, including deaths from other causes with C19 positive: 228 (ie 6 in million)
+  - Of  these, for youth under 20 years of age : 0.1%
+  - Of  these, for people under 40 years of age : 1%
 - Average age of deceased: 75 +/-3 years  
-- Average mortality of C-19 cases: 0.75%
-
-Percentage of Fully vaccinated: 
-
-- Among C-19 deaths: 76.4%
-- Among all C-19 cases: 83.9%
-
-- Among all Canadian population (Full vaccination rate): 80.7%
+- C19 Deaths / C19 Cases: 0.75% 
 
 
 <!-- 
+- C19 Deaths without other causes / C19 Deaths : ~10 % (estimated)
+Other deaths:
+In Historically Deaths
 
-C-19 Vaccine Severe reactions:
+-->
+
+C-19 Vaccine Severe reactions (six-month weekly average)
+- All ages: 150 
+  -  Of  these, for youth under 20 years of age : 8%
+<!-- 
+
+
   
 **Disclaimer**: The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
 any Canadian Agency, University, or Department. All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/ivi-m/vitals/).  The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). 
