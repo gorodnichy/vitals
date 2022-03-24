@@ -8,22 +8,44 @@ Analysis of Official Canada Data Related to COVID-19 Vaccine Efficacy and Safety
 [ivi-m.github.io/vitals](https://ivi-m.github.io/vitals) (originally: [open-canada.github.io/vitals](https://open-canada.github.io/vitals))    
 Last updated: March 23, 2022
 
-## News
+## News 
 
-- ["PSAC files policy grievances against federal vaccination policy"](https://psacunion.ca/psac-files-policy-grievances-against-federal)
-, 23 March 2022
-- ["State Health Departments Forced to Remove False Information About COVID-19 Vaccines"](https://www.icandecide.org/state-health-departments-forced-to-remove-false-information-about-covid-19-vaccines/), 8 March 2022
-- ["There is no longer a strong scientific reason to differentially treat those who were fully vaccinated
-months ago and those who are unvaccinated, in terms of the risks that they pose for transmitting COVID to others" (Letter to the University of British Columbia from UBC Professors](https://github.com/IVI-M/vitals/raw/main/docs/2022-02-20-Letter-to-UBC-Pres-from-UBC-experts.pdf),  20 February 2022
+23 Mar 2022: ["PSAC files policy grievances against federal vaccination policy"](https://psacunion.ca/psac-files-policy-grievances-against-federal), Public Service Alliance of Canada, 
+
+8 Mar 2022: ["Vancouver Coastal Health’s top doctor said vaccine mandates may cause more harm than good, letter reveals"](http://www.theglobeandmail.com/canada/british-columbia/article-vancouver-coastal-healths-top-doctor-said-vaccine-mandates-may-cause), the globe and mail
+
+20 Feb 2022: ["There is no longer a strong scientific reason to differentially treat those who were fully vaccinated
+months ago and those who are unvaccinated, in terms of the risks that they pose for transmitting COVID to others"](https://github.com/IVI-M/vitals/raw/main/docs/2022-02-20-Letter-to-UBC-Pres-from-UBC-experts.pdf), Letter to the University of British Columbia President from the University Professors 
+
+24 Feb, 2022: 'Not demonstrably justified': High Court upholds challenge to Police and NZDF vaccination mandates, terminations suspended
 
 
-## Weekly update ([Live Google spreadsheet](https://ivi-m.github.io/vitals/data)):
+<!-- - ["State Health Departments Forced to Remove False Information About COVID-19 Vaccines"](https://www.icandecide.org/state-health-departments-forced-to-remove-false-information-about-covid-19-vaccines/),
+-->
+
+## Weekly Update ([Live Google spreadsheet](https://ivi-m.github.io/vitals/data)):
 
 Percentage of Fully vaccinated: last week (six-month weekly average)
+
 - In Canada - Full vaccination rate : 80.7% (75%)
 - In C19 cases: 83.9% (62%)
 - In C19 deaths: 76.4% (52%)
 
+Percentage of Fully vaccinated | last week  | six-month weekly average |
+In Canada (Full vaccination rate) | 80.7% | 75% | 
+In C19 cases |  83.9% | 62% |
+In C19 deaths | 76.4% | 52% |
+
+Percentage of Fully vaccinated | last week  | six-month weekly average |
+-------------------------------|------------|--------------------------|
+In Canada (Full vaccination rate) | 80.7% | 75% | 
+In C19 cases |  83.9% | 62% |
+In C19 deaths | 76.4% | 52% |
+
+| Percentage of Fully vaccinated | last week  | six-month weekly average |
+| In Canada (Full vaccination rate) | 80.7% | 75% | 
+| In C19 cases |  83.9% | 62% |
+| In C19 deaths | 76.4% | 52% |
 
 C19 Deaths: last week (six-month weekly average)
 - All ages*: 228 (276.9), or 6 people in million 
