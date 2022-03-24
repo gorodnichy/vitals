@@ -52,6 +52,8 @@ C-19 Vaccine Severe reactions (three-month weekly average adjusted for the repor
 - All ages:  207 
 - Under 20: 14
 \* Average delay in reporting: 4 months
+
+
 <!-- 
 
 
@@ -65,7 +67,7 @@ any Canadian Agency, University, or Department. All codes behind the analysis an
 
 ## Where to go from here:
 
-- [LIVE SPREADSHEET:  Official Data Related to COVID-19 Vaccine Efficacy and Safety - Dashboard and raw data](https://docs.google.com/spreadsheets/d/1lSO5jJwTkMNGl9kk6Y5jeGORGS11KzEE5yTxBGrGYKw) 
+- [Live Spreadsheet:  Official Data Related to COVID-19 Vaccine Efficacy and Safety - Dashboard and raw data](https://docs.google.com/spreadsheets/d/1lSO5jJwTkMNGl9kk6Y5jeGORGS11KzEE5yTxBGrGYKw) 
 - [What did Chief Science Advisor of Canada say about COVID-19 vaccines](https://ivi-m.github.io/vitals/#ChiefSciCan)
 - [Guide on how to report COVID-19 vaccine side-effects in Canada as a consumer](https://ivi-m.github.io/vitals/report-side-effect)
 <!-- - [Early COVID-19 Treatment Guidelines](https://worldcouncilforhealth.org/resources/early-covid-19-treatment-guidelines-a-practical-approach-to-home-based-care-for-healthy-families/) -->
@@ -78,7 +80,7 @@ Spreadsheet with raw data&nbsp;and calculations: (<a href="http://docs.google.co
 
 ## Live Spreadsheet
 
-<iframe frameborder="0" height="420" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9YL1sdOLcImnAc5FPOq92pcnTBibk7NYZBYI1K5EXxOXgiBS7ONinDa336sAfw3AD4unOadWqFFNd/pubhtml?widget=true&amp;headers=false" width="100%"></iframe>
+<iframe frameborder="0" height="620" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9YL1sdOLcImnAc5FPOq92pcnTBibk7NYZBYI1K5EXxOXgiBS7ONinDa336sAfw3AD4unOadWqFFNd/pubhtml?widget=true&amp;headers=false" width="100%"></iframe>
 
 
 <a name="ChiefSciCan"></a>
