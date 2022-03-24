@@ -26,7 +26,7 @@ Percentage of Fully vaccinated: last week (six-month weekly average)
 
 
 C19 Deaths: last week (six-month weekly average)
-- All ages*: 228 or 6 people in million (276.9)
+- All ages*: 228 (276.9), or 6 people in million 
 - Under 20 : 0 (0.2)
 - Under 40 : 2 (2.5)
 - Average age of deceased: 75  years  
