@@ -6,16 +6,25 @@ Analysis of Official Data Related to COVID-19 Vaccine Efficacy and Safety
 ==================================================
 
 [ivi-m.github.io/vitals](https://ivi-m.github.io/vitals) (forked from [open-canada.github.io/vitals](https://open-canada.github.io/vitals))    
-Last updated: March 2, 2022
+Last updated: March 23, 2022
+
+## News
+
+- ["PSAC files policy grievances against federal vaccination policy" (23 March 2022)](https://psacunion.ca/psac-files-policy-grievances-against-federal)
+<span class="badge badge-secondary">New</span> 
+- ["State Health Departments Forced to Remove False Information About COVID-19 Vaccines"](https://www.icandecide.org/state-health-departments-forced-to-remove-false-information-about-covid-19-vaccines/)
 
 
+## Latest statistics:
+
+<!-- 
+  
 **Disclaimer**: The results and views presented in this portal are those by the authors and are not to be misconstrued as representing  views of
 any Canadian Agency, University, or Department. All codes behind the analysis and supporting documents are free, open and available in [GitHub](https://github.com/ivi-m/vitals/).  The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html). 
 
-<!-- Raison d'être:
-The authoritative source for COVID-19 information is [Canada.ca/coronavirus](https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html).  They were developed and gathered by the [R4GC Data Science community](https://open-canada.github.io/r4gc/index.html#r4gc-community) as part of the community training and socializing, mostly on authors' own time and using authors' own resources.
-Table of Contents:
 -->
+
+
 
 ## Where to go from here:
 
