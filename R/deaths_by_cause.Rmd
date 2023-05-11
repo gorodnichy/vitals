@@ -1,0 +1,1257 @@
+---
+output: html_document
+runtime: shiny
+---
+
+<!-- deaths_by_cause.Rmd -->
+
+```{r 01_vitals_ca_LTE.R, include=F}
+source("00_common.R")
+knitr::opts_chunk$set(echo = F)
+
+# source ("01_vitals_ca_LTE.R")
+
+# 01_vitals_ca_LTE.R
+
+# 0. Global settings ----
+
+
+# source ("LTE-vitals-ca.R") 
+# 1. Read CANSIM data ----
+
+# Canadian Vital Statistics Death (CVSD) Database
+# Leading causes of death, total population 
+# Provisional weekly death counts, by selected grouped causes of death
+# Table: 13-10-0810-01
+# Release date: 2021-11-08
+
+# https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001
+# https://www150.statcan.gc.ca/n1/tbl/csv/13100810-eng.zip
+
+
+
+
+dt.cleanVitalData  <- function(dt) {
+  dt <- dt[, c("Date", "GEO", "val_norm", "Cause of death (ICD-10)")]
+  
+  dt[, Date := ymd(Date)]; 
+  dateMax <- dt$Date %>% max; dateMax # "2021-10-02"
+  dateLive <- dateToday
+  dt$GEO %>% unique() %>% sort
+  dt[, GEO := gsub(", place of occurrence", "", GEO)]
+  
+  # dt <- dtGeo[dt, on="GEO"]
+  dt[, GEO:=fct_relevel(GEO, choicesGEO)]
+  setnames(dt, "val_norm", "value")
+  setcolorder(dt, c("Date",  "GEO", "Cause of death (ICD-10)", "value"))
+  dt
+}
+
+
+# * 1.c Read local cached copy ----
+
+# dtCached <- readRDS(paste0("13100810-20220110.Rds"))
+# dtCached <- readRDS(paste0("13100810-20220210.Rds"))
+# dtCached <- readRDS(paste0("13100810-20220420.Rds"))
+dtCached <- readRDS(paste0("13100810-Release date-2022-11-10.Rds"))
+
+# dtCached <- readRDS(paste0("13100810-cached.Rds"))
+dtCached
+dateCached <- "2022-11-10" %>% ymd
+
+
+dateMax <- dtCached$Date %>% max (na.rm=T) %>% ymd; dateMax
+dtCached %>% names
+dtCached[, GEO := gsub(", place of occurrence", "", GEO)]
+
+choicesGEO <-  dtCached$GEO %>% unique(); choicesGEO
+choicesCauses <- dtCached$`Cause of death (ICD-10)` %>% unique(); choicesCauses
+
+# dt <- dt[Date >= ymd("2019-09-01")]
+
+# 2. Merge with population, compute rates per million----
+
+
+# We do it now in if input$per_million)
+# dtCached <- dtGeo[dtCached, on="GEO"]
+dtCached[, GEO:=fct_relevel(GEO, choicesGEO)]
+# dtCached [, rate:=round(1000000*val_norm/population)]
+
+dtCached <- dtCached[, c("Date", "GEO", "val_norm", "Cause of death (ICD-10)")]
+dtCached[, Date := ymd(Date)]; 
+dateMax <- dtCached$Date %>% max; dateMax # "2021-10-02"
+
+setnames(dtCached, "val_norm", "value")
+setcolorder(dtCached, c("Date",  "GEO", "Cause of death (ICD-10)", "value"))
+
+# 3. Read Vaccination data -----
+
+# Read cached or live data
+
+# downloader::download("https://github.com/open-canada/cansim-examples/raw/main/vaccination-coverage-byAgeAndSex-overTimeDownload-2021-12-07.Rds", "vaccination-coverage-byAgeAndSex-overTimeDownload-2021-12-07.Rds")
+
+if (F) {
+  dtVac <- fread("https://health-infobase.canada.ca/src/data/covidLive/vaccination-coverage-byAgeAndSex-overTimeDownload.csv")
+  # fwrite(dtVac, "vaccination-coverage-byAgeAndSex-overTimeDownload.csv")
+  # saveRDS(dtVac, "vaccination-coverage-byAgeAndSex-overTimeDownload.Rds")
+  # saveRDS(dtVac, "vaccination-coverage-byAgeAndSex-overTimeDownload-2022-03-10.Rds")
+}
+
+dtVac <- readRDS("vaccination-coverage-byAgeAndSex-overTimeDownload-2021-12-07.Rds")
+
+dtVac[.N]
+dtVac %>% names
+dtVac <- dtVac[, c(2, 4:7,9)]
+
+dtVac[, week_end := ymd(week_end)]
+setnames(dtVac, old=c("prename", "week_end"), new=c("GEO", "Date"))
+
+dtVac %>% names
+setnames(dtVac, 
+         c("numtotal_atleast1dose","numtotal_fully" ),
+         c("dose1_rate", "dose2_rate"))
+colValues <- c("dose1_rate", "dose2_rate")
+dtVac[, (colValues):=lapply(.SD, as.numeric), .SDcols=colValues]
+
+dtVac$GEO  %>% unique() 
+# dtVac[, prename:=fct_reorder(prename, numtotal_fully, min)]
+dtVac[, GEO:=fct_relevel(GEO, choicesGEO)]
+
+dtVac <- dtGeo[dtVac, on="GEO"]
+
+dtVac [, dose1_rate:=round(100*dose1_rate/population)]
+dtVac [, dose2_rate:=round(100*dose2_rate/population)]
+
+dtVacAllAgesAllSexes <- 
+  dtVac [sex == "All sexes", lapply(.SD, sum, na.rm=T), by=c("GEO", "Date"), .SD=colValues]
+
+```
+
+
+```{r -globals, include=F}
+knitr::opts_chunk$set(echo = F)
+# library(ggstatsplot)
+## library(corrplot)
+# library(ggcorrplot)
+# library(shinyBS)
+# library(shinybusy)
+
+if (F) {
+  dtCached 
+  dtGeo
+  dtVac
+  dtVacAllAgesAllSexes
+  choicesGEO
+  choicesCauses
+  dateToday
+  dateMax
+  dateCached
+}
+
+if (T) {
+  # For faster/memory efficient processing declare these as global 
+  # in OOP, these (below and the ones above and default input values) would be part of the class CVitals, 
+  dt <- data.table()
+  dtAll <- data.table()
+  dt0 <- data.table()
+  dtVac0 <- data.table()
+  region1 <- ""
+  cause1 <- ""
+}
+
+# > 4.a in0$  ----
+
+
+
+in0 <- list(
+  show_what = "Cause of death (ICD-10)", 
+  # state = choicesGEO %wo% c("Yukon", "Northwest Territories", "Nunavut", "Newfoundland and Labrador", "Prince Edward Island",  "Nova Scotia", "New Brunswick", "Quebec" ),
+  state =  c("Canada","Quebec", "Ontario", "Saskatchewan", "Alberta", "British Columbia"),
+  # cause = choicesCauses[c(1,2,5, 12, 15:16)], # 5:9, 7, 
+  # clump_nonselected_together=T,
+  cause = choicesCauses[c(1, 12, 15,16)], # 5:9, 7, 
+  # cause = choicesCauses[c(1,5, 7, 12, 15)], # 5:9, 7, 
+  
+  #    [1] Total, all causes of death [A00-Y89]                                   
+  #  [2] Malignant neoplasms [C00-C97]                                          
+  #  [3] Diabetes mellitus [E10-E14]                                            
+  #  [4] Alzheimer's disease [G30]                                              
+  #  [5] Diseases of heart [I00-I09, I11, I13, I20-I51]                         
+  #  [6] Cerebrovascular diseases [I60-I69]                                     
+  #  [7] Influenza and pneumonia [J09-J18]                                      
+  #  [8] Chronic lower respiratory diseases [J40-J47]                           
+  #  [9] Nephritis, nephrotic syndrome and nephrosis [N00-N07, N17-N19, N25-N27]
+  # [10] Accidents (unintentional injuries) [V01-X59, Y85-Y86]                  
+  # [11] Intentional self-harm (suicide) [X60-X84, Y87.0]                       
+  # [12] COVID-19 [U07.1,U07.2]                                                 
+  # [13] COVID-19, virus identified  [U07.1]                                    
+  # [14] COVID-19, virus not identified  [U07.2]                                
+  # [15] Ill-defined and unspecified causes of mortality [R99]                  
+  # [16] Information unavailable                                                
+  # [17] All other causes of death      
+  
+  average = F,
+  alternative_view=T,
+  per_million = T,
+  keep_scale = F,
+  lm=F,
+  se=F,
+  
+  corr_method = "spearman",
+  
+  vaccination=F,
+  vax="Total",
+  # dose=2,
+  
+  date = c("2019-01-01", as.character(dateToday-30))
+)
+
+# if ( !shiny::isRunning() ) {  
+#   cat("Relax - Shiny is NOT Running :)")
+#   input <- in0
+# }
+
+
+```
+
+# Deaths by Cause {data-height=850}
+
+## ## Settings ---------------- {.sidebar}
+
+<!-- {data-width=100} -->
+
+<font size=-1>
+
+\ Data Source: [Statistics Canada Table 13-10-0810-01](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001) 
+
+
+```{r shiny_input}
+
+flowLayout(
+  # popify(
+  # tipify(
+  selectInput(
+    "select.data_source",  "Choose data release:",  width="100%",
+    choices = c( 
+      
+      "Latest (Live)" = "live",
+      "2022-11-10")
+    # ,
+    #   "2022-04-20",
+    #   "2022-01-10")
+  ),
+  # ,
+  #   title = "Tip:",
+  #   content = "Note: opening Live data can take several minutes."
+  #   # placement = "right", trigger = "hover"
+  #   # )
+  # )
+  
+  
+  # 
+  # popify(
+  #   checkboxInput("read_from_cache", "Use cached data",  T),
+  #   "Uncheck to load Live data",
+  #   "Note: reading Live data can take some time and is possible only if Statitics Canada site is not down"
+  # )
+  
+  
+  # renderText(paste0("Data loaded on: ", ifelse(
+  #   input$read_from_cache, 
+  #   dateCached %>% as.character(), dateToday%>% as.character() )))
+  # 
+  
+  
+  renderText(paste0("Last record in data: ",
+                    r.dt()$Date %>% max(na.rm = T)) )
+)
+
+
+
+flowLayout(
+  
+  selectInput('state', h5("Select region(s):"), multiple=T, choices = choicesGEO, selected = in0$state, selectize=F, size=4, width="100%"),
+  selectInput('cause', h5("Select death cause(s):"), multiple=T, choices = choicesCauses, selected = in0$cause, selectize=F, size=4, width="100%"),
+  
+  dateRangeInput("date", h5("Select date range:"), weekstart=1, start = in0$date[1], end = in0$date[2], width="100%")
+)
+
+
+
+h5("Data processing options:")
+
+flowLayout(
+# granularity TBD ----
+# radioButtons("granularity", NULL, # "Choose granularity:",
+#              choices = c("Weekly", "Monthly", "Yearly"), inline=T),
+
+
+# per_million ----
+checkboxInput("per_million", "Show per million",  T),
+
+
+
+# average ----
+checkboxInput("average", "Average over several weeks",  T), 
+
+renderUI({
+  if (input$average){
+    sliderInput("convolution_window", NULL, 2, 12, 4, step=1, ticks=T, post=" weeks")
+  }
+})
+
+
+# relative2deaths TBD ----
+# radioButtons("relative2deaths", "Show:",
+#              choices = c("Absolute values", "Per million", "Relative values to Total deaths"), inline=T)
+
+# lumptogether TBD ----
+
+
+
+
+
+)
+
+flowLayout(
+  
+  # checkboxInput("excess", "Perform excess deaths analysis",  T),
+  
+  # * excess deaths ----
+  checkboxInput("excess", "Compare to pre-pandemic statistics", T), # Show pre-pandemic two-year average",  T),
+  # checkboxInput("excess", "*** Show excess deaths ***",  T),
+  
+  renderUI({
+    if (input$excess){
+      
+      checkboxInput("excess_measure", "Show difference with pre-pandemic (excess deaths)",  F)
+    }
+  }),
+  
+  
+  renderUI({
+    if (input$excess){
+      req(input$excess_measure)
+      if (input$excess_measure){
+        radioButtons("excess_show", NULL,
+                     choices = c("Absolute", "Relative"), inline=T)
+      }
+    }
+  })
+  
+)
+
+
+
+h5('Visualization options:')
+
+flowLayout(
+  
+  checkboxInput("interactive", "Enable interactivity", F),
+  
+  checkboxInput("alternative_view", "Reverse axes", F), # in0$alternative_view), 
+  
+  # lm -----
+  checkboxInput("lm", "Overlay trendline",  F),
+  
+  
+  # renderUI({
+  #   if (input$lm){
+  #     checkboxInput("lm_by_periods", ".. between policy changes",  F)
+  #   }
+  # })
+  
+  
+  
+  
+  
+  checkboxInput("keep_scale", "Keep the same scale",  F),
+  
+  checkboxInput("log", "Use logarithmic scale",  F)
+  
+)
+
+
+
+h5("Vaccination data options:")
+
+# Source: https://health-infobase.canada.ca/covid-19/vaccination-coverage
+
+
+# Mark vaccination -----
+checkboxInput("vline", "Mark the start of vaccination",  T)
+# checkboxInput("vline", "Mark vaccination milestones",  T)
+
+
+
+
+checkboxInput("vaccination", "Load vaccination rates",  F)
+# renderUI({
+#   if (input$vaccination){
+#     radioButtons("vax_total", NULL, c("Total", "Weekly increase"), inline=T)
+#   }
+# })
+
+
+
+
+# renderUI({
+#   if (input$vaccination){
+#         # radioButtons("doze", "... for", c("1+", "2+), inline=T)
+#     sliderInput("doze", "Dose number to show:", min=1, max=4)
+#   }
+# })
+
+# renderUI({
+#   if (input$vaccination){
+#     sliderInput("vax_rate_line", "Vaccination rate to mark:", min=0, max=100, value=3, step=1, ticks=F, width="100%")
+#   }
+# })
+
+
+
+# Predefine some periods of interest:
+
+period = c(
+  ymd("2010-01-05"), # early prepandemic, early flu waves 
+  # ymd("2016-01-01"), # late pre-pandemic, later flu  waves
+  # ymd("2020-01-01"), # four new cause categories added: 3 for covid + NO_INFO
+  # ymd("2020-03-24"), # early pre-vax pandemic, first COVID death
+  # ymd("2020-08-01"), # late pre-vax pandemic, end of first wave
+  ymd("2020-12-14"), # early vax, first vax shot 
+  ymd("2021-05-01") # late vax, vax rate >= 3%
+  # ymd("2021-12-02"), # 3rd doses (first booster)
+  # ymd("2021-10-04")     # dateToday dateMax   
+  # dateToday
+)
+
+
+# Somehow does not work...
+# selectInput(
+#   "period",  h5("Select date range"),  period,
+#   selected = period[2:length(period)] %>% as.character,
+#   selectize=F, size=5,
+#   multiple = T
+# )
+# renderUI({
+# dateRangeInput("date", h5("... adjust range"), weekstart=1, 
+#                start = ymd(input$period) %>% min(na.rm=T),
+#                end = ymd(input$period) %>% max(na.rm=T)
+#                )
+# in0$date[1] = input$period %>% min
+# in0$date[2] = input$period %>% max
+# dateRangeInput("date", h5("Select date range"), weekstart=1, start = in0$date[1], end = in0$date[2])
+# })
+
+
+```
+
+
+<!-- This Web App is free and built by the -->
+
+Open Canada Vital Statistics Tracker Web App is built using open source data and open source libraries. The source code for this App is available on [GitHub](https://github.com/open-canada/vitals).
+
+
+<!-- <form action="https://www.paypal.com/donate" method="post" target="_top"> -->
+<!-- <p style="text-align: center;"> -->
+<!-- <input name="hosted_button_id" type="hidden" value="Q96KJTKVS2VLW" /> <input alt="Donate with PayPal button" border="0" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" title="PayPal - The safer, easier way to pay online!" type="image" /> <img alt="" border="0" height="1" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" /></p> -->
+<!-- </form> -->
+
+
+</font>
+
+
+
+```{r *r.dtAll r.dtVac r.dt0}
+#shinybusy
+add_busy_bar(color = "Red", height = "30px", centered = T)
+
+
+r.dtVac0  <- reactive({
+  dtVac0 <- copy(dtVacAllAgesAllSexes)
+  
+  # if (input$vax_total=="Weekly"){ 
+  #   dtVac0[, dose1_rate := dose1_rate - shift(dose1_rate, 1), by = .(GEO)]
+  #   dtVac0[, dose2_rate := dose2_rate - shift(dose2_rate, 1), by = .(GEO)]
+  # } 
+  
+  dtVac0
+})
+
+observeEvent(input$select.data_source, {
+  
+  if (input$select.data_source == "live") { 
+    dt <- cansim::get_cansim("13-10-0810-01") %>%  setDT(dt) %>% dt.cleanVitalData
+  } else if (input$select.data_source == "url" ){
+    dt <- fread(input$select.data_address, stringsAsFactors = F) %>% dt.cleanVitalData
+  } else if (input$select.data_source == "upload") {
+    
+    file <- input$select.data_address;
+    ext <- tools::file_ext(file$datapath);
+    req(file);
+    validate(need(ext == "csv", "Please upload a csv file"));
+    dt <- fread(file$datapath, stringsAsFactors = T) %>% dt.cleanVitalData
+  } else {
+    dt = copy(dtCached)
+    # dt <- readRDS(paste0("13100810-Release date-", input$select.data_address, ".Rds"))  
+  }
+  
+  
+  
+  r$dt <- dt
+  
+  if (F) {
+    dtCached <- copy(dt)
+    saveRDS(dt, "13100810-Release date-2022-11-10.Rds")
+  }
+})
+
+
+
+r.dt  <- reactive({
+  
+  r$dt
+ 
+})
+
+r.dtAll  <- reactive({
+
+  
+  dt <- copy( r.dt() )
+  
+  dt[, value:=ifelse(value==0, NA, value)]
+  
+  
+  # if (input$show_how=="Per million") {
+  
+  if (input$per_million) { # per_million ----
+    # NB: anomalies were population is less than million.
+    dt <- dtGeo[dt, on="GEO"]
+    dt [, GEO:=fct_relevel(GEO, choicesGEO)]
+    dt [, value:=round(1000000*value/population)]
+    setcolorder(dt, c("Date",  "GEO", "population", "Cause of death (ICD-10)", "value"))
+  } 
+
+  
+  if (input$average) {  # average ----
+    convolution_window <- max(2, input$convolution_window)
+    
+    dt[, value := as.integer(frollmean(value, convolution_window, align = "right", fill = 0)), by = .(GEO, `Cause of death (ICD-10)`)]
+  }
+  
+  if (input$excess) {  # excess ----
+    dt2019 <-dt [Date >= ymd("2018-01-01") & Date < ymd("2020-01-01") ][ , week:=week(Date)
+    ][ ,.(ave=as.integer(mean(value, na.rm=T))), by=.(GEO, `Cause of death (ICD-10)`, week) ]
+    
+    dt[ , week:=week(Date)]
+    dt <- dt2019[dt, on=c( "GEO" ,  "Cause of death (ICD-10)", "week" ) ]
+    dt$week <- NULL
+  }
+  
+  if (input$vaccination) { # vaccination ----
+    # dt <- dtVac0[dt, on=c("GEO", "Date")]
+    dt <- r.dtVac0()[dt, on=c("GEO", "Date")]
+  }
+  
+  # if (input$clump_others) { # clump_others ----
+  #   dt  <- dt[, `Cause of death (ICD-10)`:=ifelse(`Cause of death (ICD-10)` %ni% input$causes, `Cause of death (ICD-10)`)
+  #   ][, .(value=sum(value, na.rm=T)), by = .(Date, GEO, `Cause of death (ICD-10)`)
+  #   ]
+  # }
+  
+  
+  dt[, GEO:=fct_relevel(GEO, choicesGEO)]
+  # setcolorder(dt, c("Date", "GEO"))
+  dtAll = dt 
+  dtAll
+})
+
+
+r.dt0  <- reactive({
+  # dt0 <<- dtAll[Date >= input$date[1] &  Date <= input$date[2] & GEO %in% input$state[1] & as.character(`Cause of death (ICD-10)`) %in% input$cause[1]]
+  q <- quote(Date >= input$date[1] &  Date <= input$date[2] & GEO %in% input$state & as.character(`Cause of death (ICD-10)`) %in% input$cause )
+  dt0 <<- r.dtAll()[eval(q)]
+})
+
+```  
+
+
+
+
+
+
+## Results {.tabset .tabset-fade data-height=850}
+
+
+```{r}
+
+
+
+
+```
+
+<!-- ### Overview -->
+### Chart 
+
+```{r r.g, fig.dim = c(8, 6) }
+
+# ```{r fig.width = 8, fig.height=8}
+#  {data-height=850}
+# out.width = "400px"
+# out.width="50%"
+# fig.dim = c(8, 6)
+
+# ```{r plotOverview}
+
+renderUI({ 
+  
+  req(r.dt0())
+  
+  # https://stackoverflow.com/questions/70656074/showing-something-my-text-instead-of-error-message-text-while-data-is-being-load
+  # req(input$)
+  
+  alp=0.2
+  #dt0 ----
+
+  dt0 <<- r.dt0()
+  
+  # if (dt0 %>% nrow == 0)
+  #   return;
+  
+  dt0$vaccination <- factor("Vaccination", levels=c("Vaccination", "Dummy") )
+  
+  g2 <-  ggplot(dt0) +   guides(col="none") +
+    # scale_x_date(guide = guide_axis(n.dodge = 2)) +
+    # theme(axis.text.x = element_text(angle = 30, vjust = 0.5, hjust=1)) +
+    geom_line(aes(Date, dose2_rate)) + 
+    geom_line(aes(Date, dose1_rate), linetype=3) +
+    labs(title = NULL,  x = NULL,   y = "(%)",
+         caption = "Source: https://health-infobase.canada.ca/covid-19/vaccination-coverage")
+  
+  
+  
+  # if (input$lm_by_periods) {  
+  #   
+  #   period0 <- c(period[1], period[2], period[4], period[length(period)])
+  #   
+  #   for (i in 1:(length(period0)-1)) {
+  #     g <- g + geom_smooth(aes(Date, value), method="lm", se = F, na.rm=T, alpha=alp, linetype=1, size=0.5, col="grey", data=dt0[Date>=period0[i] & Date<period0[i+1]])
+  #   }
+  
+  g <-  ggplot(dt0) + 
+    theme(legend.position = "bottom")  +
+    
+    # guides(x =  guide_axis(angle = 90)) +
+    # scale_x_date(guide = guide_axis(n.dodge = 2)) +
+    # scale_x_discrete(guide = guide_axis(angle = 90)) +
+    # theme(axis.text.x = element_text(angle = 30, vjust = 0.5, hjust=1)) +
+    # scale_col_manual(r.show_what(), values=c("orange","red")) +
+    # scale_color_discrete(name = "New Legend Title") +
+    # guides(col=guide_legend(title="New Legend Title")) +
+    
+    labs( 
+      title = NULL, x = NULL,  
+      y = ifelse(input$per_million, "Deaths per million per week", "Deaths per week"), 
+      
+    
+      caption = paste0("Source: Statistics Canada - Table 13-10-0810-01",
+       "\nGenerated on ", dateToday, " by Open Canada Vital Statistics Tracker (open-canada.github.io/Apps/vitals)")  
+    )
+  
+  # https://open-canada.github.io/Apps/vitals o-canada.shinyapps.io/vitals
+  
+  #  # vaccination  TBD overlay ------
+  # if (input$vaccination==T) {
+  #   scaleFactor <- max(dt0$value, na.rm=T) / max(dt0$dose1_rate, na.rm=T)
+  # 
+  #   g <- g+
+  #     geom_line(aes(x=Date, y=dose2_rate * max(value, na.rm=T) / 100), col="red") +
+  #     scale_y_continuous(name="value", sec.axis=sec_axis(~./ (max(dt0$value, na.rm=T) / 100), name="Full vaccination rate"))     +
+  #   theme(
+  #     axis.title.y.left=element_text(color="blue"),
+  #     axis.text.y.left=element_text(color="blue"),
+  #     axis.title.y.right=element_text(color="red"),
+  #     axis.text.y.right=element_text(color="red")
+  #   )
+  # }
+  # 
+  
+  
+  
+  if (input$vline) {  
+    alp = 0.2  
+    for (i in 1:length(period)) {
+      g <- g + geom_vline(xintercept=period[i], linetype=5, aplha=alp,  col="grey")
+      g2 <- g2 + geom_vline(xintercept=period[i], linetype=5, aplha=alp,  col="grey")
+    }
+    
+    g <- g + xlim(input$date[1], input$date[2])
+    g2 <- g2 + xlim(input$date[1], input$date[2])
+  }
+  
+  
+  # log ----
+  if (input$log==T) {  
+    g <-  g + 
+      # annotation_logticks(sides = 'l')+
+      # annotation_logticks(sides = 'lr')+
+      scale_y_log10(
+        # breaks = scales::trans_breaks("log10", function(x) 10^x),
+        # labels = scales::trans_format("log10", scales::math_format(10^.x))
+      ) 
+  }
+  
+  # excess------
+  if (input$excess==T) { 
+    
+    if   (input$excess_measure==F) { 
+      g <- g + 
+        geom_line(aes(Date, ave),  alpha=0.9)  +
+        geom_line(aes(Date, value, col = `Cause of death (ICD-10)`)) +
+        labs( 
+          x = "Black curves show pre-pandemic weekly average"
+        ) 
+      
+      if (input$lm==T) { 
+        g <- g + 
+          geom_smooth(
+            aes(Date, ave),   method="lm", se = F, na.rm=T,
+            alpha=0.4, linetype=4, col="grey") +
+          geom_smooth(aes(Date, value, col=`Cause of death (ICD-10)`), method="lm", se = F, na.rm=T, alpha=alp, linetype=1, size=0.5) +
+          
+          labs( 
+            x = "Black curves show pre-pandemic weekly average  and trendline\n Drop at the end of the curves indicates the absense of data"
+          )
+      }
+    } else {
+      
+      if (input$excess_show=="Absolute") { 
+        g <- g + geom_line(aes(Date, value-ave, col = `Cause of death (ICD-10)`)) + 
+          geom_hline(yintercept=0,  aplha=0.8,  col="black") +
+          scale_y_continuous(limits = c(-0.5*max(dt0$value), 0.5*max(dt0$value)))
+        
+        if (input$lm==T) { 
+          g <- g + geom_smooth(
+            aes(Date, value-ave), method="lm", se = F, na.rm=T, 
+            alpha=0.4, linetype=4, col="grey") +
+            labs( 
+              x = "Note: Drop at the end of the curves indicates the absense of data"
+            )
+        } 
+      }
+      
+      if (input$excess_show=="Relative"){ 
+        g <- g + geom_line(aes(Date, value/ave, col = `Cause of death (ICD-10)`)) + 
+          geom_hline(yintercept=1,  aplha=0.8,  col="black") +
+          scale_y_continuous(limits = c(0.5, 1.5))
+        
+        if (input$lm==T) { 
+          g <- g + geom_smooth(
+            aes(Date, value/ave),   method="lm", se = F, na.rm=T,
+            alpha=0.4, linetype=4, col="grey") 
+        }
+      }
+    }
+    
+  } else { # (input$excess==F)
+    
+    
+    g <-  g +  geom_line(aes(Date, value, col = `Cause of death (ICD-10)`))
+    if (input$lm==T) { 
+      g <- g + 
+        geom_smooth(aes(Date, value, col=`Cause of death (ICD-10)`), method="lm", se = F, na.rm=T, alpha=alp, linetype=1, size=0.5)    
+    }
+    
+  }
+  
+  
+  
+  
+  if (input$alternative_view == T) { # alt view -----
+    
+    # VERTICAL LAYOUT ############################################### #
+    
+    g <- g +  
+      facet_grid(`Cause of death (ICD-10)` ~ GEO ,  scales = ifelse (input$keep_scale, "fixed", "free")  ) 
+    
+    if (input$vaccination==T) {
+      g2 <- g2 + facet_grid( vaccination ~ GEO ) 
+      # a <- max(1, input$cause %>% length - 4)
+      a=5
+      g <- ggpubr::ggarrange(g2, g, nrow = 2, heights = c(1,a))
+    } 
+    
+  } else {
+    
+    # HORIZONATAL LAYOUT ############################################# #
+    
+    g <- g + 
+      guides(col="none")  + 
+      # scale_x_date(guide = guide_axis(n.dodge = 2)) +
+      facet_grid(GEO ~ `Cause of death (ICD-10)`, 
+                 scales = ifelse (input$keep_scale, "fixed", "free") ) 
+    
+    
+    if (input$vaccination==T) {
+      
+      g2 <-  g2 +   
+        guides(col="none") +
+        # scale_x_date(guide = guide_axis(n.dodge = 2)) +
+        facet_grid(GEO ~ vaccination , scales = "free") +
+        labs(      title = NULL,         x = NULL,        y = "Vaccination rate (%)", 
+                   caption = "https://health-infobase.canada.ca\n"  )
+      
+      g <- ggpubr::ggarrange(g, g2, ncol = 2, widths=c(5,1))
+      
+    } 
+    
+  }
+  
+  
+  
+  
+  if (!input$interactive) {
+    renderPlot(g)
+  } else {
+    renderPlotly(g %>% ggplotly)
+  }
+})
+
+
+
+```
+
+> Source: Statistics Canada Table 13-10-0810-01 (Updated monthly),  <https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=13100810011>
+
+
+
+<!-- ###  Interactive time-series  -->
+
+<!-- Plot shows time-series for all causes in  one region  (the first in the list of the selected regions).    -->
+
+<!-- ### Time-series -->
+
+
+
+
+
+```{r dygraphs, eval=F, include=F}
+
+# inputPanel(
+#   
+#   
+#   radioButtons("dy.by.cause", NULL,
+#                choices = c("By Cause" = "cause",    "By Region"  = "region"),
+#                selected = "cause", inline=T)
+#   
+# )
+
+# 
+# # See: https://rstudio.github.io/dygraphs/
+# 
+# ### By cause
+# 
+dygraphs::renderDygraph ({
+  
+  dt0 <- r.dt0()
+  
+  region1 <<- dt0$GEO %>% unique %>% .[1]
+  cause1 <<- dt0$`Cause of death (ICD-10)`%>% unique %>% .[1]
+  
+  # if(input$dy.by.cause=="cause") {
+  
+  dt0_wide <- dt0[GEO == region1, !c("GEO"), with = T] %>% dcast( Date ~ `Cause of death (ICD-10)`, value.var = "value")
+  title = region1
+  
+  # }  else {
+  
+  # dt0_wide <- dt0[`Cause of death (ICD-10)`==cause1, !c("Cause of death (ICD-10)"), with=T] %>% dcast(Date ~ GEO, value.var="value")
+  # title = cause1
+  # 
+  # }
+  
+  # setcolorder(dt0_wide, "Date"); 
+  dts  <- as.xts.data.table(dt0_wide)  
+  
+  # dy <- dygraph.title( dts, title) 
+  
+  dy <- dygraph(dts, main = title) %>%
+    dyOptions(fillGraph = F, stepPlot = F, drawGrid = T, drawPoints = TRUE, pointSize = 2) %>%
+    dyHighlight(highlightCircleSize = 5,highlightSeriesBackgroundAlpha = 0.2, hideOnMouseOut = F) %>%
+    dyRangeSelector()  %>%
+    dyAxis("y", label="Deaths / week") 
+  #   dyAxis("y", label=ifelse(input$per_million,  "Deaths in million per week", "Deaths per week")) 
+  
+  dy
+})
+```
+
+<!-- ### By province -->
+
+```{r}
+# 
+# dygraphs::renderDygraph ({
+#   
+#   dt0 <- r.dt0()
+#   cause1 <<- dt0$`Cause of death (ICD-10)`%>% unique %>% .[1]
+#   
+#   
+#   dt0_wideCause1 <- dt0[`Cause of death (ICD-10)`==cause1, !c("Cause of death (ICD-10)"), with=T] %>% dcast(Date ~ GEO, value.var="value")
+#   
+#   # dt0_wideGeo1 <- r.dt0_wide() [`Cause of death (ICD-10)`==cause1, !c("Cause of death (ICD-10)"), with=T]
+#   dts  <- as.xts.data.table(dt0_wideCause1)
+#   
+#   
+#   # dy <- dygraph.title( dts, cause1)
+#   dy <- dygraph(dts, main = cause1) %>%
+#     # dySeries(input$var1, color = input$color1, strokePattern = input$stroke1,  axis = input$axis1 )  %>%
+#     dyOptions(fillGraph = F, stepPlot = F, drawGrid = T, drawPoints = TRUE, pointSize = 2) %>%
+#     dyHighlight(highlightCircleSize = 5,highlightSeriesBackgroundAlpha = 0.2, hideOnMouseOut = FALSE) %>%
+#     dyAxis("y", label=ifelse(input$per_million,  "Deaths in million / week", "Deaths / week")) %>%
+#     # dyAnnotation("2021-6-10", text = "10%", tooltip = "Fully Vaccinated Rate 10%") %>%
+#     # dyAnnotation("2021-5-1", text = "3%", tooltip = "Fully Vaccinated Rate 3%") %>%
+#     # dyAnnotation("2021-4-6", text = "2%", tooltip = "Fully Vaccinated Rate 2%") %>%
+#     # dyAnnotation("2021-2-18", text = "1%", tooltip = "Fully Vaccinated Rate 1%") %>%
+#     dyRangeSelector()
+#   
+#   
+#   # dy <- dy %>% 
+#   #   dyAxis("y", label=ifelse(input$per_million,  "Deaths in million / week", "Deaths / week")) 
+#   
+#   # 
+#   #   if (input$vaccination){
+#   #     dy <- dy %>% 
+#   #       dySeries(dcast(dtVacAllAgesAllSexes, Date ~ GEO, value.var="dose2_rate"), color = "red", axis = "y2", strokePattern=2 )  %>% 
+#   #       dySeries(dcast(dtVacAllAgesAllSexes, Date ~ GEO, value.var="dose1_rate"), color = "red", axis = "y2", strokePattern=2 ) 
+#   #   }
+#   
+#   dy
+# })
+
+```
+
+
+
+<!-- ### By cause (alt.)  -->
+
+
+<!-- ```{r ggplotly} -->
+
+<!-- # See:  -->
+<!-- # https://plotly.com/r/, https://plotly.com/ggplot2/getting-started/ -->
+<!-- # https://plotly-r.com/ -->
+
+<!-- plotly::renderPlotly( { -->
+
+<!--   dt0 <<- r.dt0() -->
+<!--   # Interactive plot can visualize only data for one region -->
+<!--   region1 <- dt0$GEO %>% unique %>% .[1] -->
+<!--   g <-ggplot(dt0[GEO==region1]) + -->
+<!--     geom_line(aes(Date, value,   col = `Cause of death (ICD-10)`)) + -->
+<!--     labs(         -->
+<!--       title = paste0(region1)  ,          -->
+<!--       x = NULL, -->
+<!--       y = ifelse(input$per_million,  "Deaths in million / week", "Deaths / week")   -->
+<!--     ) -->
+
+<!--   if (input$vaccination==T) { -->
+<!--     g <-  g + -->
+<!--       geom_line(aes(Date, dose2_rate)) + -->
+<!--       geom_line(aes(Date, dose1_rate), linetype=3) + -->
+<!--       labs(         -->
+<!--         title = region1  ,          -->
+<!--         x = NULL,         -->
+<!--         y = ifelse(input$per_million,  "Vaccination rate (%) | Deaths in million per week", "Vaccination rate (%) | Deaths per week")   -->
+<!--       ) -->
+<!--   } -->
+
+<!--   if (input$lm==T) { -->
+
+<!--     alp=0.2 -->
+<!--     if (input$lm_by_periods) {   -->
+<!--       for (i in 1:(length(period)-1)) { -->
+<!--         g <- g + geom_smooth(aes(Date, value,  col = `Cause of death (ICD-10)`), method="lm", se = input$se, na.rm=T, alpha=alp, linetype=1, size=0.5, col="black", data=dt0[Date>=period[i] & Date<period[i+1]]) -->
+<!--       } -->
+<!--     } else { -->
+<!--       g <- g +  -->
+<!--         geom_smooth(aes(Date, value,  col = `Cause of death (ICD-10)`), method="lm", se = input$se, na.rm=T, alpha=alp, linetype=1, size=0.5,  col="black")  -->
+<!--     } -->
+<!--   } -->
+
+
+<!--   if (input$vline) {   -->
+<!--     alp = 0.2   -->
+<!--     for (i in 1:length(period)) { -->
+<!--       g <- g + geom_vline(xintercept=period[i], linetype=5, aplha=alp,  col="grey") -->
+<!--     } -->
+<!--     g <- g + xlim(input$date[1], input$date[2]) -->
+<!--   } -->
+
+
+<!--   plotly::ggplotly( g )  -->
+<!-- }) -->
+
+<!-- ``` -->
+
+
+<!-- ### By province (alt.) -->
+
+
+
+<!-- ```{r } -->
+
+<!-- plotly::renderPlotly( { -->
+
+<!--   dt0 <- r.dt0() -->
+<!--   cause1 <- dt0$`Cause of death (ICD-10)`%>% unique %>% .[1]  -->
+<!--   # Interactive plot can visualize only data for one cause -->
+<!--   g <- -->
+<!--     dt0[`Cause of death (ICD-10)` == cause1] %>%  -->
+<!--     ggplot() + -->
+<!--     geom_line(aes(Date, value,  col = GEO)) + -->
+<!--     labs(         -->
+<!--       title = paste0(cause1)  ,          -->
+<!--       x = NULL,         -->
+<!--       y = ifelse(input$per_million,  "Deaths in million / week", "Deaths / week")  -->
+<!--     ) -->
+
+<!--   if (input$vaccination==T) { -->
+<!--     g <-  g + -->
+<!--       geom_line(aes(Date, dose2_rate, col = GEO)) + -->
+<!--       geom_line(aes(Date, dose1_rate, col = GEO), linetype=3) + -->
+<!--       labs(         -->
+<!--         title = cause1,          -->
+<!--         x = NULL,         -->
+<!--         y = ifelse(input$per_million,  "Vaccinatrion rate (%) | Deaths in million per week", "Vaccinatrion rate (%) | Deaths per week")    -->
+<!--       ) -->
+<!--   } -->
+
+<!--   if (input$lm==T) { -->
+
+<!--     alp=0.2 -->
+<!--     if (input$lm_by_periods) {   -->
+<!--       for (i in 1:(length(period)-1)) { -->
+<!--         g <- g + geom_smooth(aes(Date, value,  col = GEO), method="lm", se = input$se, na.rm=T, alpha=alp, linetype=1, size=0.5, col="black", data=dt0[Date>=period[i] & Date<period[i+1]]) -->
+<!--       } -->
+<!--     } else { -->
+<!--       g <- g +  -->
+<!--         geom_smooth(aes(Date, value,   col = GEO), method="lm", se = input$se, na.rm=T, alpha=alp, linetype=1, size=0.5,  col="black")  -->
+<!--     } -->
+<!--   } -->
+
+
+<!--   if (input$vline) {   -->
+<!--     alp = 0.2   -->
+<!--     for (i in 1:length(period)) { -->
+<!--       g <- g + geom_vline(xintercept=period[i], linetype=5, aplha=alp,  col="grey") -->
+<!--     } -->
+<!--     g <- g + xlim(input$date[1], input$date[2]) -->
+<!--   } -->
+
+<!--   plotly::ggplotly( g )  -->
+<!-- }) -->
+
+
+
+<!-- ``` -->
+
+<!-- # Summary -->
+
+<!-- ## ... -->
+
+<!-- ```{r} -->
+
+<!-- ``` -->
+
+<!-- ### Key statistics -->
+
+
+
+
+<!-- # Tables -->
+
+<!-- ## ........ {.tabset .tabset-fade } -->
+
+
+<!-- ### Raw  statistics  -->
+
+### Grid 
+
+
+
+```{r r.dt0_wide}
+
+
+splitLayout(
+  
+  radioButtons("print.raw", NULL,
+               choices = c("Display Interactive Table" = "Interactive",    "Display Non-interactive Table"  = "static"), selected="Interactive", inline=T)
+  
+  # radioButtons("radio.cumulative", NULL,
+  #              choices = c("Show raw weekly numbers" = "raw",    "Show cumulative numbers"  = "cumulative"),selected="raw", inline=T)
+  
+)
+
+
+r.dt0_wide  <- reactive({  
+  dt0 <<- r.dt0()
+  
+  # if (input$radio.cumulative== "cumulative") {
+  #     dt0 <<- copy(r.dt0())
+  #   dt0 [ ,  value:=cumsum(value),    by=.(`Cause of death (ICD-10)`,GEO)]
+  # }
+  # 
+  
+  if (input$vaccination) {
+    dt0_wide <-  dt0 %>% dcast(GEO    +   Date + dose1_rate + dose2_rate ~ `Cause of death (ICD-10)`, value.var = "value")
+  } else {
+    dt0_wide <- dt0 %>% dcast(GEO    +   Date ~ `Cause of death (ICD-10)`, value.var = "value")
+  }
+  
+})
+
+renderUI({
+  if (input$print.raw == "Interactive") {
+    r.dt0_wide()  %>% datatable.title() %>% renderDataTable
+  } else {
+    r.dt0_wide() [, Date:=format(Date,'%Y-%m-%d')] %>% renderTable
+  }
+})
+
+# renderDataTable({
+#   
+#   # if (!input$per_million) {
+#   #   r.dt0_wide() %>% datatable.title()
+#   # } else {
+#   #   dtGeo[r.dt0_wide() , on="GEO"][order(GEO, -Date)] %>% datatable.title()
+#   # }
+
+# })
+
+```
+
+
+>  Data Source: [Statistics Canada Table 13-10-0810-01](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001) 
+
+
+### Cumulative 
+
+
+
+```{r }
+
+r.dt00_wide  <- reactive({
+  dt00 <<- copy(r.dt0() )
+  
+  dt00 [ ,  Cumulative:=cumsum(value),    by=.(`Cause of death (ICD-10)`,GEO)]
+  
+  
+  if (input$vaccination) {
+    dt00_wide <-  dt00 %>% dcast(GEO    +   Date + dose1_rate + dose2_rate ~ `Cause of death (ICD-10)`, value.var = "Cumulative")
+  } else {
+    dt00_wide <- dt00 %>% dcast(GEO    +   Date ~ `Cause of death (ICD-10)`, value.var = "Cumulative")
+  }
+})
+
+radioButtons("print.raw2", NULL,
+             choices = c("Display Interactive Table" = "Interactive",    "Display Non-interactive Table"  = "static"), selected="Interactive", inline=T)
+
+
+
+renderUI({
+  if (input$print.raw2 == "Interactive") {
+    r.dt00_wide()  %>% datatable.title() %>% renderDataTable
+  } else {
+    r.dt00_wide() [, Date:=format(Date,'%Y-%m-%d')] %>% renderTable
+  }
+})
+
+
+```
+
+
+>  Data Source: [Statistics Canada Table 13-10-0810-01](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001) 
+
+
+<!-- ### Summary -->
+
+### Summary 
+<!-- Totals and weekly averages {data-height=850} -->
+
+```{r r.dtSummary}
+
+
+r.dtSummary  <- reactive({
+  dt0 <<- r.dt0()
+  
+  dtS <- dt0 [ , .(
+    # `Weekly lowest`=min(value, na.rm = T) %>% round(0),  
+    `Total`=sum(value, na.rm=T), 
+    `Weekly average`=mean(value, na.rm = T) %>% round(0),   
+    `Weekly variation`=sd(value, na.rm = T) %>% round(1),
+    # `Weekly highest`=max(value, na.rm = T) %>% round(0),
+    
+    # LM = list(list(lm(value ~ as.integer( Date - min(Date))),  na.action=na.omit)),
+    # `Weekly increase`=( lm(value ~ as.integer( Date - min(Date)),  na.action=na.omit)$coefficients[2] * 7 ) %>% round(1),
+    Weeks=as.integer( max(Date) - min(Date))/7
+  ),    by=.(`Cause of death (ICD-10)`,GEO)]
+  
+  if (input$vaccination) {
+    
+    dtSvax <- dt0 [ , .(
+      `dose2_mean`=mean(dose2_rate, na.rm=T) %>% round(3), 
+      `dose1_mean`=mean(dose1_rate, na.rm = T) %>% round(3)   
+    ),    by=.(GEO)]
+    
+    dtS <- dtS [dtSvax, on="GEO"]
+  }
+  dtS
+})
+
+
+
+renderUI({
+  
+  if (T) {
+    r <- r.dtSummary()
+    if(T) { # r != "") {
+      DT::datatable(
+        r,
+        # colnames = c("Keyword" = "keyword", "Filename" = "filename", "Page" = "page_num", "Source" = "source", "Extract" = "extract"),
+        class='compact', 
+        #style="jqueryui", 
+        selection = "none",
+        rownames = FALSE, 
+        escape = FALSE, 
+        width = "120%",
+        height = 400,
+        filter = 'top', #Position of column filters
+        extensions = 'Buttons', 
+        options = list(ordering=F, 
+                       language = list(search = 'Filter:'),
+                       initComplete = JS(
+                         "function(settings, json) {",
+                         "$(this.api().table().header()).css({'background-color': '#2C3E50', 'color': '#fff'});",
+                         "}"
+                       ),
+                       displayLength=10,  #Records to show/page
+                       lengthChange = 1,  #Show/hide records/page
+                       dom = 'Blfrtip',   #Reqiured for buttons
+                       buttons = c('copy', 'csv', 'excel', 'print'),
+                       searchHighlight = TRUE
+        )
+        
+      ) %>% renderDataTable
+      
+    } else{
+      HTML("<hr><i>Results will appear here...</i>") 
+    }
+  }
+  
+})
+
+
+
+```
+
+>  Data Source: [Statistics Canada Table 13-10-0810-01](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001) 

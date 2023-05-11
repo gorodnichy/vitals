@@ -9,12 +9,12 @@ meta() %>%
   meta_name("github-repo" = "open-canada/vitals") %>%
   meta_viewport() %>%
   meta_social(
-    title = "Open Canada Vital Statistics Tracker App",
-    url = "https://open-canada.github.io/Apps/vitals",
-    # image = "https://github.com/open-canada/r4gc/raw/main/images/rCanada-octogon.png",
-    image_alt = "o-Canada Vitals Logo",
+    title = "Open Canada Vital Statistics Tracker",
+    url = "http://OpenCanada.info",
+    image = "https://github.com/open-canada/r4gc/raw/main/images/rCanada-octogon.png",
+    image_alt = "OpenCanada.info Logo",
     og_type = "app",
-    og_author = c("R4GC Community"),
+    og_author = c("Anonymouss"),
   )   %>%
   meta_general(
     # keywords = "open canada, statistics, vital databases, cases, deaths, births, covidcanada, covid", # This does not work

@@ -1,0 +1,370 @@
+
+
+```{r read.deaths.by.age, include=F}
+# ---
+# # title: 'Open Canada Vital Statistics Tracker'
+# title: "OpenCanada.info: Vital Statistics Tracker"
+# output:  
+#   flexdashboard::flex_dashboard:
+#     # orientation: columns
+#     # vertical_layout: scroll #fill
+#     favicon: rCanada.ico
+#     social: menu
+#     navbar: 
+#       - { title: "Deaths by Cause", href: "https://o-canada.shinyapps.io/vitals/", align: left }
+# # - { title: "Donate", href: "https://IVIM.ca/donate", align: right }
+#       - { title: "Open Canada Data Catalog", href: "https://o-canada.shinyapps.io/data", align: right }
+# runtime: shiny  
+# ---
+knitr::opts_chunk$set(echo = F, message=FALSE, warning=FALSE)
+
+# source("open-deaths-by-age.R")
+source("00_common.R")
+dtAll <- readRDS("13100768-all-releases.Rds")
+
+
+dt <- cansim::get_cansim("13-10-0768-01") %>%  setDT() 
+
+dt[, ( names(dt) %wo% c("Date", "GEO", "val_norm","Age at time of death", "Sex") ):= NULL]
+
+dt$release = paste0(dateToday," (Live)") 
+
+for (col in which(sapply (dt,is.factor)) )  
+  dt[, (col) := as.character(dt[[col]])] #fastest
+
+
+
+setnames(dt, "val_norm", "weekly") 
+setnames(dt, "Age at time of death", "Age")
+dt[, GEO := gsub(", place of occurrence", "", GEO)]
+dt[, Age := gsub("Age at time of death, ", "", Age)]
+# setorder(dt, -Date,GEO,Sex,Age,-release)
+# setorder(dt, -Date,-release)
+
+dt[, Date:=ymd(Date)]
+setcolorder(dt, c("Date",    "GEO" ,  "Age","Sex",   "release", "weekly"  ) )   
+
+
+
+dtAll <- dtAll %>% rbind (dt)
+setorder(dtAll, -Date,-release)
+
+dtAll[, ':=' (monthly=sum(weekly, na.rm = F), N=.N), by=.(month(Date), year(Date),GEO,Age,Sex,release)][, monthly:=as.integer(monthly/N*4.34524)][, N:=NULL]
+dtAll[, ':=' (quarterly=sum(weekly, na.rm = F), N=.N), by=.(quarter(Date), year(Date),GEO,Age,Sex,release)][, quarterly:=as.integer(quarterly/N*4.34524*3)][, N:=NULL]
+# dtAll[, ':=' (quarterly2=sum(weekly, na.rm = F), N=.N), by=.(quarter(Date), year(Date),GEO,Age,Sex,release)][, quarterly:=as.integer(quarterly/N*4.34524*3)][, N:=NULL]
+dtAll[, ':=' (annually=sum(weekly, na.rm = F), N=.N), by=.(year(Date),GEO,Age,Sex,release)][, annually:=as.integer(annually/N*52.1429)][, N:=NULL]
+dtAll[, ':=' (ww=week(Date), mm=month(Date), qq=quarter(Date), yy=year(Date))]
+
+
+# dtAll <- dtAll0[sample(1000)]
+
+# r <- in0 <- list()---- 
+
+in0 <- list()
+
+# in0$statcan.title <- "Provisional weekly death counts, by age group and sex"
+# in0$statcan.table <- "13-10-0768-01"
+
+in0$date1 <- as.character( ym("2019-01")) 
+in0$date2 <- as.character ( dateToday - months(1))
+
+# $geo <- dtAll$GEO %>% unique %wo% c("Canada","Yukon", "Nunavut","Northwest Territories") "British Columbia", 
+in0$geo  =  c("Ontario", "Alberta",  "British Columbia")
+in0$sex = dtAll$Sex %>% unique() %>% .[c(1,3)]
+in0$age = dtAll$Age %>% unique() %>% .[c(1,5)]
+# $release = dtAll$release %>% unique() %>% .[c(1,5,9)]
+# in0$release = c("2022-04-14",  dtAll$release %>% unique() %>% .[1])
+in0$release = c(dtAll$release %>% unique() %>% .[1])
+
+in0$granularity  = "weekly"
+
+
+aSex <- dtAll$Sex %>% u
+aAge <- dtAll$Age %>% u
+aGeo <- dtAll$GEO %>% u
+aRelease <- dtAll$release %>% u
+
+
+# r <- list ---- 
+if (T) {
+  r$statcan.title <- "Provisional weekly death counts, by age group and sex"
+  r$statcan.table <- "13-10-0768-01"
+  
+  # r$date1 <- as.character( ym("2019-01")) 
+  # r$date2 <- as.character ( dateToday - months(1))
+  
+  r$geo = in0$geo
+  r$sex = in0$sex
+  r$age = in0$age
+  r$release = in0$release
+  
+  r$granularity  = "weekly"
+  r$average = F
+  r$convolution_window <- 4
+  r$select_all <- F
+  
+}
+
+in0$granularity  = isolate( r$granularity )
+
+```
+
+# Deaths by Age
+
+## ## Settings ## {.sidebar}
+<!-- ## Search criteria: {.sidebar data-width="210"} -->
+
+<font size=-1>
+
+Data Source: [Statistics Canada Table 13-10-0768-01](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310076801)
+
+Make selection (Click to select, "Del" to deselect)
+
+```{r}
+
+renderUI({ selectInput("release",  "Choose data release(s):",  aRelease, in0$release, multiple = T) })
+
+renderText(paste0("Last record in data: ",
+                  dtAll$Date %>% max(na.rm = T)) )
+
+renderUI({ selectInput("geo", "Select Region(s):", aGeo, in0$geo, multiple = T) })
+renderUI({ selectInput("age", "Select Age group(s):", aAge, aAge, multiple = T ) })
+renderUI({ selectInput("sex", "Select Sex group(s):", aSex, in0$sex, multiple = T ) })
+
+
+dateRangeInput("date", h5("Select date range:"), weekstart=1, start = "2018-01-01", end = as.character(dateToday-30))
+
+
+
+# checkboxInput("select.all", "Select all", F)
+# renderUI({
+#   if (input$select.all)
+#      sliderInput("select.all.percentage", NULL, 10, 100, 10, step=10, ticks=F, pre="Show ", post="% of data")
+# })
+
+
+radioButtons("granularity", "Show:", c("weekly", "monthly", "quarterly", "annually"), # , "sliding total"), 
+             "monthly", inline = T)
+renderUI({
+  if (input$granularity=="weekly"){
+    sliderInput("convolution_window", NULL, 1, 12, 4, step=1, ticks=T, pre="Average over ", post=" weeks")
+    # numericInput("convolution_window", "Number of weeks to average: ", 4, min=1, max=12, step=1)
+  }
+})
+
+
+# checkboxInput("overlay.historical", "Overlay pre-pandemic data", F)
+# renderUI({
+#   if (input$overlay.historical)
+#     sliderInput("overlay.historical.number", "Number of prepandemic years to count: ", value=2, min=1, max=10, step=1)
+# })
+
+hr()
+
+
+checkboxInput("interactive.age", "Enable interactivity", F)
+checkboxInput("alternative_view.age", "Reverse axis", F)
+checkboxInput("alternative_colour", "Swap colour and line type", F)
+
+checkboxInput("fixed_scale.age", "Fix scale", F)
+
+checkboxInput("lm.age", "Overlay trendline",  T)
+
+
+
+```
+
+</font>
+
+
+## ROW 1........ {.tabset .tabset-fade} 
+
+
+
+
+
+```{r *AGE r.dtAll r.dtVac r.dt0}
+#shinybusy
+add_busy_bar(color = "Red", height = "30px", centered = T)
+
+observe({
+  
+  req(dtAll)
+  
+  r$date[1] <- input$date[1]
+  r$geo <- input$geo 
+  r$sex = input$sex
+  r$age = input$age 
+  
+  r$release = input$release
+  r$average <- input$average
+  r$convolution_window <- input$convolution_window
+  r$granularity <- input$granularity
+  
+  
+  r$dt0 <- dtAll [Date > r$date[1] & GEO %in% r$geo & 
+                    Age %in% r$age & 
+                    release %in% r$release & Sex %in% r$sex ]
+  
+  
+  # r$dt0 <- copy( r$dt )
+  
+  var.y <- r$granularity
+  # r$dt0[ , deaths:= weekly]
+  
+  # r$dt0[ , deaths:= get(var.y)] # CRASHES
+  # r$dt0$deaths <- r$dt0[["weekly"]]
+  
+  # r$dt0$deaths <- r$dt0[[r$granularity]]
+  # r$dt0[ , deaths:= get(r$granularity)]
+  
+  
+  setkey(r$dt0, Date)
+  setcolorder(r$dt0,c("Date"))
+  
+  
+  convolution_window <- max(1, r$convolution_window)
+  if (convolution_window>1)
+    r$dt0[, weekly := as.integer(frollmean(weekly, convolution_window, align = "right", fill = 0)), by = .(GEO, Age, Sex, release)]
+  
+  
+  setorder(r$dt0,-Date)
+})
+
+# r.dt  <- reactive({
+#   r$dt
+# })
+
+
+```
+
+
+### Chart
+
+
+```{r}
+renderUI({ 
+  
+  req(r$dt0)
+  
+  # dt0 <- r$dt0
+  
+  
+  # var.y <- "weekly"
+  var.y <- r$granularity
+  
+  if (!input$alternative_colour) { 
+    var.col <- "Sex"; var.linetype="release"
+  } else   { 
+    var.col <- "release"; var.linetype="Sex"
+  }
+  
+  if (!input$alternative_view.age) {
+    qq <- quote(Age ~ GEO)
+  } else {
+    qq <- quote(GEO ~ Age)
+  }
+  
+  g <-  
+    r$dt0  %>%
+    ggplot() +
+    theme(legend.position = "bottom")  +
+    # theme_gray() +
+    guides(x =  guide_axis(angle = 60)) +
+    # guides(linetype = guide_legend(reverse=TRUE)) +
+    
+    guides(linetype=guide_legend(title=var.linetype), col=guide_legend(title=var.col)) + 
+    scale_x_date(date_labels = "%b %Y", date_breaks = "3 months") +
+    
+    geom_line(aes(Date, get(var.y), col=get(var.col), linetype = get(var.linetype) ),size=1, alpha=0.8) +
+    facet_grid(eval(qq),  scales = ifelse(input$fixed_scale.age, "fixed", "free") ) +
+    
+    labs( title = r$statcan.title,
+          caption = paste0 ("Source: Statistics Canada - Table ",  r$statcan.table, 
+                            "\nGenerated on ", dateToday, " by Open Canada Vital Statistics Tracker (open-canada.github.io/Apps/vitals)"  ), 
+          x=NULL,
+          y=paste0("Deaths ", r$granularity))  
+  
+  
+  #   scale_x_date(date_labels = "%b %d", date_breaks = "1 month") +
+  #   # scale_x_date(date_labels = "%W", date_breaks = "1 week", ) +
+  # # # scale_x_date(date_minor_breaks = "1 week")
+  ## scale_x_yearquarter(date_labels = "%Y",date_breaks = "1 year") +
+  
+  # 
+  
+  if (input$lm.age) {
+    g <- g + geom_smooth(aes(Date, get(var.y), col=get(var.col), linetype = get(var.linetype) ),size=1, alpha=0.8, method = lm)
+  }
+  
+  
+  
+  if (!input$interactive.age) {
+    renderPlot(g)
+  } else {
+    renderPlotly(g %>% ggplotly)
+  }
+  
+  
+})
+
+
+
+```
+
+
+
+<!-- ### Interactive Chart -->
+
+<!-- ```{r} -->
+<!-- renderPlotly(r$g %>% ggplotly) -->
+<!-- ``` -->
+
+<!-- ### Table -->
+
+<!-- ```{r} -->
+<!-- renderTable.with_date(  r$dt0 ) -->
+<!-- ``` -->
+
+
+
+### Table
+
+```{r}
+renderDataTable(  r$dt0 %>% datatable.title() )
+```
+
+
+
+
+
+
+```{r STOP_HERE-AGE, eval=F, include=FALSE}
+knitr::knit_exit()
+```
+
+
+
+<!-- ### Debug: input -->
+
+<!-- ### Debug window -->
+
+```{r echo=T}
+renderPrint (reactiveValuesToList(input))
+
+```
+
+
+
+<!-- ### Debug: r -->
+
+<!-- ### Debug window -->
+
+```{r echo=T}
+
+renderPrint (reactiveValuesToList(r))
+```
+
+
+
+<!-- http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization -->
