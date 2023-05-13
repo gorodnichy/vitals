@@ -1,0 +1,161 @@
+---
+title: "Open Canada Vital Statistics Tracker"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: columns
+  # vertical_layout: fill
+    favicon: rCanada.ico
+
+    source_code: https://github.com/open-canada/vitals
+    social: menu
+    navbar: 
+    # - { title: "Deaths by Age", href: "https://o-canada.shinyapps.io/vitals/deaths-by-age.Rmd", align: left }
+    - { title: "Data Explorer", href: "https://o-canada.shinyapps.io/data", align: right }
+
+license: MIT
+runtime: shiny
+
+---
+
+```{r 00_vital_meta.Rmd, child = '00_vital_meta.Rmd'}
+```
+
+
+```{r common, include=F,echo=F}
+
+source("00_common.R")
+knitr::opts_chunk$set(echo = F)
+
+# resource_files:
+#   - deaths-by-age.Rmd
+
+```
+
+<!-- # Search criteria: {.sidebar data-width=210} -->
+
+
+<!-- <font size=-1> -->
+
+
+<!-- Use this App to extract and visualize various Open Canada vital statistics. -->
+
+<!-- The following statistics are presently processed by this App. -->
+
+<!-- ```{r} -->
+
+<!--   # state = choicesGEO %wo% c("Yukon", "Northwest Territories", "Nunavut", "Newfoundland and Labrador", "Prince Edward Island",  "Nova Scotia", "New Brunswick", "Quebec" ), -->
+<!-- #   state =  c("Canada", "Ontario", "Saskatchewan", "Alberta", "British Columbia"), -->
+<!-- # choicesGEO = aGeo -->
+<!-- selectInput('state', h5("Select region(s):"), multiple=T, choices = aGeo,  -->
+<!--             selected = aGeo[1:3],  -->
+<!--             selectize=F, size=3) -->
+
+<!-- dateRangeInput("date", h5("Select date range:"), weekstart=1, start = in0$date[1], end = dateToday-days(30)) -->
+
+
+
+<!-- # granularity TBD ---- -->
+<!-- radioButtons("granularity", "Choose granularity:", -->
+<!--              choices = c("Weekly", "Monthly", "Yearly"), inline=T) -->
+
+<!-- checkboxInput("alternative_view", "Reverse axes", F) # in0$alternative_view)  -->
+
+
+<!-- # h5('Data processing options:') -->
+
+
+<!-- # average ---- -->
+<!-- checkboxInput("average", "Average over several weeks",  T) -->
+<!-- renderUI({ -->
+<!--   if (input$average){ -->
+<!--     sliderInput("convolution_window", NULL, 2, 12, 4, step=1, ticks=T, post=" weeks") -->
+<!--   } -->
+<!-- }) -->
+
+
+
+<!-- checkboxInput("keep_scale", "Keep the same scale",  F) -->
+
+<!-- checkboxInput("log", "Use logarithmic scale",  F) -->
+
+
+<!-- ``` -->
+
+
+
+<!-- Open Canada Vital Statistics Tracker Web App is built using open source data and open source code. The source code for this App is available on [GitHub](https://github.com/open-canada/vitals). -->
+
+<!-- </font> -->
+
+
+```{r deaths_by_cause.Rmd, child = 'deaths_by_cause.Rmd'}
+```
+
+
+
+
+```{r deaths-by-age.Rmd, child = 'deaths-by-age.Rmd'}
+```
+
+
+
+
+<!-- ```{r stillbirths.Rmd, child = 'stillbirths.Rmd'} -->
+<!-- ``` -->
+
+
+
+
+```{r Pop-ups, eval=FALSE, include=FALSE}
+# Pop-up window
+# https://stackoverflow.com/questions/48523338/how-can-i-add-a-message-box-in-r-shiny
+# observeEvent(input$read_from_cache, {
+#   if (!input$read_from_cache) 
+#     showModal(modalDialog(
+#       title = "Alert:",
+#       paste("Please wait. It can take some time to load Live data."),
+#       easyClose = TRUE,
+#       footer = "Press anywhere to continue to close this window" # NULL
+#     ))
+# })
+```
+
+
+
+
+
+
+
+
+
+
+```{r STOP_HERE, include=FALSE}
+knitr::knit_exit()
+```
+Any other codes/text, which you dont want to be shown (yet) in the complied App, can be placed here. For example debugging pane or extra statistical analysis tab
+
+
+
+<!-- ```{r 99_vital_info.Rmd, child = '99_vital_info.Rmd'} -->
+<!-- ``` -->
+
+
+
+
+# Debug 
+
+## ...
+
+
+
+```{r reactiveValuesToList, echo=F}
+
+renderText(paste0("Working directory: ", getwd()))
+renderPrint(reactiveValuesToList(input) )
+renderPrint(reactiveValuesToList(r))
+
+```
+
+
+
+

@@ -235,7 +235,8 @@ flowLayout(
     choices = c( 
       
       "Latest (Live)" = "live",
-      "2022-11-10")
+      "2022-11-10"),
+    selectize=F, size=2, 
     # ,
     #   "2022-04-20",
     #   "2022-01-10")
@@ -413,13 +414,13 @@ checkboxInput("vaccination", "Load vaccination rates",  F)
 # Predefine some periods of interest:
 
 period = c(
-  ymd("2010-01-05"), # early prepandemic, early flu waves 
+  # ymd("2010-01-05"), # early prepandemic, early flu waves 
   # ymd("2016-01-01"), # late pre-pandemic, later flu  waves
-  # ymd("2020-01-01"), # four new cause categories added: 3 for covid + NO_INFO
+  ymd("2020-01-01"), # four new cause categories added: 3 for covid + NO_INFO
   # ymd("2020-03-24"), # early pre-vax pandemic, first COVID death
   # ymd("2020-08-01"), # late pre-vax pandemic, end of first wave
-  ymd("2020-12-14"), # early vax, first vax shot 
-  ymd("2021-05-01") # late vax, vax rate >= 3%
+  ymd("2020-12-14"), # early vax, first vax shot Vax.rate=0%
+  ymd("2021-05-01") # Vax.rate=3%
   # ymd("2021-12-02"), # 3rd doses (first booster)
   # ymd("2021-10-04")     # dateToday dateMax   
   # dateToday

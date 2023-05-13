@@ -1,0 +1,188 @@
+
+
+
+
+```{r read, fig.width = 8, fig.height=8, eval=T, include=F}
+
+# dpi = 200
+source("00_common.R")
+knitr::opts_chunk$set(echo = F)
+
+# r$dtAll <- cansim::get_cansim("13-10-0810-01") %>%  setDT() # By cause
+# r$dtAll <- cansim::get_cansim("13-10-0768-01") %>%  setDT()  # By Age
+dtBirths0 <- cansim::get_cansim("13-10-0428") %>%  setDT() # Live births and fetal deaths (stillbirths), by type of birth (single or multiple)
+
+
+dtBirths0 %>% names;
+dtBirths <- dtBirths0 [, c(22,21,2,23,24) ] 
+
+
+dtBirths$GEO %>% unique()
+dtBirths[, GEO := gsub(", place of residence of mother", "", GEO)]
+
+
+
+
+dtBirths <- dtBirths [
+  Date> ym("2010-01") &
+    GEO != "Northwest Territories including Nunavut" &
+    GEO != "Yukon" &
+    `Type of birth (single or multiple)` == "Total, single and multiple births"] %>% setorder(-Date)
+
+
+
+dtBirths$`Type of birth (single or multiple)` <- NULL
+setnames (dtBirths, "Live births and fetal deaths (stillbirths)", "type")
+dtBirths[, GEO := gsub(", place of residence of mother", "", GEO)]
+# dtBirths[, GEO:=as.factor(GEO)]
+
+dtBirths[, GEO:=fct_relevel(GEO, aGeo)]
+# dtBirths[, GEO:=factor(GEO)]
+dtBirths[, Date:=year(Date)]
+
+
+dtBirths[1:2]
+
+
+dt.wide <-   dtBirths %>% dcast (Date + GEO ~ type, value.var = "val_norm" )
+
+
+# It should be in rates per thousand TOTAL 1000 BIRTHS (not a percentage and not per 1000 live births.
+
+
+dt.wide [ , `Stillbirths per thousand Total births` := round (1000 *`Fetal deaths (stillbirths)` / `Total, births`,0)] %>% setorder(GEO, -Date)
+
+
+```
+
+
+
+# Births
+
+
+<!-- ## Search criteria: {data-width=100} -->
+
+<!-- <font size=-1> -->
+
+<!-- \ Data Source: [Statistics Canada Table 13-10-0810-01](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001).  -->
+<!-- Live births and fetal deaths (stillbirths), by type of birth (single or multiple). <br>Updated: Annually -->
+
+
+<!-- ```{r} -->
+
+<!-- selectInput("birth.type", "Birth Type", dtBirths$GEO %>% unique(), dtBirths$GEO %>% unique() %>% .[c(1,5,7,10,11)], multiple = T   ) -->
+
+<!-- ``` -->
+
+
+<!-- </font> -->
+
+
+
+
+
+
+## ROW 1........ {.tabset .tabset-fade data-width=1000}
+
+<!-- ## ROW 1........ -->
+
+
+ Data Source: [Statistics Canada Table 13-10-0810-01](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001). 
+Live births and fetal deaths (stillbirths), by type of birth (single or multiple). Updated: Annually
+
+
+### Chart
+
+```{r}
+# 
+# ```{r fig.width = 8, fig.height=8}
+# 
+# out.width = "400px"
+# out.width="50%"
+# fig.dim = c(8, 6)
+
+g <-  dt.wide [GEO != "Unknown province or territory"] %>% 
+  ggplot(aes(Date, `Stillbirths per thousand Total births`, fill=GEO)) + 
+      theme(legend.position = "bottom")  +
+  geom_col() + geom_point (aes(size=`Total, births`)) + 
+  facet_wrap(. ~ GEO, scales = "fixed") +     
+  # theme(legend.position = "bottom")  +
+  labs (
+    title = "Stillbirths (per thousand Total births). Source: Statistics Canada Table 13-10-0810-01", 
+    x = NULL,  y=NULL
+  )
+
+
+# 
+# tryCatch({
+#   observe({
+#     if (input$birth.total==T) {
+#       scaleFactor <- max(dt0$value, na.rm=T) / max(dt0$dose1_rate, na.rm=T)
+#       
+#       g <- g+
+#         geom_line(aes(x=Date, y=dose2_rate * max(value, na.rm=T) / 100), col="red") +
+#         scale_y_continuous(name="value", sec.axis=sec_axis(~./ (max(dt0$value, na.rm=T) / 100), name="Full vaccination rate"))     +
+#         theme(
+#           axis.title.y.left=element_text(color="blue"),
+#           axis.text.y.left=element_text(color="blue"),
+#           axis.title.y.right=element_text(color="red"),
+#           axis.text.y.right=element_text(color="red")
+#         )
+#     }
+#   })
+  # 
+# })  
+
+# g
+# 
+# ```
+# 
+# ### Interactive plot
+# 
+# ```{r}
+g %>% ggplotly
+
+
+```
+
+
+
+### Grid
+
+```{r}
+
+dt.wide %>%  datatable.title()
+
+```
+
+
+
+<!-- ### Grid (Raw data) -->
+
+<!-- ```{r} -->
+
+<!-- dtBirths %>%  datatable.title("Statistics Canada Table 13-10-0428. Live births and fetal deaths (stillbirths), by type of birth (single or multiple). Updated: Annually") -->
+
+<!-- ``` -->
+
+
+<!-- <!-- ### Timeseries  --> -->
+
+
+<!-- ```{r eval=FALSE, include=FALSE} -->
+
+<!-- # dt.wide[`Stillbirths per thousand Total births` <1000 ]  -->
+
+<!-- dt.wide3 <-   dt.wide [`Stillbirths per thousand Total births` <100 ]  %>% dcast (Date ~ GEO, value.var = "Stillbirths per thousand Total births") -->
+<!-- dt.wide3  %>% setcolorder("Date") %>% as.xts.data.table %>% dygraph.title("stillbirths / live births (%)") -->
+
+<!-- ```   -->
+
+
+<!-- >  Data Source: [Statistics Canada Table 13-10-0810-01](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310081001)  -->
+
+
+
+
+
+

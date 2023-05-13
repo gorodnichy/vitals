@@ -118,21 +118,24 @@ in0$granularity  = isolate( r$granularity )
 
 Data Source: [Statistics Canada Table 13-10-0768-01](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310076801)
 
-Make selection (Click to select, "Del" to deselect)
+<!-- Make selection (Click to select, "Del" to deselect) -->
 
 ```{r}
 
-renderUI({ selectInput("release",  "Choose data release(s):",  aRelease, in0$release, multiple = T) })
+renderUI({ selectInput("release",  "Choose data release(s):",  aRelease, in0$release,
+                       selectize=F, size=3, multiple = T) })
 
 renderText(paste0("Last record in data: ",
                   dtAll$Date %>% max(na.rm = T)) )
 
-renderUI({ selectInput("geo", "Select Region(s):", aGeo, in0$geo, multiple = T) })
-renderUI({ selectInput("age", "Select Age group(s):", aAge, aAge, multiple = T ) })
-renderUI({ selectInput("sex", "Select Sex group(s):", aSex, in0$sex, multiple = T ) })
+renderUI({ selectInput("geo", "Select Region(s):", aGeo, in0$geo,selectize=F, size=4,  multiple = T) })
+renderUI({ selectInput("age", "Select Age group(s):", aAge, aAge,
+                       selectize=F, size=4, multiple = T ) })
+renderUI({ selectInput("sex", "Select Sex group(s):", aSex, in0$sex,
+                       selectize=F, size=4, multiple = T ) })
 
 
-dateRangeInput("date", h5("Select date range:"), weekstart=1, start = "2018-01-01", end = as.character(dateToday-30))
+dateRangeInput("date.age", h5("Select date range:"), weekstart=1, start = "2018-01-01", end = as.character(dateToday-30))
 
 
 
@@ -162,7 +165,7 @@ renderUI({
 hr()
 
 
-checkboxInput("interactive.age", "Enable interactivity", F)
+# checkboxInput("interactive.age", "Enable interactivity", F)
 checkboxInput("alternative_view.age", "Reverse axis", F)
 checkboxInput("alternative_colour", "Swap colour and line type", F)
 
@@ -202,7 +205,7 @@ observe({
   r$granularity <- input$granularity
   
   
-  r$dt0 <- dtAll [Date > r$date[1] & GEO %in% r$geo & 
+  r$dt0 <- dtAll [Date > input$date.age[1] & GEO %in% r$geo & 
                     Age %in% r$age & 
                     release %in% r$release & Sex %in% r$sex ]
   
@@ -299,11 +302,25 @@ renderUI({
   
   
   
-  if (!input$interactive.age) {
-    renderPlot(g)
-  } else {
-    renderPlotly(g %>% ggplotly)
+  
+  if (input$vline) {  
+    alp = 0.2  
+    for (i in 1:length(period)) {
+      g <- g + geom_vline(xintercept=period[i], linetype=5, aplha=alp,  col="grey")
+    }
+    
+    g <- g + xlim(input$date.age[1], input$date.age[2])
+
   }
+ 
+  
+      renderPlot(g)
+  
+  # if (!input$interactive.age) {
+  #   renderPlot(g)
+  # } else {
+  #   renderPlotly(g %>% ggplotly)
+  # }
   
   
 })
